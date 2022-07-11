@@ -1,7 +1,7 @@
 name: skywa_framework_widgets
-description: A new Flutter project.
+description: The framework for Skywa Solutions.
 version: 0.0.1
-homepage:
+homepage: https://github.com/skyvaSolutions/skywa_framework_widgets
 
 environment:
   sdk: ">=2.17.5 <3.0.0"

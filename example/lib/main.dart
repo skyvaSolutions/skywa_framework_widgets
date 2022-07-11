@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:skywa_framework_widgets/skywa_framework_widgets.dart';
 import 'package:skywa_framework_widgets_example/all_widgets_screen.dart';
 
 void main() {
