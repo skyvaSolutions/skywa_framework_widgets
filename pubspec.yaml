@@ -19,6 +19,13 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.9.2
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: 'icons/app_icon.png'
+
   flutter_lints: ^2.0.0
 
 # For information on the generic Dart part of this file, see the
@@ -48,8 +55,8 @@ flutter:
         fileName: skywa_framework_widgets_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - assets/images/
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see
