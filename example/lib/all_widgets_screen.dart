@@ -4,6 +4,7 @@ import 'package:skywa_framework_widgets/skywa_text.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 
 import 'sample_elevated_button_screen.dart';
+import 'sample_snackbar_screen.dart';
 import 'sample_texts_screen.dart';
 
 class AllWidgetsScreen extends StatefulWidget {
@@ -28,6 +29,20 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           // const SizedBox(height: 20.0),
 
           /// sample snackbars
+          SkywaElevatedButton.save(
+            context: context,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return SampleSnackBarScreen();
+                }),
+              );
+            },
+            text: 'Sample SnackBars',
+          ),
+          SizedBox(height: 20.0),
+
 
           /// sample alert dialogs
 

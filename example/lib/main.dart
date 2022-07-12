@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skywa_framework_widgets_example/all_widgets_screen.dart';
-import 'package:get_it/get_it.dart';
 
 void main() {
-  final GetIt sl = GetIt.instance;
   runApp(const MyApp());
 }
 

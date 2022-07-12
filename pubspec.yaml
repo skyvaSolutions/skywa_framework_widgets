@@ -11,7 +11,12 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_device_type: ^0.4.0
-  get_it: ^7.2.0
+  fluttericon: ^2.0.0
+  flutter_icons: ^1.1.0
+  material_design_icons_flutter: ^5.0.6595
+  eva_icons_flutter: ^3.0.2
+  flutter_cmoon_icons: ^0.1.0
+  fluttertoast: ^8.0.9
 
   flutter_web_plugins:
     sdk: flutter
@@ -51,13 +56,13 @@ flutter:
         pluginClass: SkywaFrameworkWidgetsPlugin
       ios:
         pluginClass: SkywaFrameworkWidgetsPlugin
-      web:
-        pluginClass: SkywaFrameworkWidgetsWeb
-        fileName: skywa_framework_widgets_web.dart
+#      web:
+#        pluginClass: SkywaFrameworkWidgetsWeb
+#        fileName: skywa_framework_widgets_web.dart
 
   # To add assets to your plugin package, add an assets section, like this:
-  assets:
-    - assets/images/
+#  assets:
+#    - assets/images/
   #   - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see

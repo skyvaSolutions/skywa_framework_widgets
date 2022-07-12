@@ -71,6 +71,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  eva_icons_flutter:
+    dependency: transitive
+    description:
+      name: eva_icons_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.1.0"
   fake_async:
     dependency: transitive
     description:
@@ -83,6 +90,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_cmoon_icons:
+    dependency: transitive
+    description:
+      name: flutter_cmoon_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.0"
   flutter_device_type:
     dependency: transitive
     description:
@@ -90,6 +104,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.0"
+  flutter_icons:
+    dependency: transitive
+    description:
+      name: flutter_icons
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   flutter_launcher_icons:
     dependency: "direct dev"
     description:
@@ -107,13 +128,20 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  get_it:
+  fluttericon:
     dependency: transitive
     description:
-      name: get_it
+      name: fluttericon
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "7.2.0"
+    version: "2.0.0"
+  fluttertoast:
+    dependency: transitive
+    description:
+      name: fluttertoast
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "8.0.9"
   image:
     dependency: transitive
     description:
@@ -142,6 +170,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.4"
+  material_design_icons_flutter:
+    dependency: transitive
+    description:
+      name: material_design_icons_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.0.6996"
   meta:
     dependency: transitive
     description:
