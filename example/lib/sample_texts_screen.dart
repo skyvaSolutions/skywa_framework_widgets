@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
+import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
 
 class SampleTextsScreen extends StatelessWidget {
@@ -12,7 +13,7 @@ class SampleTextsScreen extends StatelessWidget {
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
         // child: SkywaAppBar(appbarText: 'Sample Texts'),
-        child: AppBar(title: const Text('Sample Texts')),
+        child: SkywaAppBar(appbarText: 'Sample Texts'),
       ),
       body: Container(
         height: Device.screenHeight,

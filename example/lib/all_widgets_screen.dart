@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 
+import 'sample_elevated_button_screen.dart';
 import 'sample_texts_screen.dart';
 
 class AllWidgetsScreen extends StatefulWidget {
@@ -44,8 +46,9 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           /// sample textformfields
 
           /// sample texts
-          ElevatedButton(
-            onPressed: () {
+          SkywaElevatedButton.delete(
+            context: context,
+            onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) {
@@ -53,15 +56,36 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 }),
               );
             },
-            child: const SkywaText(text: 'Sample Texts'),
+            text: 'Sample Texts',
           ),
           const SizedBox(height: 20.0),
 
           /// sample rich texts
 
           /// sample buttons
+          SkywaText(
+            text: 'Buttons',
+            fontSize: 25.0,
+            textAlign: TextAlign.center,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFFEA4335),
+          ),
+          SizedBox(height: 20.0),
 
           /// sample elevated buttons
+          SkywaElevatedButton.save(
+            context: context,
+            text: 'Sample Elevated Buttons',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return SampleElevatedButtonScreen();
+                }),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
 
           /// sample text buttons
 

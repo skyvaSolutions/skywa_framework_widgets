@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:skywa_framework_widgets_example/all_widgets_screen.dart';
+import 'package:get_it/get_it.dart';
 
 void main() {
+  final GetIt sl = GetIt.instance;
   runApp(const MyApp());
 }
 
@@ -62,10 +64,11 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Skywa Framework Widgets',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.light().copyWith(
+      /*theme: ThemeData.light().copyWith(
         primaryColor: const Color(0xFF54BAB9),
         splashColor: const Color(0xFF54BAB9).withOpacity(0.4),
-      ),
+        errorColor: Color(0xFFEB1D36),
+      ),*/
       home: const AllWidgetsScreen(),
     );
   }
