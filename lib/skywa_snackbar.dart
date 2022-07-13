@@ -25,7 +25,6 @@ class SkywaSnackBar {
     this.iconSize,
   })  : color = Theme.of(context).primaryColor,
         icon = MaterialCommunityIcons.check,
-        assert(context != null),
         assert(!isStringInvalid(text: snackbarText)) {
     displaySkywaSnackBar();
   }
@@ -38,9 +37,8 @@ class SkywaSnackBar {
     this.actionText,
     this.durationInSeconds = 2,
     this.iconSize,
-  })  : color = Theme.of(context).splashColor,
+  })  : color = Theme.of(context).colorScheme.secondary,
         icon = Octicons.info,
-        assert(context != null),
         assert(!isStringInvalid(text: snackbarText)) {
     displaySkywaSnackBar();
   }
@@ -55,7 +53,6 @@ class SkywaSnackBar {
     this.iconSize,
   })  : color = Theme.of(context).errorColor,
         icon = MaterialCommunityIcons.close,
-        assert(context != null),
         assert(!isStringInvalid(text: snackbarText)) {
     displaySkywaSnackBar();
   }

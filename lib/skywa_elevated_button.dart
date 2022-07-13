@@ -22,9 +22,7 @@ class SkywaElevatedButton extends StatelessWidget {
     required this.onTap,
     this.padding,
     this.margin,
-  })  : buttonColor = Theme.of(context).splashColor,
-        assert(text != null),
-        assert(onTap != null);
+  }) : buttonColor = Theme.of(context).colorScheme.secondary;
 
   SkywaElevatedButton.save({
     required this.context,
@@ -35,7 +33,7 @@ class SkywaElevatedButton extends StatelessWidget {
     required this.onTap,
     this.padding,
     this.margin,
-  })  : buttonColor = Theme.of(context).primaryColor;
+  }) : buttonColor = Theme.of(context).primaryColor;
 
   SkywaElevatedButton.delete({
     required this.context,
@@ -46,9 +44,7 @@ class SkywaElevatedButton extends StatelessWidget {
     required this.onTap,
     this.padding,
     this.margin,
-  })  : buttonColor = Theme.of(context).errorColor,
-        assert(text != null),
-        assert(onTap != null);
+  }) : buttonColor = Theme.of(context).errorColor;
 
   @override
   Widget build(BuildContext context) {

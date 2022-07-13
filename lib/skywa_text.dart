@@ -26,7 +26,7 @@ class SkywaText extends StatelessWidget {
     this.letterSpacing = 0.0,
     this.textDecoration,
     this.textDecorationStyle,
-  })  : assert(text != null && text != 'null'),
+  })  : assert(text != 'null'),
         super(key: key);
 
   @override
