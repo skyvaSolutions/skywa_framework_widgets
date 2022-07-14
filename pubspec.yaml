@@ -17,6 +17,7 @@ dependencies:
   eva_icons_flutter: ^3.0.2
   flutter_cmoon_icons: ^0.1.0
   fluttertoast: ^8.0.9
+  flutter_slidable: ^0.6.0
 
   flutter_web_plugins:
     sdk: flutter

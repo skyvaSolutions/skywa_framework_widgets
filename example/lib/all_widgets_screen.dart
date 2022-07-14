@@ -6,6 +6,7 @@ import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'sample_elevated_button_screen.dart';
 import 'sample_snackbar_screen.dart';
 import 'sample_texts_screen.dart';
+import 'skywa_appt_list_screen.dart';
 
 class AllWidgetsScreen extends StatefulWidget {
   const AllWidgetsScreen({Key? key}) : super(key: key);
@@ -41,8 +42,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             },
             text: 'Sample SnackBars',
           ),
-          SizedBox(height: 20.0),
-
+          const SizedBox(height: 20.0),
 
           /// sample alert dialogs
 
@@ -85,7 +85,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             fontWeight: FontWeight.bold,
             color: Color(0xFFEA4335),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample elevated buttons
           SkywaElevatedButton.save(
@@ -109,6 +109,19 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           /// single & multiple selections
 
           /// sample radio buttons
+
+          SkywaElevatedButton.info(
+            context: context,
+            text: 'Sample Appointment List',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return SampleAppointmentListScreen();
+                }),
+              );
+            },
+          ),
         ],
       ),
     );

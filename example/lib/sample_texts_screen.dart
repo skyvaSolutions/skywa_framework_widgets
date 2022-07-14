@@ -12,7 +12,6 @@ class SampleTextsScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
-        // child: SkywaAppBar(appbarText: 'Sample Texts'),
         child: SkywaAppBar(appbarText: 'Sample Texts'),
       ),
       body: Container(

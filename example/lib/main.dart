@@ -62,11 +62,14 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Skywa Framework Widgets',
       debugShowCheckedModeBanner: false,
-      /*theme: ThemeData.light().copyWith(
+      theme: ThemeData.light().copyWith(
         primaryColor: const Color(0xFF54BAB9),
         splashColor: const Color(0xFF54BAB9).withOpacity(0.4),
         errorColor: Color(0xFFEB1D36),
-      ),*/
+        colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: Color(0xFFEDAF11),
+        ),
+      ),
       home: const AllWidgetsScreen(),
     );
   }
