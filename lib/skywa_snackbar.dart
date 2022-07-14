@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 
 import 'services/is_string_invalid.dart';
 
 class SkywaSnackBar {
   final BuildContext context;
-  final String snackbarText;
+  final String snackBarText;
   final double? fontSize;
   final String? actionText;
   final Function()? action;
@@ -17,43 +16,43 @@ class SkywaSnackBar {
 
   SkywaSnackBar.success({
     required this.context,
-    required this.snackbarText,
+    required this.snackBarText,
     this.fontSize,
     this.action,
     this.actionText,
     this.durationInSeconds = 2,
     this.iconSize,
   })  : color = Theme.of(context).primaryColor,
-        icon = MaterialCommunityIcons.check,
-        assert(!isStringInvalid(text: snackbarText)) {
+        icon = Icons.check_rounded,
+        assert(!isStringInvalid(text: snackBarText)) {
     displaySkywaSnackBar();
   }
 
   SkywaSnackBar.info({
     required this.context,
-    required this.snackbarText,
+    required this.snackBarText,
     this.fontSize,
     this.action,
     this.actionText,
     this.durationInSeconds = 2,
     this.iconSize,
   })  : color = Theme.of(context).colorScheme.secondary,
-        icon = Octicons.info,
-        assert(!isStringInvalid(text: snackbarText)) {
+        icon = Icons.info,
+        assert(!isStringInvalid(text: snackBarText)) {
     displaySkywaSnackBar();
   }
 
   SkywaSnackBar.error({
     required this.context,
-    required this.snackbarText,
+    required this.snackBarText,
     this.fontSize,
     this.action,
     this.actionText,
     this.durationInSeconds = 2,
     this.iconSize,
   })  : color = Theme.of(context).errorColor,
-        icon = MaterialCommunityIcons.close,
-        assert(!isStringInvalid(text: snackbarText)) {
+        icon = Icons.close_rounded,
+        assert(!isStringInvalid(text: snackBarText)) {
     displaySkywaSnackBar();
   }
 
@@ -78,7 +77,7 @@ class SkywaSnackBar {
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
               ),*/
-              Text(snackbarText),
+              Text(snackBarText),
             ],
           ),
         ),

@@ -26,7 +26,7 @@ class SampleSnackBarScreen extends StatelessWidget {
             onTap: () {
               SkywaSnackBar.success(
                   context: context,
-                  snackbarText: 'This is a success snackbar',
+                  snackBarText: 'This is a success snackbar',
                   actionText: 'Undo',
                   action: () {
                     Fluttertoast.showToast(msg: 'Undo Pressed');
@@ -42,7 +42,7 @@ class SampleSnackBarScreen extends StatelessWidget {
             onTap: () {
               SkywaSnackBar.info(
                   context: context,
-                  snackbarText: 'This is an info snackbar',
+                  snackBarText: 'This is an info snackbar',
                   actionText: 'Undo',
                   action: () {
                     Fluttertoast.showToast(msg: 'Undo Pressed');
@@ -58,7 +58,7 @@ class SampleSnackBarScreen extends StatelessWidget {
             onTap: () {
               SkywaSnackBar.error(
                 context: context,
-                snackbarText: 'This is an error snackbar',
+                snackBarText: 'This is an error snackbar',
                 durationInSeconds: 5,
               );
             },
