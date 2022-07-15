@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
+import 'package:skywa_framework_widgets_example/sample_rich_texts_screen.dart';
 
 import 'sample_elevated_button_screen.dart';
+import 'sample_loader_screen.dart';
 import 'sample_snackbar_screen.dart';
+import 'sample_switch_screen.dart';
 import 'sample_texts_screen.dart';
-import 'skywa_appt_list_screen.dart';
 
 class AllWidgetsScreen extends StatefulWidget {
   const AllWidgetsScreen({Key? key}) : super(key: key);
@@ -47,6 +49,21 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           /// sample alert dialogs
 
           /// sample loader
+          SkywaElevatedButton.save(
+            context: context,
+            text: 'Sample Loader',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return SampleLoaderScreen();
+                  },
+                ),
+              );
+            },
+          ),
+          SizedBox(height: 20.0),
 
           /// sample glassmorphic loader
 
@@ -76,6 +93,19 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           const SizedBox(height: 20.0),
 
           /// sample rich texts
+          SkywaElevatedButton.save(
+            context: context,
+            text: 'Sample Rich Texts',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return SampleRichTextsScreen();
+                }),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
 
           /// sample buttons
           SkywaText(
@@ -110,18 +140,40 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
 
           /// sample radio buttons
 
-          SkywaElevatedButton.info(
+          /// sample choice chips
+
+          /// sample dropdowns
+
+          /// sample checkboxes
+
+          /// sample switches
+          SkywaElevatedButton.delete(
             context: context,
-            text: 'Sample Appointment List',
+            text: 'Sample Switches',
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) {
-                  return SampleAppointmentListScreen();
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return SampleSwitchScreen();
                 }),
               );
             },
           ),
+          SizedBox(height: 20.0),
+
+          /// sample sliders
+
+          /// images & image pickers
+
+          /// sample image pickers
+
+          /// sample cached network images
+
+          /// pickers
+
+          /// sample pickers
+
+          /// listwheelscrollviews
         ],
       ),
     );
