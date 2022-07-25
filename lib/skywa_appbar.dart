@@ -12,13 +12,12 @@ class SkywaAppBar extends StatelessWidget {
 
   SkywaAppBar({
     Key? key,
-    required this.appbarText,
+    this.appbarText = '',
     this.centerTitle = true,
     this.backIconButton,
     this.size,
     this.actions,
-  })  : assert(!isStringInvalid(text: appbarText)),
-        super(key: key);
+  })  : super(key: key);
 
   @override
   Widget build(BuildContext context) {
