@@ -212,6 +212,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
           SizedBox(height: 20.0),
 
+
           /// sample buttons
           SkywaText(
             text: 'Buttons',
