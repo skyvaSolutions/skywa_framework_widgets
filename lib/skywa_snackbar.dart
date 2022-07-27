@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
-
+import 'skywa_auto_size_text.dart';
 import 'services/is_string_invalid.dart';
 
 class SkywaSnackBar {
@@ -59,27 +59,27 @@ class SkywaSnackBar {
   void displaySkywaSnackBar() {
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
-        content: Container(
-          width: Device.screenWidth,
-          child: Row(
-            children: [
-              /// icon
-              Icon(
-                icon,
-                color: Colors.white,
-                size: iconSize ?? IconTheme.of(context).size,
-              ),
-              SizedBox(width: 10.0),
+        content: Row(
+          children: [
+            /// icon
+            Icon(
+              icon,
+              color: Colors.white,
+              size: iconSize ?? IconTheme.of(context).size,
+            ),
+            SizedBox(width: 10.0),
 
-              /// snackbar text
-              /*SkywaAutoSizeText(
-                text: snackbarText,
-                color: Colors.white,
-                fontWeight: FontWeight.w600,
-              ),*/
-              Text(snackBarText),
-            ],
-          ),
+            /// snackbar text
+            Expanded(
+              child: Text(
+                snackBarText,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ],
         ),
         elevation: 0.0,
         duration: Duration(seconds: durationInSeconds),
