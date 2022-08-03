@@ -229,8 +229,6 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             },
           ),
           const SizedBox(height: 20.0),
-
-          const SizedBox(height: 20.0),
           const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
           const SizedBox(height: 20.0),
 
@@ -292,7 +290,6 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             },
           ),
           const SizedBox(height: 20.0),
-
           const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
           const SizedBox(height: 20.0),
 

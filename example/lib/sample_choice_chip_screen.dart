@@ -22,7 +22,7 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Choice Chips'),
       ),
       body: Container(
@@ -30,7 +30,7 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
         child: ListView(
           shrinkWrap: true,
           children: [
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             SkywaChoiceChipGroup(
               selectedValue: selectedGender,
               choiceChips: genderChips,
@@ -41,14 +41,14 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
                 print('value: $value');
               },
               wrapAlignment: WrapAlignment.spaceAround,
-              padding: EdgeInsets.all(0.0),
+              padding: const EdgeInsets.all(0.0),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Padding(
               padding: const EdgeInsets.all(20.0),
               child: SkywaText(text: selectedGender),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             SkywaChoiceChipGroup(
               selectedValue: selectedNationality,
               choiceChips: nationalityChips,
@@ -59,14 +59,14 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
                 print('value: $value');
               },
               wrapAlignment: WrapAlignment.spaceAround,
-              padding: EdgeInsets.all(0.0),
+              padding: const EdgeInsets.all(0.0),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Padding(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: SkywaText(text: selectedNationality),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
           ],
         ),
       ),
