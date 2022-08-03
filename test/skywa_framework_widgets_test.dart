@@ -1,7 +1,4 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:skywa_framework_widgets/skywa_framework_widgets.dart';
-import 'package:skywa_framework_widgets/skywa_framework_widgets_platform_interface.dart';
-import 'package:skywa_framework_widgets/skywa_framework_widgets_method_channel.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
 class MockSkywaFrameworkWidgetsPlatform 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'skywa_auto_size_text.dart';
 import 'services/is_string_invalid.dart';
+import 'skywa_text.dart';
 
 class SkywaSnackBar {
   final BuildContext context;
@@ -71,12 +72,10 @@ class SkywaSnackBar {
 
             /// snackbar text
             Expanded(
-              child: Text(
-                snackBarText,
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                ),
+              child: SkywaText(
+                text: snackBarText,
+                color: Colors.white,
+                fontWeight: FontWeight.w600,
               ),
             ),
           ],

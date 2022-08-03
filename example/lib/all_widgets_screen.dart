@@ -16,6 +16,7 @@ import 'sample_radio_button_screen.dart';
 import 'sample_snackbar_screen.dart';
 import 'sample_switch_screen.dart';
 import 'sample_textbutton_screen.dart';
+import 'sample_textformfield_screen.dart';
 import 'sample_texts_screen.dart';
 import 'package:skywa_framework_widgets/skywa_bottom_sheet.dart';
 
@@ -163,6 +164,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             },
           ),
           SizedBox(height: 20.0),
+
           Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
           SizedBox(height: 20.0),
 
@@ -177,6 +179,20 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           SizedBox(height: 20.0),
 
           /// sample textformfields
+          SkywaElevatedButton.delete(
+            context: context,
+            onTap: () {
+              /*Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return SampleTextFormFieldScreen();
+                }),
+              );*/
+            },
+            text: 'Sample TextFormFields',
+            // fontSize: Device.screenHeight * 0.025,
+          ),
+          SizedBox(height: 20.0),
 
           /// sample texts
           SkywaElevatedButton.delete(
@@ -194,7 +210,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           const SizedBox(height: 20.0),
 
           /// sample rich texts
-          SkywaElevatedButton.save(
+          SkywaElevatedButton.delete(
             context: context,
             text: 'Sample Rich Texts',
             onTap: () {
@@ -211,7 +227,6 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
           SizedBox(height: 20.0),
           Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
           SizedBox(height: 20.0),
-
 
           /// sample buttons
           SkywaText(

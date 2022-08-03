@@ -11,6 +11,9 @@ class SkywaDropdownButton extends StatelessWidget {
   final bool isDense;
   final String selectedValue;
   final EdgeInsetsGeometry? contentPadding;
+  final double elevation;
+  final bool showUnderLine;
+  final Color textColor;
 
   const SkywaDropdownButton({
     Key? key,
@@ -21,11 +24,14 @@ class SkywaDropdownButton extends StatelessWidget {
     this.isDense = false,
     required this.selectedValue,
     this.contentPadding,
+    this.elevation = 0.0,
+    this.showUnderLine = true,
+    this.textColor = Colors.black,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    /*return Container(
       child: FormField<String>(
         builder: (FormFieldState<String> state) {
           return InputDecorator(
@@ -70,6 +76,31 @@ class SkywaDropdownButton extends StatelessWidget {
             ),
           );
         },
+      ),
+    );*/
+    return Material(
+      elevation: elevation,
+      child: Container(
+        decoration: BoxDecoration(color: Colors.white),
+        child: FormField<String>(
+          builder: (FormFieldState<String> state) {
+            return DropdownButton<String>(
+              underline: showUnderLine ? null : SizedBox(),
+              value: isStringInvalid(text: selectedValue)
+                  ? items[0]
+                  : selectedValue,
+              isExpanded: isExpanded,
+              isDense: isDense,
+              items: items.map((newValue) {
+                return DropdownMenuItem<String>(
+                  value: newValue,
+                  child: SkywaText(text: newValue.toString(), color: textColor),
+                );
+              }).toList(),
+              onChanged: onChanged,
+            );
+          },
+        ),
       ),
     );
   }
