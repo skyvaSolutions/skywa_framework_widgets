@@ -25,7 +25,7 @@ class SkywaFloatingActionButton extends StatelessWidget {
             color: Colors.grey.shade400,
             blurRadius: 10.0,
             spreadRadius: 2.0,
-            offset: Offset(5, 5),
+            offset: const Offset(5, 5),
           ),
         ],
       ),

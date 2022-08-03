@@ -1,7 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
+import 'package:skywa_framework_widgets/skywa_cached_network_image.dart';
+import 'package:skywa_framework_widgets/skywa_dropdown_button.dart';
 import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
+import 'package:skywa_framework_widgets/skywa_radio_group.dart';
+import 'package:skywa_framework_widgets/skywa_slider.dart';
+import 'package:skywa_framework_widgets/skywa_snackbar.dart';
+import 'package:skywa_framework_widgets/skywa_switch.dart';
+import 'package:skywa_framework_widgets/skywa_text_button.dart';
+import 'package:skywa_framework_widgets/skywa_textformfield.dart';
+import 'package:skywa_framework_widgets/skywa_glassmorphic_loader.dart';
 
 class SampleGlassmorphicLoaderScreen extends StatefulWidget {
   const SampleGlassmorphicLoaderScreen({Key? key}) : super(key: key);
@@ -21,61 +30,61 @@ class _SampleGlassmorphicLoaderScreenState
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Glassmorphic Loader'),
       ),
-      /*body: Stack(
+      body: Stack(
         children: [
           Container(
             height: Device.screenHeight,
             width: Device.screenWidth,
             child: ListView(
               shrinkWrap: true,
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               children: [
                 SkywaTextFormField.name(
                   textEditingController: _nameController,
                   labelText: 'Name',
                   hintText: 'Enter your name...',
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 SkywaElevatedButton.delete(
                   context: context,
                   text: 'Delete',
                   onTap: () {
                     SkywaSnackBar.success(
                       context: context,
-                      snackbarText: 'Deleted successfully',
+                      snackBarText: 'Deleted successfully',
                     );
                   },
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 SkywaDropdownButton(
                   items: ['Male', 'Female'],
                   onChanged: (value) {},
                   selectedValue: 'Male',
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 SkywaSwitch(
                   value: true,
                   onChanged: (value) {},
                   title: 'Light Theme',
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 SkywaRadioGroup(
                   texts: ['Male', 'Female'],
                   onChanged: (valuee) {},
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 SkywaSlider(value: 4, onChanged: (value) {}, maxValue: 5),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 SkywaTextButton(
                   text: 'Exit',
                   textColor: Colors.redAccent,
                   fontWeight: FontWeight.w700,
                   onTap: () {},
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(12.0),
@@ -88,14 +97,14 @@ class _SampleGlassmorphicLoaderScreenState
                     height: 150.0,
                   ),
                 ),
-                SizedBox(height: 20.0),
+                const SizedBox(height: 20.0),
               ],
             ),
           ),
 
           /// loader
           if (_isLoading)
-            Positioned(
+            const Positioned(
               top: 0.0,
               bottom: 0.0,
               left: 0.0,
@@ -103,7 +112,7 @@ class _SampleGlassmorphicLoaderScreenState
               child: SkywaGlassMorphicLoader(text: 'Loading...'),
             ),
         ],
-      ),*/
+      ),
     );
   }
 }

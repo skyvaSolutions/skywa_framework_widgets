@@ -17,7 +17,7 @@ class SkywaAppBar extends StatelessWidget {
     this.backIconButton,
     this.size,
     this.actions,
-  })  : super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class SkywaAppBar extends StatelessWidget {
       backIconButton = IconButton(
         icon: const Icon(Icons.arrow_back_ios_rounded),
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.canPop(context) ? Navigator.pop(context) : null;
         },
       );
     }

@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'skywa_date_time_picker.dart';
@@ -189,7 +186,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.readOnly = false,
     this.onChanged,
     this.isObscure = false,
-    required this.onDateTimeChanged,
+    this.onDateTimeChanged,
     this.initialDateTime,
     this.minimumDate,
     this.minimumYear,
@@ -198,8 +195,7 @@ class SkywaTextFormField extends StatefulWidget {
   })  : keyboardType = TextInputType.datetime,
         textCapitalization = TextCapitalization.none,
         assert(textEditingController != null),
-        assert(labelText != 'null'),
-        assert(onDateTimeChanged != null);
+        assert(labelText != 'null');
 
   /// Optimize for email addresses.
   ///
@@ -460,8 +456,9 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
             ),
           ),
           validator: (value) {
-            widget.validator!;
+            widget.validator;
             return null;
+            // TODO: HANDLE VALIDATOR
           },
           inputFormatters: <TextInputFormatter>[
             if (widget.keyboardType ==
@@ -471,17 +468,12 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
                 ))
               LengthLimitingTextInputFormatter(widget.maxDigitsLength),
             if (widget.keyboardType == TextInputType.phone)
-              FilteringTextInputFormatter.deny(
-                RegExp(r'[a-z A-Z]'),
-              ),
+              FilteringTextInputFormatter.deny(RegExp(r'[a-z A-Z]')),
           ],
           onTap: widget.keyboardType == TextInputType.datetime
               ? () {
                   SkywaDateTimePicker.dateAndTime(
                     context: context,
-                    /*onDateTimeChanged: (DateTime dateTime) {
-                      widget.onDateTimeChanged;
-                    },*/
                     onDateTimeChanged: widget.onDateTimeChanged!,
                     initialDateTime: widget.initialDateTime,
                     minimumYear: widget.minimumYear,

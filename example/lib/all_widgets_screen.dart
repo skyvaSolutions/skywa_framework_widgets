@@ -5,14 +5,20 @@ import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets_example/sample_rich_texts_screen.dart';
 
 import 'sample_alert_dialog_screen.dart';
+import 'sample_cached_image_network_screen.dart';
+import 'sample_checkbox_screen.dart';
 import 'sample_choice_chip_screen.dart';
 import 'sample_dropdown_screen.dart';
 import 'sample_elevated_button_screen.dart';
 import 'sample_floating_action_button_screen.dart';
 import 'sample_glassmorphic_loader_screen.dart';
+import 'sample_image_picker_screen.dart';
+import 'sample_list_wheel_scrollview_screen.dart';
 import 'sample_loader_screen.dart';
 import 'sample_outlined_button_screen.dart';
+import 'sample_picker_screen.dart';
 import 'sample_radio_button_screen.dart';
+import 'sample_slider_screen.dart';
 import 'sample_snackbar_screen.dart';
 import 'sample_switch_screen.dart';
 import 'sample_textbutton_screen.dart';
@@ -46,7 +52,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) {
-                  return SampleSnackBarScreen();
+                  return const SampleSnackBarScreen();
                 }),
               );
             },
@@ -62,12 +68,12 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (builder) {
-                  return SampleAlertDialogScreen();
+                  return const SampleAlertDialogScreen();
                 }),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample loader
           SkywaElevatedButton.save(
@@ -78,43 +84,43 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return SampleLoaderScreen();
+                    return const SampleLoaderScreen();
                   },
                 ),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample glassmorphic loader
           SkywaElevatedButton.save(
             context: context,
-            text: 'TODO: Sample Glassmorphic Loader',
+            text: 'Sample Glassmorphic Loader',
             onTap: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return SampleGlassmorphicLoaderScreen();
+                    return const SampleGlassmorphicLoaderScreen();
                   },
                 ),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
-          Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
-          SizedBox(height: 20.0),
+          const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
+          const SizedBox(height: 20.0),
 
           /// Scaffold's Children
-          SkywaText(
+          const SkywaText(
             text: 'Scaffold\'s Children',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
             color: Color(0xFFEA4335),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample floating action buttons
           SkywaElevatedButton.info(
@@ -124,13 +130,13 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (builder) {
-                  return SampleFloatingActionButtonScreen();
+                  return const SampleFloatingActionButtonScreen();
                 }),
               );
             },
             // fontSize: Device.screenHeight * 0.025,
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample bottom sheets
           SkywaElevatedButton.info(
@@ -143,56 +149,56 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 content: ListView(
                   shrinkWrap: true,
                   children: [
-                    Center(
+                    const Center(
                       child: SkywaText(
                         text: 'Sample Bottom Sheet',
                         fontSize: 20.0,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                     SkywaElevatedButton.delete(
                         context: context,
                         text: 'Dismiss',
                         onTap: () {
                           Navigator.pop(context);
                         }),
-                    SizedBox(height: 10.0),
+                    const SizedBox(height: 10.0),
                   ],
                 ),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
-          Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
-          SizedBox(height: 20.0),
+          const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
+          const SizedBox(height: 20.0),
 
           /// input Fields & texts
-          SkywaText(
+          const SkywaText(
             text: 'Input Fields & Texts',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
-            color: Color(0xFFEA4335),
+            color: const Color(0xFFEA4335),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample textformfields
           SkywaElevatedButton.delete(
             context: context,
             onTap: () {
-              /*Navigator.push(
+              Navigator.push(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) {
-                  return SampleTextFormFieldScreen();
+                  return const SampleTextFormFieldScreen();
                 }),
-              );*/
+              );
             },
             text: 'Sample TextFormFields',
             // fontSize: Device.screenHeight * 0.025,
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample texts
           SkywaElevatedButton.delete(
@@ -217,24 +223,24 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return SampleRichTextsScreen();
+                  return const SampleRichTextsScreen();
                 }),
               );
             },
           ),
           const SizedBox(height: 20.0),
 
-          SizedBox(height: 20.0),
-          Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
+          const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
+          const SizedBox(height: 20.0),
 
           /// sample buttons
-          SkywaText(
+          const SkywaText(
             text: 'Buttons',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
-            color: Color(0xFFEA4335),
+            color: const Color(0xFFEA4335),
           ),
           const SizedBox(height: 20.0),
 
@@ -246,7 +252,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return SampleElevatedButtonScreen();
+                  return const SampleElevatedButtonScreen();
                 }),
               );
             },
@@ -262,13 +268,13 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return SampleTextButtonScreen();
+                    return const SampleTextButtonScreen();
                   },
                 ),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample outlined buttons
           SkywaElevatedButton.save(
@@ -279,26 +285,26 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return SampleOutlinedButtonScreen();
+                    return const SampleOutlinedButtonScreen();
                   },
                 ),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
-          Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
-          SizedBox(height: 20.0),
+          const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
+          const SizedBox(height: 20.0),
 
           /// single & multiple selections
-          SkywaText(
+          const SkywaText(
             text: 'Single & Multiple Selections',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
             color: Color(0xFFEA4335),
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample radio buttons
           SkywaElevatedButton.info(
@@ -308,13 +314,13 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (builder) {
-                  return SampleRadioButtonScreen();
+                  return const SampleRadioButtonScreen();
                 }),
               );
             },
             // fontSize: Device.screenHeight * 0.025,
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample choice chips
           SkywaElevatedButton.info(
@@ -325,13 +331,13 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return SampleChoiceChipScreen();
+                    return const SampleChoiceChipScreen();
                   },
                 ),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample dropdowns
           SkywaElevatedButton.info(
@@ -342,15 +348,30 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 context,
                 MaterialPageRoute(
                   builder: (BuildContext context) {
-                    return SampleDropdownScreen();
+                    return const SampleDropdownScreen();
                   },
                 ),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample checkboxes
+          SkywaElevatedButton.info(
+            context: context,
+            text: 'Sample CheckBoxes',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return const SampleCheckBoxScreen();
+                }),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
+          const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
+          const SizedBox(height: 20.0),
 
           /// sample switches
           SkywaElevatedButton.delete(
@@ -360,26 +381,117 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (BuildContext context) {
-                  return SampleSwitchScreen();
+                  return const SampleSwitchScreen();
                 }),
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// sample sliders
+          SkywaElevatedButton.delete(
+            context: context,
+            text: 'Sample Sliders',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return const SampleSliderScreen();
+                  },
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
+          const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
+          const SizedBox(height: 20.0),
 
           /// images & image pickers
+          const SkywaText(
+            text: 'Images & Image Pickers',
+            fontSize: 25.0,
+            textAlign: TextAlign.center,
+            fontWeight: FontWeight.bold,
+            color: Color(0xFFEA4335),
+          ),
+          const SizedBox(height: 20.0),
 
           /// sample image pickers
+          SkywaElevatedButton.save(
+            context: context,
+            text: 'Sample Image Pickers',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return const SampleImagePickerScreen();
+                  },
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
 
           /// sample cached network images
+          SkywaElevatedButton.save(
+            context: context,
+            text: 'Sample Cached Network Images',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return const SampleCachedImageNetworkScreen();
+                  },
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
+          const Divider(height: 10.0, color: Colors.black87, thickness: 1.0),
+          const SizedBox(height: 20.0),
 
           /// pickers
+          const SkywaText(
+            text: 'Pickers',
+            fontSize: 25.0,
+            textAlign: TextAlign.center,
+            fontWeight: FontWeight.bold,
+            color: const Color(0xFFEA4335),
+          ),
+          const SizedBox(height: 20.0),
 
           /// sample pickers
+          SkywaElevatedButton.info(
+            context: context,
+            text: 'Sample Pickers',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return const SamplePickerScreen();
+                }),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
 
           /// listwheelscrollviews
+          SkywaElevatedButton.info(
+            context: context,
+            text: 'Sample ListWheelScrollViews',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return const SampleListWheelScrollViewScreen();
+                }),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
         ],
       ),
     );

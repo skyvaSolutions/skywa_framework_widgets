@@ -81,11 +81,11 @@ class SkywaDropdownButton extends StatelessWidget {
     return Material(
       elevation: elevation,
       child: Container(
-        decoration: BoxDecoration(color: Colors.white),
+        decoration: const BoxDecoration(color: Colors.white),
         child: FormField<String>(
           builder: (FormFieldState<String> state) {
             return DropdownButton<String>(
-              underline: showUnderLine ? null : SizedBox(),
+              underline: showUnderLine ? null : const SizedBox(),
               value: isStringInvalid(text: selectedValue)
                   ? items[0]
                   : selectedValue,

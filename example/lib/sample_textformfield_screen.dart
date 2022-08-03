@@ -1,4 +1,4 @@
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:skywa_framework_widgets/services/is_string_invalid.dart';
 import 'package:skywa_framework_widgets/skywa_textformfield.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
@@ -236,8 +236,10 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
               onDateTimeChanged: (DateTime _dateTime) {
                 setState(() {
                   _datetimeController.text = _dateTime.toString();
-                  print(_dateTime);
                 });
+              },
+              validator: (String value) {
+                print(value);
               },
               initialDateTime: !isStringInvalid(text: _datetimeController.text)
                   ? DateTime.parse(_datetimeController.text)
@@ -432,4 +434,3 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
     );
   }
 }
-*/
