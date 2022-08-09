@@ -7,16 +7,16 @@ import 'skywa_text_button.dart';
 
 class SkywaFilter {
   final BuildContext context;
-  final List<String> availableItems;
-  final List<String> filterItems;
+  // final List<String> availableItems;
+  // final List<String> filterItems;
   final Widget buildFilterItems;
   final Function() clearFilter;
   final Function() applyFilter;
 
   SkywaFilter({
     required this.context,
-    required this.availableItems,
-    required this.filterItems,
+    // required this.availableItems,
+    // required this.filterItems,
     required this.buildFilterItems,
     required this.clearFilter,
     required this.applyFilter,

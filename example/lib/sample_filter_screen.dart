@@ -71,8 +71,8 @@ class _SampleFilterScreenState extends State<SampleFilterScreen> {
   Future<void> showItemFilterDialog() async {
     SkywaFilter(
       context: context,
-      availableItems: items,
-      filterItems: brandNames,
+      // availableItems: items,
+      // filterItems: brandNames,
       buildFilterItems: buildBrandCheckBoxes(),
       clearFilter: clearFilter,
       applyFilter: applyFilter,
