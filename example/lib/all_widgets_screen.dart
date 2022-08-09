@@ -10,6 +10,7 @@ import 'sample_checkbox_screen.dart';
 import 'sample_choice_chip_screen.dart';
 import 'sample_dropdown_screen.dart';
 import 'sample_elevated_button_screen.dart';
+import 'sample_filter_screen.dart';
 import 'sample_floating_action_button_screen.dart';
 import 'sample_glassmorphic_loader_screen.dart';
 import 'sample_image_picker_screen.dart';
@@ -102,6 +103,23 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 MaterialPageRoute(
                   builder: (BuildContext context) {
                     return const SampleGlassmorphicLoaderScreen();
+                  },
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 20.0),
+
+          /// sample filter
+          SkywaElevatedButton.save(
+            context: context,
+            text: 'Sample Filter',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (BuildContext context) {
+                    return const SampleFilterScreen();
                   },
                 ),
               );

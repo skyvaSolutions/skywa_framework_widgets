@@ -13,13 +13,13 @@ class SampleAlertDialogScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Alert Dialogs'),
       ),
       body: ListView(
         shrinkWrap: true,
         children: [
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// success alert dialog
           SkywaElevatedButton.save(
@@ -31,7 +31,7 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 titleText: 'Success Alert',
                 content: Container(
                   padding: EdgeInsets.all(Device.screenHeight * 0.02),
-                  child: SkywaText(
+                  child: const SkywaText(
                     text: 'This is a success alert dialog',
                     fontWeight: FontWeight.w500,
                   ),
@@ -51,7 +51,7 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 titleText: 'Info Alert',
                 content: Container(
                   padding: EdgeInsets.all(Device.screenHeight * 0.02),
-                  child: SkywaText(
+                  child: const SkywaText(
                     text: 'This is a info alert dialog',
                     fontWeight: FontWeight.w500,
                   ),
@@ -59,7 +59,7 @@ class SampleAlertDialogScreen extends StatelessWidget {
               );
             },
           ),
-          SizedBox(height: 20.0),
+          const SizedBox(height: 20.0),
 
           /// error alert dialog
           SkywaElevatedButton.delete(
@@ -71,7 +71,7 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 titleText: 'Error Alert',
                 content: Container(
                   padding: EdgeInsets.all(Device.screenHeight * 0.02),
-                  child: SkywaText(
+                  child: const SkywaText(
                     text: 'This is a error alert dialog',
                     fontWeight: FontWeight.w500,
                   ),

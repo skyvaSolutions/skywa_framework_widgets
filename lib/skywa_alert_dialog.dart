@@ -61,8 +61,8 @@ class SkywaAlertDialog {
         builder: (BuildContext context) {
           return AlertDialog(
             backgroundColor: Colors.transparent,
-            contentPadding: EdgeInsets.all(0.0),
-            titlePadding: EdgeInsets.all(0.0),
+            contentPadding: const EdgeInsets.all(0.0),
+            titlePadding: const EdgeInsets.all(0.0),
             title: !isStringInvalid(text: titleText)
                 ? Container(
                     width: Device.screenWidth * 0.65,
@@ -75,7 +75,7 @@ class SkywaAlertDialog {
                         ),
                     decoration: BoxDecoration(
                       color: color,
-                      borderRadius: BorderRadius.only(
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(12.0),
                         topRight: Radius.circular(12.0),
                       ),
@@ -101,13 +101,13 @@ class SkywaAlertDialog {
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: isStringInvalid(text: titleText)
-                      ? Radius.circular(12.0)
-                      : Radius.circular(0.0),
+                      ? const Radius.circular(12.0)
+                      : const Radius.circular(0.0),
                   topRight: isStringInvalid(text: titleText)
-                      ? Radius.circular(12.0)
-                      : Radius.circular(0.0),
-                  bottomLeft: Radius.circular(12.0),
-                  bottomRight: Radius.circular(12.0),
+                      ? const Radius.circular(12.0)
+                      : const Radius.circular(0.0),
+                  bottomLeft: const Radius.circular(12.0),
+                  bottomRight: const Radius.circular(12.0),
                 ),
               ),
               child: content,

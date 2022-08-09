@@ -14,6 +14,7 @@ class SkywaElevatedButton extends StatelessWidget {
   final EdgeInsetsGeometry? margin;
 
   SkywaElevatedButton.info({
+    Key? key,
     required this.context,
     this.iconData,
     this.iconSize,
@@ -22,9 +23,11 @@ class SkywaElevatedButton extends StatelessWidget {
     required this.onTap,
     this.padding,
     this.margin,
-  }) : buttonColor = Theme.of(context).colorScheme.secondary;
+  })  : buttonColor = Theme.of(context).colorScheme.secondary,
+        super(key: key);
 
   SkywaElevatedButton.save({
+    Key? key,
     required this.context,
     this.iconData,
     this.iconSize,
@@ -33,9 +36,11 @@ class SkywaElevatedButton extends StatelessWidget {
     required this.onTap,
     this.padding,
     this.margin,
-  }) : buttonColor = Theme.of(context).primaryColor;
+  })  : buttonColor = Theme.of(context).primaryColor,
+        super(key: key);
 
   SkywaElevatedButton.delete({
+    Key? key,
     required this.context,
     this.iconData,
     this.iconSize,
@@ -44,7 +49,8 @@ class SkywaElevatedButton extends StatelessWidget {
     required this.onTap,
     this.padding,
     this.margin,
-  }) : buttonColor = Theme.of(context).errorColor;
+  })  : buttonColor = Theme.of(context).errorColor,
+        super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -55,10 +61,9 @@ class SkywaElevatedButton extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
-            padding: padding != null
-                ? padding
-                : const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
-            margin: margin != null ? margin : const EdgeInsets.all(0.0),
+            padding: padding ??
+                const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+            margin: margin ?? const EdgeInsets.all(0.0),
             decoration: BoxDecoration(
               color: buttonColor,
               borderRadius: BorderRadius.circular(8.0),
@@ -71,7 +76,7 @@ class SkywaElevatedButton extends StatelessWidget {
                     color: Colors.white,
                     size: iconSize ?? IconTheme.of(context).size,
                   ),
-                if (iconData != null) SizedBox(width: 10.0),
+                if (iconData != null) const SizedBox(width: 10.0),
                 SkywaText(
                   text: text,
                   fontSize: fontSize,
