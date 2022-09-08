@@ -1,3 +1,5 @@
+import 'dart:core';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'skywa_date_time_picker.dart';
@@ -22,7 +24,8 @@ class SkywaTextFormField extends StatefulWidget {
   final int maxLines;
   final bool autofocus;
   final bool showDecoration;
-  final Function(String)? validator;
+  // final Function(String)? validator;
+  FormFieldValidator<String>? validator,
   ValueChanged<DateTime>? onDateTimeChanged;
   DateTime? initialDateTime;
   DateTime? minimumDate;
@@ -35,6 +38,7 @@ class SkywaTextFormField extends StatefulWidget {
   ///
   /// Requests the default platform keyboard.
   SkywaTextFormField.text({
+    // super.key,
     this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -62,6 +66,7 @@ class SkywaTextFormField extends StatefulWidget {
   /// enter key is pressed. This is the input type used for all multiline text
   /// fields.
   SkywaTextFormField.multiline({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -110,6 +115,7 @@ class SkywaTextFormField extends StatefulWidget {
   /// Additional options, such as decimal point and/or positive/negative
   /// signs, can be requested using [new TextInputType.numberWithOptions].
   SkywaTextFormField.numberWithOptions({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -140,6 +146,7 @@ class SkywaTextFormField extends StatefulWidget {
   ///
   /// Requests a keyboard with ready access to the number keys, "*", and "#".
   SkywaTextFormField.phone({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -169,6 +176,7 @@ class SkywaTextFormField extends StatefulWidget {
   /// On Android, requests a keyboard with ready access to the number keys,
   /// ":", and "-".
   SkywaTextFormField.datetime({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -201,6 +209,7 @@ class SkywaTextFormField extends StatefulWidget {
   ///
   /// Requests a keyboard with ready access to the "@" and "." keys.
   SkywaTextFormField.emailAddress({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -227,6 +236,7 @@ class SkywaTextFormField extends StatefulWidget {
   ///
   /// Requests a keyboard with ready access to the "/" and "." keys.
   SkywaTextFormField.url({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -253,6 +263,7 @@ class SkywaTextFormField extends StatefulWidget {
   ///
   /// Requests a keyboard with ready access to both letters and numbers.
   SkywaTextFormField.visiblePassword({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -285,6 +296,7 @@ class SkywaTextFormField extends StatefulWidget {
   /// On Android, requests a keyboard optimized for
   /// [TYPE_TEXT_VARIATION_PERSON_NAME](https://developer.android.com/reference/android/text/InputType#TYPE_TEXT_VARIATION_PERSON_NAME).
   SkywaTextFormField.name({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -314,6 +326,7 @@ class SkywaTextFormField extends StatefulWidget {
   /// On Android, requests a keyboard optimized for
   /// [TYPE_TEXT_VARIATION_POSTAL_ADDRESS](https://developer.android.com/reference/android/text/InputType#TYPE_TEXT_VARIATION_POSTAL_ADDRESS).
   SkywaTextFormField.streetAddress({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
@@ -338,6 +351,7 @@ class SkywaTextFormField extends StatefulWidget {
 
   /// Prevent the OS from showing the on-screen virtual keyboard.
   SkywaTextFormField.none({
+    // super.key,
     required this.textEditingController,
     this.labelText = '',
     this.hintText = '',
