@@ -25,7 +25,7 @@ class SkywaTextFormField extends StatefulWidget {
   final bool autofocus;
   final bool showDecoration;
   // final Function(String)? validator;
-  FormFieldValidator<String>? validator,
+  FormFieldValidator<String>? validator;
   ValueChanged<DateTime>? onDateTimeChanged;
   DateTime? initialDateTime;
   DateTime? minimumDate;
