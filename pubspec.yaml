@@ -20,6 +20,7 @@ dependencies:
   image_cropper: ^2.0.3
   flutter_lints: ^2.0.0
   cached_network_image: ^3.2.1
+  intl: ^0.17.0
 
   flutter_web_plugins:
     sdk: flutter

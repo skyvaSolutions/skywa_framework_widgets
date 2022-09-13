@@ -2,7 +2,7 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'skywa_date_time_picker.dart';
+import 'skywa_cupertino_date_time_picker.dart';
 import 'skywa_text.dart';
 
 class SkywaTextFormField extends StatefulWidget {
@@ -487,7 +487,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
           ],
           onTap: widget.keyboardType == TextInputType.datetime
               ? () {
-                  SkywaDateTimePicker.dateAndTime(
+                  SkywaCupertinoDateTimePicker.dateAndTime(
                     context: context,
                     onDateTimeChanged: widget.onDateTimeChanged!,
                     initialDateTime: widget.initialDateTime,

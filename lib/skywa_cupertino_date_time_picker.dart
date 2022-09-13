@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SkywaDateTimePicker {
+class SkywaCupertinoDateTimePicker {
   final BuildContext context;
   final bool use24hFormat;
   final ValueChanged<DateTime> onDateTimeChanged;
@@ -11,7 +11,7 @@ class SkywaDateTimePicker {
   final int? minimumYear;
   final int? maximumYear;
 
-  SkywaDateTimePicker.dateAndTime({
+  SkywaCupertinoDateTimePicker.dateAndTime({
     required this.context,
     required this.onDateTimeChanged,
     this.use24hFormat = false,
@@ -24,7 +24,7 @@ class SkywaDateTimePicker {
     showSkywaDateTimePicker();
   }
 
-  SkywaDateTimePicker.date({
+  SkywaCupertinoDateTimePicker.date({
     required this.context,
     required this.onDateTimeChanged,
     this.use24hFormat = false,
@@ -37,7 +37,7 @@ class SkywaDateTimePicker {
     showSkywaDatePicker();
   }
 
-  SkywaDateTimePicker.time({
+  SkywaCupertinoDateTimePicker.time({
     required this.context,
     required this.onDateTimeChanged,
     this.use24hFormat = false,
@@ -87,7 +87,8 @@ class SkywaDateTimePicker {
             initialDateTime: initialDateTime ?? now,
             use24hFormat: use24hFormat,
             backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
-            minimumDate: minimumDate ?? now.subtract(Duration(minutes: 1)),
+            minimumDate:
+                minimumDate ?? now.subtract(const Duration(minutes: 1)),
             minimumYear: minimumYear ?? now.year,
             maximumDate:
                 maximumDate ?? DateTime(now.year, now.month, now.day + 30),

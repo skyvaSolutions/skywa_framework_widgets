@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
-import 'package:skywa_framework_widgets/skywa_date_time_picker.dart';
+import 'package:skywa_framework_widgets/skywa_cupertino_date_time_picker.dart';
 import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
+import 'package:skywa_framework_widgets/skywa_material_date_time_picker.dart';
+import 'package:intl/intl.dart';
 
 class SamplePickerScreen extends StatefulWidget {
   const SamplePickerScreen({Key? key}) : super(key: key);
@@ -14,8 +16,12 @@ class SamplePickerScreen extends StatefulWidget {
 class _SamplePickerScreenState extends State<SamplePickerScreen> {
   DateTime? dateTime;
   DateTime? date;
+  TimeOfDay? time;
   DateTime? time12Hr;
   DateTime? time24Hr;
+  DateTime? materialDate;
+  TimeOfDay? materialTime24Hr;
+  String? materialTime24HrString;
   DateTime now = DateTime.now();
 
   @override
@@ -23,7 +29,7 @@ class _SamplePickerScreenState extends State<SamplePickerScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Pickers'),
       ),
       body: Container(
@@ -31,14 +37,14 @@ class _SamplePickerScreenState extends State<SamplePickerScreen> {
         child: ListView(
           shrinkWrap: true,
           children: [
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
-            /// datetime picker
+            /// cupertino datetime picker
             SkywaElevatedButton.save(
               context: context,
-              text: 'Show DateTime Picker',
+              text: 'Show Cupertino DateTime Picker',
               onTap: () {
-                SkywaDateTimePicker.dateAndTime(
+                SkywaCupertinoDateTimePicker.dateAndTime(
                   context: context,
                   onDateTimeChanged: (DateTime _dateTime) {
                     setState(() {
@@ -54,19 +60,20 @@ class _SamplePickerScreenState extends State<SamplePickerScreen> {
               },
             ),
             Container(
-              margin: EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
               child: Text(
                 dateTime.toString(),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 18.0),
               ),
             ),
 
-            /// date picker
+            /// cupertino date picker
             SkywaElevatedButton.save(
               context: context,
-              text: 'Show Date Picker',
+              text: 'Show Cupertino Date Picker',
               onTap: () {
-                SkywaDateTimePicker.date(
+                SkywaCupertinoDateTimePicker.date(
                   context: context,
                   onDateTimeChanged: (DateTime _date) {
                     setState(() {
@@ -82,19 +89,20 @@ class _SamplePickerScreenState extends State<SamplePickerScreen> {
               },
             ),
             Container(
-              margin: EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
               child: Text(
                 date.toString(),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 18.0),
               ),
             ),
 
-            /// time picker 12 hr
+            /// cupertino time picker 12 hr
             SkywaElevatedButton.save(
               context: context,
-              text: 'Show Time Picker 12 hr',
+              text: 'Show Cupertino Time Picker 12 hr',
               onTap: () {
-                SkywaDateTimePicker.time(
+                SkywaCupertinoDateTimePicker.time(
                   context: context,
                   onDateTimeChanged: (DateTime _time) {
                     setState(() {
@@ -105,19 +113,20 @@ class _SamplePickerScreenState extends State<SamplePickerScreen> {
               },
             ),
             Container(
-              margin: EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
               child: Text(
                 time12Hr.toString(),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 18.0),
               ),
             ),
 
-            /// time picker 24 hr
+            /// cupertino time picker 24 hr
             SkywaElevatedButton.save(
               context: context,
-              text: 'Show Time Picker 24 hr',
+              text: 'Show Cupertino Time Picker 24 hr',
               onTap: () {
-                SkywaDateTimePicker.time(
+                SkywaCupertinoDateTimePicker.time(
                   context: context,
                   onDateTimeChanged: (DateTime _time) {
                     setState(() {
@@ -129,10 +138,76 @@ class _SamplePickerScreenState extends State<SamplePickerScreen> {
               },
             ),
             Container(
-              margin: EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
               child: Text(
                 time24Hr.toString(),
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+                style: const TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.0,
+                ),
+              ),
+            ),
+
+            /// material date picker
+            SkywaElevatedButton.save(
+              context: context,
+              text: 'Show Material Date Picker',
+              onTap: () async {
+                materialDate =
+                    await SkywaMaterialDateTimePicker.showSkywaDatePicker(
+                  context: context,
+                  initialDateTime: date,
+                  minimumDate: DateTime.now(),
+                  maximumDate: DateTime(now.year, now.month, now.day + 30),
+                );
+                setState(() {
+                  dateTime;
+                });
+                print(dateTime);
+              },
+            ),
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              child: Text(
+                materialDate.toString(),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 18.0),
+              ),
+            ),
+
+            /// material time picker 12 hr
+            SkywaElevatedButton.save(
+              context: context,
+              text: 'Show Material Time Picker 12 hr',
+              onTap: () async {
+                materialTime24Hr =
+                    await SkywaMaterialDateTimePicker.showSkywaTimePicker(
+                  context: context,
+                  initialDateTime: time,
+                  // minimumDate: DateTime.now(),
+                  // maximumDate: DateTime(now.year, now.month, now.day + 30),
+                );
+                setState(() {
+                  materialTime24Hr;
+                  materialTime24HrString = DateFormat.jm().format(
+                    DateTime(
+                      now.year,
+                      now.month,
+                      now.day,
+                      materialTime24Hr!.hour,
+                      materialTime24Hr!.minute,
+                    ),
+                  );
+                });
+                print(materialTime24HrString);
+              },
+            ),
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              child: Text(
+                materialTime24HrString.toString(),
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold, fontSize: 18.0),
               ),
             ),
           ],

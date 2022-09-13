@@ -28,12 +28,12 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample TextFormFields'),
       ),
       body: Container(
         height: Device.screenHeight,
-        padding: EdgeInsets.all(15.0),
+        padding: const EdgeInsets.all(15.0),
         child: ListView(
           children: [
             // SizedBox(height: 500.0),
@@ -46,7 +46,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.text(
                 textEditingController: _textController,
                 hintText: 'Enter a text...',
@@ -69,7 +69,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                     _textController.text;
                   });
                 }),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// multiline
             Text(
@@ -79,7 +79,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.multiline(
                 textEditingController: _multilineController,
                 hintText: 'Enter multiline text...',
@@ -104,7 +104,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                     _multilineController.text;
                   });
                 }),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// number   NOT REQUIRED
             /*Text('Number', style: TextStyle(
@@ -145,7 +145,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.numberWithOptions(
                 textEditingController: _numberWithOptionsController,
                 hintText: 'Enter number with options...',
@@ -169,7 +169,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                     _numberWithOptionsController.text;
                   });
                 }),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// phone
             Text(
@@ -179,7 +179,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.phone(
               textEditingController: _phoneController,
               hintText: 'Enter your phone...',
@@ -204,7 +204,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 });
               },*/
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// datetime
             Text(
@@ -214,7 +214,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.datetime(
               textEditingController: _datetimeController,
               hintText: 'Enter datetime...',
@@ -238,7 +238,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                   _datetimeController.text = _dateTime.toString();
                 });
               },
-              validator: (String value) {
+              validator: (String? value) {
                 print(value);
               },
               initialDateTime: !isStringInvalid(text: _datetimeController.text)
@@ -253,7 +253,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 DateTime.now().day + 30,
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// email
             Text(
@@ -263,7 +263,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.emailAddress(
               textEditingController: _emailController,
               hintText: 'Enter your email...',
@@ -288,7 +288,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 });
               },
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// url
             Text(
@@ -298,7 +298,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.url(
               textEditingController: _urlController,
               hintText: 'Enter url...',
@@ -323,7 +323,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 });
               },
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// visiblePassword
             Text(
@@ -333,7 +333,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.visiblePassword(
               textEditingController: _passwordController,
               hintText: 'Enter password...',
@@ -358,7 +358,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 });
               },
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// name
             Text(
@@ -368,7 +368,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.name(
                 textEditingController: _nameController,
                 hintText: 'Enter your name...',
@@ -392,7 +392,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                     _nameController.text;
                   });
                 }),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// address
             Text(
@@ -402,7 +402,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             SkywaTextFormField.streetAddress(
               textEditingController: _addressController,
               hintText: 'Enter your address...',
@@ -427,7 +427,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 });
               },
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
           ],
         ),
       ),
