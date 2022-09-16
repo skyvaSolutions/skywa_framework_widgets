@@ -487,7 +487,13 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
                   decimal: true,
                   signed: true,
                 ))
-              FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
+              FilteringTextInputFormatter.allow(RegExp(r'[0-9.]?\d{0,2}')),
+            if (widget.keyboardType ==
+                const TextInputType.numberWithOptions(
+                  decimal: true,
+                  signed: true,
+                ))
+              FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,2}')),
             if (widget.keyboardType == TextInputType.phone)
               FilteringTextInputFormatter.deny(RegExp(r'[a-z A-Z]')),
           ],
