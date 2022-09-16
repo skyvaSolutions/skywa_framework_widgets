@@ -482,6 +482,12 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
                   signed: true,
                 ))
               LengthLimitingTextInputFormatter(widget.maxDigitsLength),
+            if (widget.keyboardType ==
+                const TextInputType.numberWithOptions(
+                  decimal: true,
+                  signed: true,
+                ))
+              FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),
             if (widget.keyboardType == TextInputType.phone)
               FilteringTextInputFormatter.deny(RegExp(r'[a-z A-Z]')),
           ],
