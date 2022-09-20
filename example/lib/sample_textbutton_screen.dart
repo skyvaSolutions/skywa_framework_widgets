@@ -16,7 +16,7 @@ class _SampleTextButtonScreenState extends State<SampleTextButtonScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Text Buttons'),
       ),
       body: Container(
@@ -24,7 +24,7 @@ class _SampleTextButtonScreenState extends State<SampleTextButtonScreen> {
         child: ListView(
           shrinkWrap: true,
           children: [
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             SkywaTextButton(
               text: 'Change',
               onTap: () {

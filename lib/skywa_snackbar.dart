@@ -68,7 +68,7 @@ class SkywaSnackBar {
               color: Colors.white,
               size: iconSize ?? IconTheme.of(context).size,
             ),
-            SizedBox(width: 10.0),
+            const SizedBox(width: 10.0),
 
             /// snackbar text
             Expanded(

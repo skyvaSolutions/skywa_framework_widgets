@@ -11,7 +11,7 @@ class SampleElevatedButtonScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Elevated Buttons'),
       ),
       body: Container(
@@ -20,7 +20,7 @@ class SampleElevatedButtonScreen extends StatelessWidget {
         child: ListView(
           shrinkWrap: true,
           children: [
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// save
             SkywaElevatedButton.save(
@@ -34,7 +34,7 @@ class SampleElevatedButtonScreen extends StatelessWidget {
               },
               // fontSize: Device.screenHeight * 0.025,
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// info
             SkywaElevatedButton.info(
@@ -48,12 +48,12 @@ class SampleElevatedButtonScreen extends StatelessWidget {
               },
               // fontSize: Device.screenHeight * 0.025,
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
 
             /// delete
             SkywaElevatedButton.delete(
               context: context,
-              text: 'Delete/Cancel',
+              text: 'Delete/Cancel Delete/Cancel Delete/Cancel Delete/Cancel',
               onTap: () {
                 /*SkywaSnackBar.error(
                   context: context,
@@ -62,7 +62,7 @@ class SampleElevatedButtonScreen extends StatelessWidget {
               },
               // fontSize: Device.screenHeight * 0.025,
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
           ],
         ),
       ),

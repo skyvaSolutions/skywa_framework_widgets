@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_device_type/flutter_device_type.dart';
+import 'package:skywa_framework_widgets/skywa_auto_size_text.dart';
 
 import 'services/is_string_invalid.dart';
 import 'skywa_text.dart';
@@ -45,9 +47,7 @@ class _SkywaTextButtonState extends State<SkywaTextButton> {
             alignment: Alignment.center,
             child: Card(
               elevation: 1.0,
-              margin: widget.margin != null
-                  ? widget.margin
-                  : const EdgeInsets.all(0.0),
+              margin: widget.margin ?? const EdgeInsets.all(0.0),
               color: widget.buttonColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
@@ -58,7 +58,7 @@ class _SkywaTextButtonState extends State<SkywaTextButton> {
                       vertical: 10.0,
                       horizontal: 25.0,
                     ),
-                child: SkywaText(
+                child: SkywaAutoSizeText(
                   text: widget.text,
                   color: widget.textColor,
                   fontSize: widget.fontSize,

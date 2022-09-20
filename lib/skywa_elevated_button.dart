@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_device_type/flutter_device_type.dart';
 
 import 'skywa_text.dart';
 
@@ -61,6 +62,7 @@ class SkywaElevatedButton extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
+            constraints: BoxConstraints(maxWidth: Device.screenWidth * 0.90),
             padding: padding ??
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
             margin: margin ?? const EdgeInsets.all(0.0),
