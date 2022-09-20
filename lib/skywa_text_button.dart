@@ -45,6 +45,7 @@ class _SkywaTextButtonState extends State<SkywaTextButton> {
         children: [
           Container(
             alignment: Alignment.center,
+            constraints: BoxConstraints(maxWidth: Device.screenWidth * 0.90),
             child: Card(
               elevation: 1.0,
               margin: widget.margin ?? const EdgeInsets.all(0.0),
