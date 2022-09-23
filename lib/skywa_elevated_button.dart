@@ -7,12 +7,29 @@ class SkywaElevatedButton extends StatelessWidget {
   final BuildContext context;
   final IconData? iconData;
   final double? iconSize;
+  final Color iconColor;
   final String text;
+  final Color textColor;
   final double fontSize;
   final Function() onTap;
   final Color buttonColor;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
+
+  const SkywaElevatedButton({
+    Key? key,
+    required this.context,
+    this.iconData,
+    this.iconSize,
+    this.iconColor = Colors.black,
+    required this.text,
+    this.textColor = Colors.black,
+    this.fontSize = 18.0,
+    required this.onTap,
+    this.padding,
+    this.margin,
+    required this.buttonColor,
+  }) : super(key: key);
 
   SkywaElevatedButton.info({
     Key? key,
@@ -25,6 +42,8 @@ class SkywaElevatedButton extends StatelessWidget {
     this.padding,
     this.margin,
   })  : buttonColor = Theme.of(context).colorScheme.secondary,
+        iconColor = Colors.white,
+        textColor = Colors.white,
         super(key: key);
 
   SkywaElevatedButton.save({
@@ -38,6 +57,8 @@ class SkywaElevatedButton extends StatelessWidget {
     this.padding,
     this.margin,
   })  : buttonColor = Theme.of(context).primaryColor,
+        iconColor = Colors.white,
+        textColor = Colors.white,
         super(key: key);
 
   SkywaElevatedButton.delete({
@@ -51,6 +72,8 @@ class SkywaElevatedButton extends StatelessWidget {
     this.padding,
     this.margin,
   })  : buttonColor = Theme.of(context).errorColor,
+        iconColor = Colors.white,
+        textColor = Colors.white,
         super(key: key);
 
   @override
@@ -75,14 +98,14 @@ class SkywaElevatedButton extends StatelessWidget {
                 if (iconData != null)
                   Icon(
                     iconData,
-                    color: Colors.white,
+                    color: iconColor,
                     size: iconSize ?? IconTheme.of(context).size,
                   ),
                 if (iconData != null) const SizedBox(width: 10.0),
                 SkywaText(
                   text: text,
                   fontSize: fontSize,
-                  color: Colors.white,
+                  color: textColor,
                   fontWeight: FontWeight.w500,
                 ),
               ],
