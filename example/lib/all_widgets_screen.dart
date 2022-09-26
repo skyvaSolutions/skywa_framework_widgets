@@ -27,6 +27,8 @@ import 'sample_textformfield_screen.dart';
 import 'sample_texts_screen.dart';
 import 'package:skywa_framework_widgets/skywa_bottom_sheet.dart';
 
+import 'sample_dropdown_search_screen.dart';
+
 class AllWidgetsScreen extends StatefulWidget {
   const AllWidgetsScreen({Key? key}) : super(key: key);
 
@@ -217,6 +219,21 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             // fontSize: Device.screenHeight * 0.025,
           ),
           const SizedBox(height: 20.0),
+
+          /// sample dropdpwn search
+          /*SkywaElevatedButton.delete(
+            context: context,
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                  return const SampleDropdownSearchScreen();
+                }),
+              );
+            },
+            text: 'Sample Dropdown Search',
+          ),
+          const SizedBox(height: 20.0),*/
 
           /// sample texts
           SkywaElevatedButton.delete(

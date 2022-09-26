@@ -24,6 +24,7 @@ class SkywaTextFormField extends StatefulWidget {
   final int maxLines;
   final bool autofocus;
   final bool showDecoration;
+  final Function()? onTap;
   // final Function(String)? validator;
   FormFieldValidator<String>? validator;
   ValueChanged<DateTime>? onDateTimeChanged;
@@ -50,6 +51,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -77,6 +79,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 20000,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -126,6 +129,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -157,6 +161,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -187,6 +192,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -220,6 +226,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -247,6 +254,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -274,6 +282,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -307,6 +316,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -337,6 +347,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -362,6 +373,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.maxLines = 1,
     this.autofocus = false,
     this.showDecoration = true,
+    this.onTap,
     this.validator,
     this.prefixIcon,
     this.suffixIcon,
@@ -470,7 +482,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
             ),
           ),
           validator: (value) {
-            print('459: $value');
+            // print('459: $value');
             widget.validator;
             return null;
             // TODO: HANDLE VALIDATOR
@@ -509,7 +521,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
                     maximumDate: widget.maximumDate,
                   );
                 }
-              : null,
+              : widget.onTap,
           onChanged: widget.onChanged,
         ),
         if (widget.keyboardType == TextInputType.phone && !isValidPhoneNumber)
