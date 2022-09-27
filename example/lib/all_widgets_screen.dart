@@ -27,8 +27,6 @@ import 'sample_textformfield_screen.dart';
 import 'sample_texts_screen.dart';
 import 'package:skywa_framework_widgets/skywa_bottom_sheet.dart';
 
-import 'sample_dropdown_search_screen.dart';
-
 class AllWidgetsScreen extends StatefulWidget {
   const AllWidgetsScreen({Key? key}) : super(key: key);
 
