@@ -37,7 +37,7 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
                 'Male',
                 'Female',
                 'Others',
-                'Doctor Monetray has long name',
+                // 'Doctor Monetray has long name',
               ],
               onChanged: (value) {
                 setState(() {
