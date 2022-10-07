@@ -11,6 +11,7 @@ class SkywaRadioGroup extends StatefulWidget {
   final WrapAlignment wrapAlignment;
   final Color? backgroundColor;
   final double spacing;
+  final EdgeInsets? margin;
 
   const SkywaRadioGroup({
     Key? key,
@@ -21,6 +22,7 @@ class SkywaRadioGroup extends StatefulWidget {
     this.wrapAlignment = WrapAlignment.spaceAround,
     this.backgroundColor,
     this.spacing = 8.0,
+    this.margin,
   }) : super(key: key);
 
   @override
@@ -43,7 +45,7 @@ class _SkywaRadioGroupState extends State<SkywaRadioGroup> {
   Widget build(BuildContext context) {
     return Container(
       width: Device.screenWidth,
-      margin: const EdgeInsets.all(10.0),
+      margin: widget.margin ?? const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: widget.backgroundColor ?? Colors.transparent,
         borderRadius: BorderRadius.circular(12.0),
