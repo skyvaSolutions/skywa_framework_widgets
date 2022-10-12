@@ -22,7 +22,7 @@ class SkywaText extends StatelessWidget {
     this.fontWeight = FontWeight.w400,
     this.textAlign = TextAlign.start,
     this.textOverflow = TextOverflow.ellipsis,
-    this.maxLines,
+    this.maxLines = 3,
     this.letterSpacing = 0.0,
     this.textDecoration,
     this.textDecorationStyle,
