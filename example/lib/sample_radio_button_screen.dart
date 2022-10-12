@@ -21,7 +21,7 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Radio Buttons'),
       ),
       body: Container(
@@ -30,14 +30,15 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
         child: ListView(
           shrinkWrap: true,
           children: [
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             SkywaRadioGroup(
               wrapAlignment: WrapAlignment.start,
-              texts: [
+              width: Device.screenWidth,
+              texts: const [
                 'Male',
                 'Female',
                 'Others',
-                // 'Doctor Monetray has long name',
+                'Doctor Monetray has a very very longgggg name',
               ],
               onChanged: (value) {
                 setState(() {
@@ -46,16 +47,16 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
               },
             ),
             Container(
-              margin: EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
               child: SkywaText(
                 text: selectedGender,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             SkywaRadioGroup(
-              texts: ['Black', 'Brown', 'Hazel', 'Blue'],
+              texts: const ['Black', 'Brown', 'Hazel', 'Blue'],
               onChanged: (value) {
                 setState(() {
                   selectedEyeColor = value;
@@ -63,14 +64,14 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
               },
             ),
             Container(
-              margin: EdgeInsets.all(10.0),
+              margin: const EdgeInsets.all(10.0),
               child: SkywaText(
                 text: selectedEyeColor,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
           ],
         ),
       ),

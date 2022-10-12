@@ -5,6 +5,7 @@ import 'skywa_text.dart';
 
 class SkywaRadioGroup extends StatefulWidget {
   final List<String> texts;
+  final double? width;
   final double fontSize;
   final ValueChanged<String> onChanged;
   final String? selectedValue;
@@ -16,6 +17,7 @@ class SkywaRadioGroup extends StatefulWidget {
   const SkywaRadioGroup({
     Key? key,
     required this.texts,
+    this.width,
     this.fontSize = 17.0,
     required this.onChanged,
     this.selectedValue,
@@ -76,7 +78,7 @@ class _SkywaRadioGroupState extends State<SkywaRadioGroup> {
         children: [
           for (int i = 0; i < widget.texts.length; i++)
             Container(
-              width: Device.screenWidth * 0.40,
+              width: widget.width ?? Device.screenWidth * 0.40,
               alignment: Alignment.center,
               child: RadioListTile(
                 contentPadding: EdgeInsets.zero,
