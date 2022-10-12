@@ -32,7 +32,13 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
           children: [
             SizedBox(height: 20.0),
             SkywaRadioGroup(
-              texts: ['Male', 'Female', 'Others'],
+              wrapAlignment: WrapAlignment.start,
+              texts: [
+                'Male',
+                'Female',
+                'Others',
+                // 'Doctor Monetray has long name',
+              ],
               onChanged: (value) {
                 setState(() {
                   selectedGender = value;

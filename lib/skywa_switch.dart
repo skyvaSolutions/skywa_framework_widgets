@@ -6,6 +6,7 @@ import 'skywa_text.dart';
 class SkywaSwitch extends StatelessWidget {
   final bool value;
   final String title;
+  final int maxLines;
   final double? fontSize;
   final FontWeight? fontWeight;
   final ValueChanged<bool> onChanged;
@@ -13,6 +14,7 @@ class SkywaSwitch extends StatelessWidget {
   SkywaSwitch({
     Key? key,
     required this.value,
+    this.maxLines = 1,
     required this.onChanged,
     required this.title,
     this.fontSize = 18.0,
@@ -28,6 +30,7 @@ class SkywaSwitch extends StatelessWidget {
       activeColor: Theme.of(context).primaryColor,
       title: SkywaText(
         text: title,
+        maxLines: maxLines,
         fontSize: fontSize ?? 18.0,
         fontWeight: fontWeight ?? FontWeight.w400,
       ),

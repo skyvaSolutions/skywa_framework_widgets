@@ -20,14 +20,14 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Pickers'),
       ),
       body: Container(
         height: Device.screenHeight,
         child: ListView(
           children: [
-            SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),
             SkywaSwitch(
               value: switch1Value,
               onChanged: (value) {
@@ -37,12 +37,12 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
               },
               title: 'Sample Switch 1',
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: SkywaText(text: switch1Value.toString()),
             ),
-            SizedBox(height: 30.0),
+            const SizedBox(height: 30.0),
             SkywaSwitch(
               value: switch2Value,
               onChanged: (value) {
@@ -52,11 +52,12 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
               },
               title: 'Sample Switch 2',
             ),
-            SizedBox(height: 10.0),
+            const SizedBox(height: 10.0),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 15.0),
+              padding: const EdgeInsets.symmetric(horizontal: 15.0),
               child: SkywaText(text: switch2Value.toString()),
             ),
+            const SizedBox(height: 10.0),
           ],
         ),
       ),
