@@ -37,6 +37,7 @@ class _SkywaRadioGroupState extends State<SkywaRadioGroup> {
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
     texts = widget.texts;
     selectedValue = widget.selectedValue ?? widget.texts[0];
