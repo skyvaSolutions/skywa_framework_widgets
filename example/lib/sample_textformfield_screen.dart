@@ -150,6 +150,8 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 textEditingController: _numberWithOptionsController,
                 hintText: 'Enter number with options...',
                 labelText: 'Number With Options',
+                // maxDigitsLength: 4,
+                postDecimalLength: 10,
                 suffixIcon: _numberWithOptionsController.text.isNotEmpty
                     ? IconButton(
                         onPressed: () {
