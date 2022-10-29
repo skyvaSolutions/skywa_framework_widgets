@@ -34,6 +34,7 @@ class SkywaTextFormField extends StatefulWidget {
   int? minimumYear;
   int? maximumYear;
   int? maxDigitsLength;
+  bool? allowDecimal;
   int? postDecimalLength;
 
   /// Optimize for textual information.
@@ -139,6 +140,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.onChanged,
     this.isObscure = false,
     this.maxDigitsLength,
+    this.allowDecimal = true,
     this.postDecimalLength = 2,
   })  : keyboardType = const TextInputType.numberWithOptions(
           decimal: true,
@@ -503,12 +505,15 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
                 ))
               FilteringTextInputFormatter.allow(RegExp(r'[0-9.]')),*/
             if (widget.keyboardType ==
-                const TextInputType.numberWithOptions(
-                  decimal: true,
-                  signed: true,
-                ))
+                    const TextInputType.numberWithOptions(
+                      decimal: true,
+                      signed: true,
+                    ) &&
+                widget.allowDecimal == true)
               FilteringTextInputFormatter.allow(RegExp(
-                  r"^-?\d*\.?\d{0," + "${widget.postDecimalLength}" + "}")),
+                  r"^-?\d*\.?\d{0," + "${widget.postDecimalLength}" + "}"))
+            else if (widget.allowDecimal == false)
+              FilteringTextInputFormatter.allow(RegExp(r"^-?\d*")),
             // FilteringTextInputFormatter.allow(RegExp(r'^\d*\.?\d{0,2}')),
             if (widget.keyboardType == TextInputType.phone)
               FilteringTextInputFormatter.deny(RegExp(r'[a-z A-Z]')),
