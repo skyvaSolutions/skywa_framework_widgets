@@ -28,7 +28,7 @@ class SampleAlertDialogScreen extends StatelessWidget {
             onTap: () {
               SkywaAlertDialog.success(
                 context: context,
-                titleText: 'Success Alert',
+                titleText: 'Success Alert Success Alert Success Alert Success Alert',
                 content: Container(
                   padding: EdgeInsets.all(Device.screenHeight * 0.02),
                   child: const SkywaText(

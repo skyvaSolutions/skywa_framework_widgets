@@ -85,11 +85,14 @@ class SkywaAlertDialog {
                           ? MainAxisAlignment.center
                           : MainAxisAlignment.spaceBetween,
                       children: [
-                        SkywaText(
-                          text: titleText,
-                          fontSize: fontSize,
-                          color: Colors.white,
-                          fontWeight: FontWeight.w700,
+                        Expanded(
+                          child: SkywaText(
+                            text: titleText,
+                            fontSize: fontSize,
+                            color: Colors.white,
+                            fontWeight: FontWeight.w700,
+                            textAlign: TextAlign.center,
+                          ),
                         ),
                         if (icon != null) icon!,
                       ],
