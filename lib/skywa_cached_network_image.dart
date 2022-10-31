@@ -36,7 +36,7 @@ class SkywaCachedNetworkImage extends StatelessWidget {
     this.padding,
     this.borderRadius = 12.0,
   })  : showRoundedCorner = true,
-        roundedWidget = ClipRRect(),
+        roundedWidget = const ClipRRect(),
         assert(!isStringInvalid(text: imageUrl)),
         super(key: key);
 
@@ -49,7 +49,7 @@ class SkywaCachedNetworkImage extends StatelessWidget {
     this.padding,
     this.fit = BoxFit.cover,
   })  : showRoundedCorner = true,
-        roundedWidget = CircleAvatar(),
+        roundedWidget = const CircleAvatar(),
         borderRadius = 0.0,
         assert(!isStringInvalid(text: imageUrl)),
         assert(height != null),
@@ -120,12 +120,10 @@ class SkywaCachedNetworkImage extends StatelessWidget {
         ),
       );
     } else {
-      widget = Container(
-        child: SkywaAutoSizeText(
-          text: 'Something went wrong',
-          color: Colors.redAccent,
-          fontWeight: FontWeight.bold,
-        ),
+      widget = const SkywaAutoSizeText(
+        text: 'Something went wrong',
+        color: Colors.redAccent,
+        fontWeight: FontWeight.bold,
       );
     }
 
@@ -136,7 +134,7 @@ class SkywaCachedNetworkImage extends StatelessWidget {
               Container(
                 width: width,
                 height: height,
-                padding: padding ?? EdgeInsets.all(8.0),
+                padding: padding ?? const EdgeInsets.all(8.0),
                 decoration: BoxDecoration(
                   // color: Colors.lightBlueAccent,
                   borderRadius: BorderRadius.circular(borderRadius),

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 
@@ -51,7 +52,7 @@ class _SkywaCheckboxListTileState extends State<SkywaCheckboxListTile> {
                       fontWeight: FontWeight.w300,
                       maxLines: 2,
                     )
-                  : Container(),
+                  : null,
               contentPadding:
                   EdgeInsets.symmetric(horizontal: Device.screenWidth * 0.05),
               activeColor: Theme.of(context).primaryColor,
