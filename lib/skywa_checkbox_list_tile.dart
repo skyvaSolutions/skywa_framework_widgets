@@ -44,12 +44,14 @@ class _SkywaCheckboxListTileState extends State<SkywaCheckboxListTile> {
                 fontWeight: FontWeight.w400,
                 maxLines: 1,
               ),
-              subtitle: SkywaText(
-                text: widget.subTitle,
-                fontSize: widget.fontSize - 1.0,
-                fontWeight: FontWeight.w300,
-                maxLines: 2,
-              ),
+              subtitle: !isStringInvalid(text: widget.subTitle)
+                  ? SkywaText(
+                      text: widget.subTitle,
+                      fontSize: widget.fontSize - 1.0,
+                      fontWeight: FontWeight.w300,
+                      maxLines: 2,
+                    )
+                  : Container(),
               contentPadding:
                   EdgeInsets.symmetric(horizontal: Device.screenWidth * 0.05),
               activeColor: Theme.of(context).primaryColor,
