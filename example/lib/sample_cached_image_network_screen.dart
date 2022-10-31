@@ -33,7 +33,7 @@ class _SampleCachedImageNetworkScreenState
             const SizedBox(height: 20.0),
 
             /// image without rounded corner
-            const SkywaText(text: 'Image without Rounded Corner'),
+            const SkywaText('Image without Rounded Corner'),
             Container(
               padding: const EdgeInsets.all(8.0),
               child: SkywaCachedNetworkImage(
@@ -45,7 +45,7 @@ class _SampleCachedImageNetworkScreenState
             const SizedBox(height: 20.0),
 
             /// image with cliprrect
-            const SkywaText(text: 'Image with ClipRRect BorderRadius 12.0'),
+            const SkywaText('Image with ClipRRect BorderRadius 12.0'),
             Container(
               padding: const EdgeInsets.all(8.0),
               child: SkywaCachedNetworkImage.clipRRect(
@@ -59,7 +59,7 @@ class _SampleCachedImageNetworkScreenState
             const SizedBox(height: 20.0),
 
             /// error widget
-            const SkywaText(text: 'Error Widget'),
+            const SkywaText('Error Widget'),
             Container(
               padding: const EdgeInsets.all(8.0),
               child: SkywaCachedNetworkImage.clipRRect(
@@ -72,7 +72,7 @@ class _SampleCachedImageNetworkScreenState
             const SizedBox(height: 20.0),
 
             /// image with cliprrect
-            const SkywaText(text: 'Image with ClipRRect'),
+            const SkywaText('Image with ClipRRect'),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
@@ -107,8 +107,7 @@ class _SampleCachedImageNetworkScreenState
             const SizedBox(height: 20.0),
 
             /// image with circle avatar e.g. profile picture
-            const SkywaText(
-                text: 'Image with CircleAvatar e.g. Profile Picture'),
+            const SkywaText('Image with CircleAvatar e.g. Profile Picture'),
             Container(
               padding: const EdgeInsets.all(8.0),
               child: SkywaCachedNetworkImage.circleAvatar(

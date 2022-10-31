@@ -13,9 +13,9 @@ class SkywaText extends StatelessWidget {
   final TextDecoration? textDecoration;
   final TextDecorationStyle? textDecorationStyle;
 
-  const SkywaText({
+  const SkywaText(
+    this.text, {
     Key? key,
-    required this.text,
     this.textStyle,
     this.color = Colors.black,
     this.fontSize = 18.0,

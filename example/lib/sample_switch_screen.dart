@@ -40,7 +40,7 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
             const SizedBox(height: 10.0),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: SkywaText(text: switch1Value.toString()),
+              child: SkywaText(switch1Value.toString()),
             ),
             const SizedBox(height: 30.0),
             SkywaSwitch(
@@ -55,7 +55,7 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
             const SizedBox(height: 10.0),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 15.0),
-              child: SkywaText(text: switch2Value.toString()),
+              child: SkywaText(switch2Value.toString()),
             ),
             const SizedBox(height: 10.0),
           ],

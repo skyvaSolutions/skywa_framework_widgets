@@ -73,7 +73,7 @@ class SkywaSnackBar {
             /// snackbar text
             Expanded(
               child: SkywaText(
-                text: snackBarText,
+                snackBarText,
                 color: Colors.white,
                 fontWeight: FontWeight.w600,
               ),

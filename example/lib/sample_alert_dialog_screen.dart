@@ -32,7 +32,7 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 content: Container(
                   padding: EdgeInsets.all(Device.screenHeight * 0.02),
                   child: const SkywaText(
-                    text: 'This is a success alert dialog',
+                    'This is a success alert dialog',
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -52,7 +52,7 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 content: Container(
                   padding: EdgeInsets.all(Device.screenHeight * 0.02),
                   child: const SkywaText(
-                    text: 'This is a info alert dialog',
+                    'This is a info alert dialog',
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -72,7 +72,7 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 content: Container(
                   padding: EdgeInsets.all(Device.screenHeight * 0.02),
                   child: const SkywaText(
-                    text: 'This is a error alert dialog',
+                    'This is a error alert dialog',
                     fontWeight: FontWeight.w500,
                   ),
                 ),

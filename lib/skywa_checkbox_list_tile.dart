@@ -39,14 +39,14 @@ class _SkywaCheckboxListTileState extends State<SkywaCheckboxListTile> {
               value: widget.isSelected,
               selected: widget.isSelected,
               title: SkywaText(
-                text: widget.title,
+                widget.title,
                 fontSize: widget.fontSize,
                 fontWeight: FontWeight.w400,
                 maxLines: 1,
               ),
               subtitle: !isStringInvalid(text: widget.subTitle)
                   ? SkywaText(
-                      text: widget.subTitle,
+                      widget.subTitle,
                       fontSize: widget.fontSize - 1.0,
                       fontWeight: FontWeight.w300,
                       maxLines: 2,
@@ -67,7 +67,7 @@ class _SkywaCheckboxListTileState extends State<SkywaCheckboxListTile> {
                   checkColor: Colors.white,
                   activeColor: Theme.of(context).primaryColor,
                 ),
-                SkywaText(text: widget.title),
+                SkywaText(widget.title),
                 if (!isStringInvalid(text: widget.subTitle))
                   SkywaAutoSizeText(
                     text: widget.subTitle,

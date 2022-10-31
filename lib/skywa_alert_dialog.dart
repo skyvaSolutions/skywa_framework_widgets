@@ -87,7 +87,7 @@ class SkywaAlertDialog {
                       children: [
                         Expanded(
                           child: SkywaText(
-                            text: titleText,
+                            titleText,
                             fontSize: fontSize,
                             color: Colors.white,
                             fontWeight: FontWeight.w700,

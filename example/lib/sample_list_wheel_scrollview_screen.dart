@@ -15,15 +15,15 @@ class SampleListWheelScrollViewScreen extends StatefulWidget {
 
 class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollViewScreen> {
   List<SkywaText> genders = [
-    const SkywaText(text: 'Male', fontSize: 30.0),
-    const SkywaText(text: 'Female', fontSize: 30.0),
-    const SkywaText(text: 'Others', fontSize: 30.0),
+    const SkywaText('Male', fontSize: 30.0),
+    const SkywaText('Female', fontSize: 30.0),
+    const SkywaText('Others', fontSize: 30.0),
   ];
   String selectedGender = '';
 
   List<SkywaText> timeUnits = [
-    const SkywaText(text: 'hr', fontSize: 30.0),
-    const SkywaText(text: 'min', fontSize: 30.0),
+    const SkywaText('hr', fontSize: 30.0),
+    const SkywaText('min', fontSize: 30.0),
   ];
   String selectedTimeUnit = '';
 
@@ -44,7 +44,7 @@ class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollV
           ],
         ),
         SizedBox(width: 10.0),
-        SkywaText(text: 'Indian', fontSize: 35.0),
+        SkywaText('Indian', fontSize: 35.0),
       ],
     ),
     Row(
@@ -63,7 +63,7 @@ class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollV
           ],
         ),
         const SizedBox(width: 10.0),
-        const SkywaText(text: 'American', fontSize: 35.0),
+        const SkywaText('American', fontSize: 35.0),
       ],
     ),
     Row(
@@ -82,7 +82,7 @@ class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollV
           ],
         ),
         const SizedBox(width: 10.0),
-        const SkywaText(text: 'Japanese', fontSize: 35.0),
+        const SkywaText('Japanese', fontSize: 35.0),
       ],
     ),
   ];
@@ -123,7 +123,7 @@ class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollV
                       },
                     ),
                   ),
-                  SkywaText(text: selectedGender),
+                  SkywaText(selectedGender),
                 ],
               ),
               SizedBox(height: 20.0),
@@ -147,7 +147,7 @@ class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollV
                       },
                     ),
                   ),
-                  SkywaText(text: selectedTimeUnit),
+                  SkywaText(selectedTimeUnit),
                 ],
               ),
               SizedBox(height: 20.0),

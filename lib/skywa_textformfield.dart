@@ -457,7 +457,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
                   )
                 : InputBorder.none,
             label: SkywaText(
-              text: widget.labelText,
+              widget.labelText,
               fontSize: 18.0,
               color: Colors.grey.shade600,
             ),
@@ -538,7 +538,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
             children: [
               const SizedBox(height: 5.0),
               SkywaText(
-                text: 'Invalid Phone Number',
+                'Invalid Phone Number',
                 color: Theme.of(context).errorColor,
                 fontWeight: FontWeight.w600,
                 fontSize: 16.0,

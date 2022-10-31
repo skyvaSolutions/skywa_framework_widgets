@@ -69,7 +69,7 @@ class _SampleCheckBoxScreenState extends State<SampleCheckBoxScreen> {
           padding: const EdgeInsets.all(20.0),
           children: [
             const SkywaText(
-              text: 'Select your favourite frameworks',
+              'Select your favourite frameworks',
               textAlign: TextAlign.center,
               fontSize: 20.0,
               fontWeight: FontWeight.w600,
@@ -91,7 +91,9 @@ class _SampleCheckBoxScreenState extends State<SampleCheckBoxScreen> {
 
             /// select working days
             const SkywaText(
-                text: 'Select Working Days', textAlign: TextAlign.center),
+              'Select Working Days',
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(height: 10.0),
             Container(
               width: Device.screenWidth,

@@ -198,7 +198,7 @@ class _SampleFilterScreenOldState extends State<SampleFilterScreenOld> {
                 color: Theme.of(context).primaryColorLight,
                 borderRadius: BorderRadius.circular(12.0),
               ),
-              child: SkywaText(text: filteredItems[index], color: Colors.black),
+              child: SkywaText(filteredItems[index], color: Colors.black),
             );
           },
         ),

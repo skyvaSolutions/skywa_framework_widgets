@@ -49,7 +49,7 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
             Container(
               margin: const EdgeInsets.all(10.0),
               child: SkywaText(
-                text: selectedGender,
+                selectedGender,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),
@@ -66,7 +66,7 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
             Container(
               margin: const EdgeInsets.all(10.0),
               child: SkywaText(
-                text: selectedEyeColor,
+                selectedEyeColor,
                 fontSize: 18.0,
                 fontWeight: FontWeight.bold,
               ),

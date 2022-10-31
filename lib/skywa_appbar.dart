@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'services/is_string_invalid.dart';
 import 'skywa_text.dart';
 
 class SkywaAppBar extends StatelessWidget {
@@ -37,7 +36,7 @@ class SkywaAppBar extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       leading: backIconButton,
       title: SkywaText(
-        text: appbarText,
+        appbarText,
         color: Colors.white,
         fontWeight: FontWeight.w500,
       ),

@@ -39,7 +39,7 @@ class _SampleDropdownScreenState extends State<SampleDropdownScreen> {
               selectedValue: selectedGender,
             ),
             SizedBox(height: 10.0),
-            SkywaText(text: selectedGender),
+            SkywaText(selectedGender),
             SizedBox(height: 20.0),
             SkywaDropdownButton(
               items: ['Choose your nationality...', 'Indian', 'American'],
@@ -51,7 +51,7 @@ class _SampleDropdownScreenState extends State<SampleDropdownScreen> {
               selectedValue: selectedNationality,
             ),
             SizedBox(height: 10.0),
-            SkywaText(text: selectedNationality),
+            SkywaText(selectedNationality),
             SizedBox(height: 20.0),
           ],
         ),

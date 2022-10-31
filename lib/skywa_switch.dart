@@ -29,7 +29,7 @@ class SkywaSwitch extends StatelessWidget {
       onChanged: onChanged,
       activeColor: Theme.of(context).primaryColor,
       title: SkywaText(
-        text: title,
+        title,
         maxLines: maxLines,
         fontSize: fontSize ?? 18.0,
         fontWeight: fontWeight ?? FontWeight.w400,

@@ -68,7 +68,7 @@ class SkywaDropdownButton extends StatelessWidget {
                 items: items.map((newValue) {
                   return DropdownMenuItem<String>(
                     value: newValue,
-                    child: SkywaText(text: newValue.toString()),
+                    child: SkywaText(newValue.toString()),
                   );
                 }).toList(),
                 onChanged: onChanged,
@@ -94,7 +94,7 @@ class SkywaDropdownButton extends StatelessWidget {
               items: items.map((newValue) {
                 return DropdownMenuItem<String>(
                   value: newValue,
-                  child: SkywaText(text: newValue.toString(), color: textColor),
+                  child: SkywaText(newValue.toString(), color: textColor),
                 );
               }).toList(),
               onChanged: onChanged,

@@ -86,7 +86,7 @@ class _SkywaRadioGroupState extends State<SkywaRadioGroup> {
                 visualDensity: VisualDensity.adaptivePlatformDensity,
                 activeColor: Theme.of(context).primaryColor,
                 title: SkywaText(
-                  text: widget.texts[i],
+                  widget.texts[i],
                   fontSize: widget.fontSize,
                   fontWeight: FontWeight.w400,
                 ),

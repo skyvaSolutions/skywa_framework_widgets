@@ -46,7 +46,7 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
             const SizedBox(height: 10.0),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: SkywaText(text: selectedGender),
+              child: SkywaText(selectedGender),
             ),
             const SizedBox(height: 20.0),
             SkywaChoiceChipGroup(
@@ -64,7 +64,7 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
             const SizedBox(height: 10.0),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: SkywaText(text: selectedNationality),
+              child: SkywaText(selectedNationality),
             ),
             const SizedBox(height: 20.0),
           ],

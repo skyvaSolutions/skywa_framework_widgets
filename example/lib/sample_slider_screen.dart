@@ -43,7 +43,7 @@ class _SampleSliderScreenState extends State<SampleSliderScreen> {
             const SizedBox(height: 10.0),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: SkywaText(text: slider1Value.toString()),
+              child: SkywaText(slider1Value.toString()),
             ),
             const SizedBox(height: 20.0),
             SkywaSlider(
@@ -59,7 +59,7 @@ class _SampleSliderScreenState extends State<SampleSliderScreen> {
             const SizedBox(height: 10.0),
             Padding(
               padding: const EdgeInsets.all(20.0),
-              child: SkywaText(text: slider2Value.toString()),
+              child: SkywaText(slider2Value.toString()),
             ),
             const SizedBox(height: 20.0),
           ],

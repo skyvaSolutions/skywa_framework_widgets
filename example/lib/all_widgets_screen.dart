@@ -132,7 +132,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
 
           /// Scaffold's Children
           const SkywaText(
-            text: 'Scaffold\'s Children',
+            'Scaffold\'s Children',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
@@ -169,7 +169,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                   children: [
                     const Center(
                       child: SkywaText(
-                        text: 'Sample Bottom Sheet',
+                        'Sample Bottom Sheet',
                         fontSize: 20.0,
                         fontWeight: FontWeight.w600,
                       ),
@@ -194,7 +194,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
 
           /// input Fields & texts
           const SkywaText(
-            text: 'Input Fields & Texts',
+            'Input Fields & Texts',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
@@ -267,7 +267,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
 
           /// sample buttons
           const SkywaText(
-            text: 'Buttons',
+            'Buttons',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
@@ -328,7 +328,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
 
           /// single & multiple selections
           const SkywaText(
-            text: 'Single & Multiple Selections',
+            'Single & Multiple Selections',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
@@ -439,7 +439,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
 
           /// images & image pickers
           const SkywaText(
-            text: 'Images & Image Pickers',
+            'Images & Image Pickers',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
@@ -485,7 +485,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
 
           /// pickers
           const SkywaText(
-            text: 'Pickers',
+            'Pickers',
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,

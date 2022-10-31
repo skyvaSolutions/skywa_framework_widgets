@@ -25,14 +25,14 @@ class SampleTextsScreen extends StatelessWidget {
 
             /// color: redAccent
             const SkywaText(
-              text: 'This is a sample text with color redAccent',
+              'This is a sample text with color redAccent',
               color: Colors.redAccent,
             ),
-            Divider(thickness: 2.0, height: 20.0),
+            const Divider(thickness: 2.0, height: 20.0),
 
             /// fontSize: 4% of height
             SkywaText(
-              text: 'This is a sample text with fontSize 4% of screen height',
+              'This is a sample text with fontSize 4% of screen height',
               fontSize: Device.screenHeight * 0.04,
               maxLines: 4,
             ),
@@ -40,37 +40,35 @@ class SampleTextsScreen extends StatelessWidget {
 
             /// fontWeight: w900
             const SkywaText(
-              text: 'This is a sample text with fontWeight w900',
+              'This is a sample text with fontWeight w900',
               fontWeight: FontWeight.w900,
             ),
-            Divider(thickness: 2.0, height: 20.0),
+            const Divider(thickness: 2.0, height: 20.0),
 
             /// textAlign: end
             const SkywaText(
-              text: 'This is a sample text with textAlign end',
+              'This is a sample text with textAlign end',
               textAlign: TextAlign.end,
             ),
             const Divider(thickness: 2.0, height: 20.0),
 
             /// textOverflow: fade
             const SkywaText(
-              text:
-                  'This is a sample text with textOverflow fade, maximum no of lines is null by default',
+              'This is a sample text with textOverflow fade, maximum no of lines is null by default',
               textOverflow: TextOverflow.fade,
             ),
-            Divider(thickness: 2.0, height: 20.0),
+            const Divider(thickness: 2.0, height: 20.0),
 
             /// maxLines: 4
             const SkywaText(
-              text:
-                  'This is a sample text with maxLines 4, This is a sample text with maxLines 4, This is a sample text with maxLines 4, This is a sample text with maxLines 4, This is a sample text with maxLines 4, ',
+              'This is a sample text with maxLines 4, This is a sample text with maxLines 4, This is a sample text with maxLines 4, This is a sample text with maxLines 4, This is a sample text with maxLines 4, ',
               maxLines: 4,
             ),
-            Divider(thickness: 2.0, height: 20.0),
+            const Divider(thickness: 2.0, height: 20.0),
 
             /// letterSpacing: 2.0
             const SkywaText(
-              text: 'This is a sample text with letterSpacing 2.0',
+              'This is a sample text with letterSpacing 2.0',
               letterSpacing: 2.0,
             ),
           ],

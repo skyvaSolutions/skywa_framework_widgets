@@ -61,7 +61,7 @@ class SkywaOutlinedButton extends StatelessWidget {
                   ),
                 if (iconData != null) const SizedBox(width: 10.0),
                 SkywaText(
-                  text: text,
+                  text,
                   fontSize: fontSize,
                   color: textColor,
                   fontWeight: fontWeight,

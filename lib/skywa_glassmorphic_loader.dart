@@ -49,7 +49,7 @@ class SkywaGlassMorphicLoader extends StatelessWidget {
                       color: Theme.of(context).primaryColorDark),
                   const SizedBox(height: 10.0),
                   SkywaText(
-                    text: text,
+                    text,
                     textAlign: TextAlign.center,
                     fontWeight: FontWeight.w500,
                     color: Theme.of(context).primaryColorDark,
