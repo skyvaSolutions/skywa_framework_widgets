@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SkywaText extends StatelessWidget {
-  final String text;
+  final text;
   final TextStyle? textStyle;
   final Color color;
   final double fontSize;
@@ -26,13 +26,13 @@ class SkywaText extends StatelessWidget {
     this.letterSpacing = 0.0,
     this.textDecoration,
     this.textDecorationStyle,
-  })  : assert(text != 'null'),
+  })  : assert(text != null),
         super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
-      text,
+      text.toString(),
       textAlign: textAlign,
       overflow: textOverflow,
       maxLines: maxLines,
