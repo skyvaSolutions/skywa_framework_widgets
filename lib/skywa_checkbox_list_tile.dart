@@ -14,6 +14,7 @@ class SkywaCheckboxListTile extends StatefulWidget {
   final ValueChanged<bool?>? onChanged;
   final Axis direction;
   final EdgeInsets? margin;
+  final EdgeInsets? contentPadding;
 
   SkywaCheckboxListTile({
     Key? key,
@@ -24,6 +25,7 @@ class SkywaCheckboxListTile extends StatefulWidget {
     required this.onChanged,
     this.direction = Axis.horizontal,
     this.margin,
+    this.contentPadding,
   })  : assert(!isStringInvalid(text: title)),
         super(key: key);
 
@@ -55,7 +57,7 @@ class _SkywaCheckboxListTileState extends State<SkywaCheckboxListTile> {
                       maxLines: 2,
                     )
                   : null,
-              contentPadding:
+              contentPadding: widget.contentPadding ??
                   EdgeInsets.symmetric(horizontal: Device.screenWidth * 0.05),
               activeColor: Theme.of(context).primaryColor,
               checkColor: Colors.white,
