@@ -13,6 +13,7 @@ class SkywaCheckboxListTile extends StatefulWidget {
   final bool isSelected;
   final ValueChanged<bool?>? onChanged;
   final Axis direction;
+  final EdgeInsets? margin;
 
   SkywaCheckboxListTile({
     Key? key,
@@ -22,6 +23,7 @@ class SkywaCheckboxListTile extends StatefulWidget {
     required this.isSelected,
     required this.onChanged,
     this.direction = Axis.horizontal,
+    this.margin,
   })  : assert(!isStringInvalid(text: title)),
         super(key: key);
 
@@ -34,7 +36,7 @@ class _SkywaCheckboxListTileState extends State<SkywaCheckboxListTile> {
   Widget build(BuildContext context) {
     return Container(
       width: Device.screenWidth,
-      margin: const EdgeInsets.all(10.0),
+      margin: widget.margin ?? const EdgeInsets.all(10.0),
       child: widget.direction == Axis.horizontal
           ? CheckboxListTile(
               value: widget.isSelected,
