@@ -19,7 +19,7 @@ class SkywaTextFormField extends StatefulWidget {
   final bool enabled;
   final bool readOnly;
   final ValueChanged<String>? onChanged;
-  final bool isObscure;
+  // final bool isObscure;
   final int minLines;
   final int maxLines;
   final bool autofocus;
@@ -60,7 +60,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // // this.isObscure = false,
   })  : textCapitalization = TextCapitalization.sentences,
         assert(labelText != 'null');
 
@@ -88,7 +88,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // // this.isObscure = false,
   })  : keyboardType = TextInputType.multiline,
         textCapitalization = TextCapitalization.sentences,
         assert(textEditingController != null),
@@ -108,7 +108,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.number,
         textCapitalization = TextCapitalization.none,
         assert(!isStringInvalid(text: labelText)),
@@ -138,7 +138,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
     this.maxDigitsLength,
     this.allowDecimal = true,
     this.postDecimalLength = 2,
@@ -172,7 +172,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.phone,
         textCapitalization = TextCapitalization.none,
         assert(textEditingController != null),
@@ -203,7 +203,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
     this.onDateTimeChanged,
     this.initialDateTime,
     this.minimumDate,
@@ -237,7 +237,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.emailAddress,
         textCapitalization = TextCapitalization.none,
         assert(textEditingController != null),
@@ -265,7 +265,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.url,
         textCapitalization = TextCapitalization.none,
         assert(textEditingController != null),
@@ -274,7 +274,7 @@ class SkywaTextFormField extends StatefulWidget {
   /// Optimize for passwords that are visible to the user.
   ///
   /// Requests a keyboard with ready access to both letters and numbers.
-  SkywaTextFormField.visiblePassword({
+  /*SkywaTextFormField.visiblePassword({
     super.key,
     required this.textEditingController,
     this.labelText = '',
@@ -293,11 +293,11 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.visiblePassword,
         textCapitalization = TextCapitalization.words,
         assert(textEditingController != null),
-        assert(labelText != 'null');
+        assert(labelText != 'null');*/
 
   /// Optimized for a person's name.
   ///
@@ -327,7 +327,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.name,
         textCapitalization = TextCapitalization.words,
         assert(textEditingController != null),
@@ -358,7 +358,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.streetAddress,
         textCapitalization = TextCapitalization.words,
         assert(textEditingController != null),
@@ -384,7 +384,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.none,
         textCapitalization = TextCapitalization.none,
         assert(textEditingController != null),
@@ -402,7 +402,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    isObscure = widget.isObscure;
+    // isObscure = widget.isObscure;
   }
 
   @override
@@ -464,26 +464,30 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
             hintText: widget.hintText,
             hintStyle: const TextStyle(fontSize: 17.0),
             prefixIcon: widget.prefixIcon,
-            suffixIcon: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                if (widget.keyboardType == TextInputType.visiblePassword)
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        isObscure = !isObscure;
-                      });
-                    },
-                    icon: Icon(
-                      isObscure
-                          ? Icons.visibility_off_rounded
-                          : Icons.visibility_rounded,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                if (widget.suffixIcon != null) widget.suffixIcon!,
-              ],
-            ),
+            /*suffixIcon: widget.keyboardType == TextInputType.visiblePassword ||
+                    widget.suffixIcon != null
+                ? Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      if (widget.keyboardType == TextInputType.visiblePassword)
+                        IconButton(
+                          onPressed: () {
+                            setState(() {
+                              isObscure = !isObscure;
+                            });
+                          },
+                          icon: Icon(
+                            isObscure
+                                ? Icons.visibility_off_rounded
+                                : Icons.visibility_rounded,
+                            color: Theme.of(context).primaryColor,
+                          ),
+                        ),
+                      if (widget.suffixIcon != null) widget.suffixIcon!,
+                    ],
+                  )
+                : null,*/
+            suffixIcon: widget.suffixIcon,
           ),
           validator: (value) {
             // print('459: $value');

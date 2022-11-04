@@ -200,12 +200,12 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                       ),
                     )
                   : null,
-              /*onChanged: (value) {
+              onChanged: (value) {
                 print(_phoneController.text);
                 setState(() {
                   _phoneController.text;
                 });
-              },*/
+              },
             ),
             const SizedBox(height: 20.0),
 
@@ -329,7 +329,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             const SizedBox(height: 20.0),
 
             /// visiblePassword
-            Text(
+            /*Text(
               'Password',
               style: TextStyle(
                 fontSize: Device.screenHeight * 0.025,
@@ -361,7 +361,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 });
               },
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 20.0),*/
 
             /// name
             Text(
