@@ -10,6 +10,7 @@ class SkywaCupertinoDateTimePicker {
   final DateTime? maximumDate;
   final int? minimumYear;
   final int? maximumYear;
+  final int minuteInterval;
 
   SkywaCupertinoDateTimePicker.dateAndTime({
     required this.context,
@@ -20,6 +21,7 @@ class SkywaCupertinoDateTimePicker {
     this.minimumYear,
     this.maximumDate,
     this.maximumYear,
+    this.minuteInterval = 1,
   }) {
     showSkywaDateTimePicker();
   }
@@ -33,7 +35,7 @@ class SkywaCupertinoDateTimePicker {
     this.minimumYear,
     this.maximumDate,
     this.maximumYear,
-  }) {
+  }) : this.minuteInterval = 1 {
     showSkywaDatePicker();
   }
 
@@ -46,6 +48,7 @@ class SkywaCupertinoDateTimePicker {
     this.minimumYear,
     this.maximumDate,
     this.maximumYear,
+    this.minuteInterval = 1,
   }) {
     showSkywaTimePicker();
   }
@@ -61,6 +64,7 @@ class SkywaCupertinoDateTimePicker {
           child: CupertinoDatePicker(
             mode: CupertinoDatePickerMode.dateAndTime,
             onDateTimeChanged: onDateTimeChanged,
+            minuteInterval: minuteInterval,
             initialDateTime: initialDateTime ?? now,
             use24hFormat: use24hFormat,
             backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
@@ -107,6 +111,7 @@ class SkywaCupertinoDateTimePicker {
           height: 250.0,
           child: CupertinoDatePicker(
             mode: CupertinoDatePickerMode.time,
+            minuteInterval: minuteInterval,
             onDateTimeChanged: onDateTimeChanged,
             initialDateTime: DateTime.now(),
             use24hFormat: use24hFormat,
