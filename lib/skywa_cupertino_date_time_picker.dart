@@ -113,7 +113,7 @@ class SkywaCupertinoDateTimePicker {
             mode: CupertinoDatePickerMode.time,
             minuteInterval: minuteInterval,
             onDateTimeChanged: onDateTimeChanged,
-            initialDateTime: DateTime.now(),
+            initialDateTime: initialDateTime ?? DateTime.now(),
             use24hFormat: use24hFormat,
             backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
           ),
