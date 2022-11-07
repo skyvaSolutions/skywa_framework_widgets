@@ -17,7 +17,7 @@ class SkywaSlider extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Slider.adaptive(
+    return Slider(
       value: value,
       onChanged: onChanged,
       label: value.toString(),
