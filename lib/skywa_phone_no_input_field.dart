@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:geocoder/geocoder.dart';
-import 'package:geolocator/geolocator.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:permission_handler/permission_handler.dart';
 
 class SkywaPhoneNoInputField extends StatefulWidget {
   final TextEditingController textEditingController;
@@ -27,31 +24,16 @@ class SkywaPhoneNoInputField extends StatefulWidget {
 }
 
 class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
-  PhoneNumber number = PhoneNumber(isoCode: 'US');
-
-  Future<String> getCountryName() async {
-    final status = await Permission.locationWhenInUse.request();
-    if (status != PermissionStatus.granted) {
-      throw const LocationServiceDisabledException();
-    }
-    String countryName = 'US';
-    Position position = await Geolocator.getCurrentPosition(
-      desiredAccuracy: LocationAccuracy.high,
-    );
-    debugPrint('location: ${position.latitude}');
-    final coordinates = Coordinates(position.latitude, position.longitude);
-    var addresses =
-        await Geocoder.local.findAddressesFromCoordinates(coordinates);
-    countryName = addresses.first.countryName;
-    print(countryName);
-    return countryName; // this will return country name
-  }
+  PhoneNumber? number;
+  List<Locale> systemLocales = WidgetsBinding.instance.window.locales;
+  String? isoCountryCode;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    // getCountryName();
+    isoCountryCode = systemLocales.first.countryCode;
+    number = PhoneNumber(isoCode: isoCountryCode);
   }
 
   @override
@@ -96,10 +78,6 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         formatInput: true,
         maxLength: 60,
         countrySelectorScrollControlled: false,
-        // keyboardType: const TextInputType.numberWithOptions(
-        //   signed: true,
-        //   decimal: true,
-        // ),
         cursorColor: Theme.of(context).primaryColor,
         inputDecoration: InputDecoration(
           border: OutlineInputBorder(

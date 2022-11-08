@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_phone_no_input_field.dart';
-import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:skywa_framework_widgets/skywa_snackbar.dart';
 
 class SkywaPhoneNoInputFieldScreen extends StatefulWidget {
@@ -28,7 +28,7 @@ class _SkywaPhoneNoInputFieldScreenState
       body: SkywaPhoneNoInputField(
         textEditingController: phoneController,
         onChanged: (PhoneNumber phoneNumber) {
-          // print(phoneController.text);
+          print(phoneController.text);
           setState(() {
             phoneController.text;
           });
