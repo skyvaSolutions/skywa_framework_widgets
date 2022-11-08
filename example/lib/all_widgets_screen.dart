@@ -3,6 +3,7 @@ import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets_example/sample_rich_texts_screen.dart';
+import 'package:skywa_framework_widgets_example/skywa_phone_no_input_field_screen.dart';
 
 import 'sample_alert_dialog_screen.dart';
 import 'sample_cached_image_network_screen.dart';
@@ -198,7 +199,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
-            color: const Color(0xFFEA4335),
+            color: Color(0xFFEA4335),
           ),
           const SizedBox(height: 20.0),
 
@@ -215,6 +216,21 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             },
             text: 'Sample TextFormFields',
             // fontSize: Device.screenHeight * 0.025,
+          ),
+          const SizedBox(height: 20.0),
+
+          /// sample phone no input field
+          SkywaElevatedButton.delete(
+            context: context,
+            text: 'Sample Phone No Input Field',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) {
+                  return const SkywaPhoneNoInputFieldScreen();
+                }),
+              );
+            },
           ),
           const SizedBox(height: 20.0),
 
@@ -271,7 +287,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
-            color: const Color(0xFFEA4335),
+            color: Color(0xFFEA4335),
           ),
           const SizedBox(height: 20.0),
 
@@ -489,7 +505,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
             fontSize: 25.0,
             textAlign: TextAlign.center,
             fontWeight: FontWeight.bold,
-            color: const Color(0xFFEA4335),
+            color: Color(0xFFEA4335),
           ),
           const SizedBox(height: 20.0),
 

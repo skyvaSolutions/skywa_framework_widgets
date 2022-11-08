@@ -13,16 +13,17 @@ class SampleTextFormFieldScreen extends StatefulWidget {
 }
 
 class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
-  TextEditingController _textController = TextEditingController();
-  TextEditingController _multilineController = TextEditingController();
-  TextEditingController _numberWithOptionsController = TextEditingController();
-  TextEditingController _phoneController = TextEditingController();
-  TextEditingController _datetimeController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _urlController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _nameController = TextEditingController();
-  TextEditingController _addressController = TextEditingController();
+  final TextEditingController _textController = TextEditingController();
+  final TextEditingController _multilineController = TextEditingController();
+  final TextEditingController _numberWithOptionsController =
+      TextEditingController();
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _datetimeController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _urlController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _nameController = TextEditingController();
+  final TextEditingController _addressController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
