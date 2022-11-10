@@ -21,7 +21,7 @@ class SkywaMaterialDateTimePicker {
           ),
           textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
-              primary: Theme.of(context).primaryColor,
+              foregroundColor: Theme.of(context).primaryColor,
             ),
           ),
         ),
@@ -29,7 +29,7 @@ class SkywaMaterialDateTimePicker {
       ),
       initialDate: initialDateTime ?? now,
       firstDate: minimumDate ?? now.subtract(const Duration(minutes: 1)),
-      lastDate: maximumDate ?? DateTime(now.year, now.month, now.day + 30),
+      lastDate: maximumDate ?? DateTime(now.year, now.month + 6, now.day),
     );
     return pickedDate;
   }
@@ -40,7 +40,6 @@ class SkywaMaterialDateTimePicker {
   }) async {
     TimeOfDay? pickedDate = await showTimePicker(
       context: context,
-
       builder: (context, child) => Theme(
         data: Theme.of(context).copyWith(
           colorScheme: ColorScheme.light(

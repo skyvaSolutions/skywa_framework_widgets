@@ -68,11 +68,12 @@ class SkywaCupertinoDateTimePicker {
             initialDateTime: initialDateTime ?? now,
             use24hFormat: use24hFormat,
             backgroundColor: Theme.of(context).primaryColor.withOpacity(0.2),
-            minimumDate: minimumDate ?? now.subtract(Duration(seconds: 59)),
+            minimumDate:
+                minimumDate ?? now.subtract(const Duration(seconds: 59)),
             minimumYear: minimumYear ?? now.year,
             maximumDate:
-                maximumDate ?? DateTime(now.year, now.month, now.day + 30),
-            maximumYear: maximumYear ?? now.year + 1,
+                maximumDate ?? DateTime(now.year, now.month + 6, now.day),
+            maximumYear: maximumYear ?? now.year,
           ),
         );
       },
@@ -95,8 +96,8 @@ class SkywaCupertinoDateTimePicker {
                 minimumDate ?? now.subtract(const Duration(minutes: 1)),
             minimumYear: minimumYear ?? now.year,
             maximumDate:
-                maximumDate ?? DateTime(now.year, now.month, now.day + 30),
-            maximumYear: maximumYear ?? now.year + 1,
+                maximumDate ?? DateTime(now.year, now.month + 6, now.day),
+            maximumYear: maximumYear ?? now.year,
           ),
         );
       },

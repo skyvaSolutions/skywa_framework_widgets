@@ -38,14 +38,13 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: widget.padding ??
-          const EdgeInsets.symmetric(
-            horizontal: 12.0,
-            vertical: 8.0,
-          ),
+    return Container(
+      height: 60,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(30),
+        border: Border.all(color: Colors.grey),
+      ),
       child: InternationalPhoneNumberInput(
-        // TODO: Customize set default country
         // TODO: Restrict input from taking alphabet
         textFieldController: widget.textEditingController,
         autoFocus: true,
@@ -79,21 +78,22 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         maxLength: 60,
         countrySelectorScrollControlled: false,
         cursorColor: Theme.of(context).primaryColor,
-        inputDecoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: BorderSide(
-              color: Theme.of(context).primaryColor,
-              width: 2.0,
-            ),
-          ),
-          hintText: 'Phone Number',
-          suffixIcon: widget.suffixIcon,
-          hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 16),
-        ),
+        inputDecoration: const InputDecoration(border: InputBorder.none),
+        // inputDecoration: InputDecoration(
+        //   border: OutlineInputBorder(
+        //     borderRadius: BorderRadius.circular(15.0),
+        //   ),
+        //   focusedBorder: OutlineInputBorder(
+        //     borderRadius: BorderRadius.circular(8.0),
+        //     borderSide: BorderSide(
+        //       color: Theme.of(context).primaryColor,
+        //       width: 2.0,
+        //     ),
+        //   ),
+        //   hintText: 'Phone Number',
+        //   suffixIcon: widget.suffixIcon,
+        //   hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 16),
+        // ),
         onFieldSubmitted: widget.onFieldSubmitted,
         onSaved: (PhoneNumber number) {
           print('On Saved: $number');

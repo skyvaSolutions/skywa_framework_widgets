@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
+import 'package:intl/intl.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_cupertino_date_time_picker.dart';
 import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
 import 'package:skywa_framework_widgets/skywa_material_date_time_picker.dart';
-import 'package:intl/intl.dart';
 
 class SamplePickerScreen extends StatefulWidget {
   const SamplePickerScreen({Key? key}) : super(key: key);
@@ -158,7 +158,7 @@ class _SamplePickerScreenState extends State<SamplePickerScreen> {
                   context: context,
                   initialDateTime: date,
                   minimumDate: DateTime.now(),
-                  maximumDate: DateTime(now.year, now.month, now.day + 30),
+                      // maximumDate: DateTime(now.year, now.month, now.day + 30),
                 );
                 setState(() {
                   dateTime;
