@@ -72,8 +72,8 @@ class SkywaCupertinoDateTimePicker {
                 minimumDate ?? now.subtract(const Duration(seconds: 59)),
             minimumYear: minimumYear ?? now.year,
             maximumDate:
-                maximumDate ?? DateTime(now.year, now.month + 6, now.day),
-            maximumYear: maximumYear ?? now.year,
+                maximumDate ?? DateTime(now.year + 1, now.month, now.day),
+            maximumYear: maximumYear ?? now.year + 1,
           ),
         );
       },
@@ -96,8 +96,8 @@ class SkywaCupertinoDateTimePicker {
                 minimumDate ?? now.subtract(const Duration(minutes: 1)),
             minimumYear: minimumYear ?? now.year,
             maximumDate:
-                maximumDate ?? DateTime(now.year, now.month + 6, now.day),
-            maximumYear: maximumYear ?? now.year,
+                maximumDate ?? DateTime(now.year + 1, now.month, now.day),
+            maximumYear: maximumYear ?? now.year + 1,
           ),
         );
       },

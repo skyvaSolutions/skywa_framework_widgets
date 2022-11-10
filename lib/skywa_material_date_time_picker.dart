@@ -29,7 +29,7 @@ class SkywaMaterialDateTimePicker {
       ),
       initialDate: initialDateTime ?? now,
       firstDate: minimumDate ?? now.subtract(const Duration(minutes: 1)),
-      lastDate: maximumDate ?? DateTime(now.year, now.month + 6, now.day),
+      lastDate: maximumDate ?? DateTime(now.year + 1, now.month, now.day),
     );
     return pickedDate;
   }
@@ -49,7 +49,7 @@ class SkywaMaterialDateTimePicker {
           ),
           textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
-              primary: Theme.of(context).primaryColor,
+              foregroundColor: Theme.of(context).primaryColor,
             ),
           ),
         ),
