@@ -39,9 +39,11 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 60,
+      // height: 60.0,
+      padding: const EdgeInsets.only(left: 5.0),
+      constraints: const BoxConstraints(minHeight: 60.0, maxHeight: 74.0),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(30),
+        borderRadius: BorderRadius.circular(15.0),
         border: Border.all(color: Colors.grey),
       ),
       child: InternationalPhoneNumberInput(
@@ -79,21 +81,21 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         countrySelectorScrollControlled: false,
         cursorColor: Theme.of(context).primaryColor,
         inputDecoration: const InputDecoration(border: InputBorder.none),
-        // inputDecoration: InputDecoration(
-        //   border: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(15.0),
-        //   ),
-        //   focusedBorder: OutlineInputBorder(
-        //     borderRadius: BorderRadius.circular(8.0),
-        //     borderSide: BorderSide(
-        //       color: Theme.of(context).primaryColor,
-        //       width: 2.0,
-        //     ),
-        //   ),
-        //   hintText: 'Phone Number',
-        //   suffixIcon: widget.suffixIcon,
-        //   hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 16),
-        // ),
+        /*inputDecoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(15.0),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(8.0),
+            borderSide: BorderSide(
+              color: Theme.of(context).primaryColor,
+              width: 2.0,
+            ),
+          ),
+          hintText: 'Phone Number',
+          suffixIcon: widget.suffixIcon,
+          hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 16),
+        ),*/
         onFieldSubmitted: widget.onFieldSubmitted,
         onSaved: (PhoneNumber number) {
           print('On Saved: $number');
