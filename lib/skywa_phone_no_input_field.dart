@@ -80,9 +80,12 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         selectorTextStyle: const TextStyle(color: Colors.black),
         formatInput: true,
         maxLength: 60,
-        countrySelectorScrollControlled: false,
+        countrySelectorScrollControlled: true,
         cursorColor: Theme.of(context).primaryColor,
-        inputDecoration: const InputDecoration(border: InputBorder.none),
+        inputDecoration: InputDecoration(
+          border: InputBorder.none,
+          suffixIcon: widget.suffixIcon,
+        ),
         /*inputDecoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
