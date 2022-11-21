@@ -4,6 +4,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 class SkywaPhoneNoInputField extends StatefulWidget {
   final TextEditingController textEditingController;
   final PhoneNumber? initialValue;
+  final bool autoFocus;
   final EdgeInsets? padding;
   final Widget? suffixIcon;
   final ValueChanged<PhoneNumber>? onChanged;
@@ -14,6 +15,7 @@ class SkywaPhoneNoInputField extends StatefulWidget {
     Key? key,
     required this.textEditingController,
     this.initialValue,
+    this.autoFocus = false,
     this.padding,
     this.suffixIcon,
     this.onChanged,
@@ -51,7 +53,7 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
       child: InternationalPhoneNumberInput(
         // TODO: Restrict input from taking alphabet
         textFieldController: widget.textEditingController,
-        autoFocus: true,
+        autoFocus: widget.autoFocus,
         autoFocusSearch: true,
         initialValue: number,
         searchBoxDecoration: InputDecoration(
