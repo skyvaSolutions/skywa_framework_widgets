@@ -27,9 +27,6 @@ class _SkywaPhoneNoInputFieldScreenState
       ),
       body: SkywaPhoneNoInputField(
         textEditingController: phoneController,
-        initialValue: PhoneNumber(
-            phoneNumber:
-        ),
         onChanged: (PhoneNumber phoneNumber) {
           print(phoneController.text);
           setState(() {
