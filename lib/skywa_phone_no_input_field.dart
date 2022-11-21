@@ -3,6 +3,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
 class SkywaPhoneNoInputField extends StatefulWidget {
   final TextEditingController textEditingController;
+  final PhoneNumber? initialValue;
   final EdgeInsets? padding;
   final Widget? suffixIcon;
   final ValueChanged<PhoneNumber>? onChanged;
@@ -12,6 +13,7 @@ class SkywaPhoneNoInputField extends StatefulWidget {
   const SkywaPhoneNoInputField({
     Key? key,
     required this.textEditingController,
+    this.initialValue,
     this.padding,
     this.suffixIcon,
     this.onChanged,
@@ -33,7 +35,7 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
     // TODO: implement initState
     super.initState();
     isoCountryCode = systemLocales.first.countryCode;
-    number = PhoneNumber(isoCode: isoCountryCode);
+    number = widget.initialValue ?? PhoneNumber(isoCode: isoCountryCode);
   }
 
   @override
