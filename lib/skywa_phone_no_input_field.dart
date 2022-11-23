@@ -7,6 +7,7 @@ class SkywaPhoneNoInputField extends StatefulWidget {
   final bool autoFocus;
   final EdgeInsets? padding;
   final Widget? suffixIcon;
+  final bool enabled;
   final ValueChanged<PhoneNumber>? onChanged;
   final ValueChanged<bool>? onInputValidated;
   final ValueChanged<String>? onFieldSubmitted;
@@ -18,6 +19,7 @@ class SkywaPhoneNoInputField extends StatefulWidget {
     this.autoFocus = false,
     this.padding,
     this.suffixIcon,
+    this.enabled = true,
     this.onChanged,
     this.onInputValidated,
     this.onFieldSubmitted,
@@ -56,6 +58,7 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         autoFocus: widget.autoFocus,
         autoFocusSearch: true,
         initialValue: number,
+        isEnabled: widget.enabled,
         searchBoxDecoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
