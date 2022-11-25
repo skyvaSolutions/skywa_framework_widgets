@@ -10,6 +10,7 @@ class SkywaTextFormField extends StatefulWidget {
   final String labelText;
   final String hintText;
   final String? errorText;
+  final Color? textColor;
   final EdgeInsetsGeometry? contentPadding;
   final FocusNode? focusNode;
   final TextInputType? keyboardType;
@@ -46,6 +47,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.keyboardType,
@@ -75,6 +77,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 5,
@@ -125,6 +128,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -159,6 +163,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -190,6 +195,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -224,6 +230,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -252,6 +259,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -314,6 +322,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -345,6 +354,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -371,6 +381,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.labelText = '',
     this.hintText = '',
     this.errorText,
+    this.textColor,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -418,7 +429,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
           textCapitalization: widget.textCapitalization,
           style: TextStyle(
             fontSize: 17.0,
-            color: widget.showDecoration ? Colors.black : Colors.white,
+            color: widget.textColor ?? Colors.black,
           ),
           enabled: widget.enabled,
           readOnly: widget.readOnly,
