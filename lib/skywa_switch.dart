@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skywa_framework_widgets/services/is_string_invalid.dart';
 
 import 'skywa_text.dart';
 
@@ -22,16 +23,22 @@ class SkywaSwitch extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SwitchListTile.adaptive(
-      value: value,
-      onChanged: onChanged,
-      activeColor: Theme.of(context).primaryColor,
-      title: SkywaText(
-        title,
-        maxLines: maxLines,
-        fontSize: fontSize ?? 18.0,
-        fontWeight: fontWeight ?? FontWeight.w400,
-      ),
-    );
+    return !isStringInvalid(text: title)
+        ? SwitchListTile(
+            value: value,
+            onChanged: onChanged,
+            activeColor: Theme.of(context).primaryColor,
+            title: SkywaText(
+              title,
+              maxLines: maxLines,
+              fontSize: fontSize ?? 18.0,
+              fontWeight: fontWeight ?? FontWeight.w400,
+            ),
+          )
+        : Switch(
+            value: value,
+            onChanged: onChanged,
+            activeColor: Theme.of(context).primaryColor,
+          );
   }
 }
