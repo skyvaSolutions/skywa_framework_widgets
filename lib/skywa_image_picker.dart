@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -18,7 +17,6 @@ class SkywaImagePicker {
       {CropStyle cropStyle = CropStyle.circle}) async {
     File? imageFile;
     File? croppedImageFile;
-    var webImage;
     ImagePicker imagePicker = ImagePicker();
     final pickedImage = await imagePicker.pickImage(
       source: ImageSource.camera,
@@ -26,23 +24,16 @@ class SkywaImagePicker {
       preferredCameraDevice: preferredCameraDevice,
     );
     try {
-      if (kIsWeb) {
-        var f = pickedImage!.readAsBytes();
-        // imageFile = File('file');
-        webImage = f;
-        print(webImage);
-      } else {
-        imageFile = File(pickedImage!.path);
-        croppedImageFile =
-            await cropImage(imageFile: imageFile, cropStyle: cropStyle);
-      }
+      imageFile = File(pickedImage!.path);
+      croppedImageFile =
+          await cropImage(imageFile: imageFile, cropStyle: cropStyle);
     } catch (error) {
       print('error: $error');
       print('No image selected');
     }
 
     /// without cropping user can't add image
-    return kIsWeb ? webImage : croppedImageFile!;
+    return croppedImageFile!;
   }
 
   Future<File>? pickImageFromGallery(
@@ -73,11 +64,11 @@ class SkywaImagePicker {
     List<File> imageFiles = [];
     List<File> croppedImageFiles = [];
     ImagePicker imagePicker = ImagePicker();
-    final List<XFile> pickedImages = await imagePicker.pickMultiImage(
+    final List<XFile>? pickedImages = await imagePicker.pickMultiImage(
       imageQuality: 99,
     );
     try {
-      for (var pickedImage in pickedImages) {
+      for (var pickedImage in pickedImages!) {
         imageFiles.add(File(pickedImage.path));
         imageFiles = List.from(imageFiles.reversed);
       }
@@ -138,12 +129,6 @@ class SkywaImagePicker {
           resetButtonHidden: false,
           showCancelConfirmationDialog: true,
         ),
-        WebUiSettings(
-          context: context,
-          enableExif: true,
-          enableZoom: true,
-          showZoomer: true,
-        )
       ],
     );
     return File(croppedFile!.path);
