@@ -7,7 +7,8 @@ class SkywaOutlinedButton extends StatelessWidget {
   final String text;
   final IconData? iconData;
   final double? iconSize;
-  final Function onTap;
+  final Color iconColor;
+  final Function() onTap;
   final Color? borderColor;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
@@ -15,11 +16,12 @@ class SkywaOutlinedButton extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
 
-  SkywaOutlinedButton({
+  const SkywaOutlinedButton({
     Key? key,
     required this.text,
     this.iconData,
     this.iconSize,
+    this.iconColor = Colors.black,
     required this.onTap,
     this.borderColor,
     this.padding,
@@ -27,12 +29,57 @@ class SkywaOutlinedButton extends StatelessWidget {
     this.textColor = Colors.black,
     this.fontSize = 18.0,
     this.fontWeight = FontWeight.w500,
-  })  : assert(!isStringInvalid(text: text)),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return iconData != null
+        ? Column(
+            children: [
+              OutlinedButton.icon(
+                onPressed: onTap,
+                style: ElevatedButton.styleFrom(
+                  padding: padding ??
+                      const EdgeInsets.symmetric(
+                        vertical: 10.0,
+                        horizontal: 25.0,
+                      ),
+                ),
+                icon: Icon(
+                  iconData,
+                  color: iconColor,
+                  size: iconSize ?? IconTheme.of(context).size,
+                ),
+                label: SkywaText(
+                  text,
+                  fontSize: fontSize,
+                  color: textColor,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          )
+        : Column(
+            children: [
+              OutlinedButton(
+                onPressed: onTap,
+                style: ElevatedButton.styleFrom(
+                  padding: padding ??
+                      const EdgeInsets.symmetric(
+                        vertical: 10.0,
+                        horizontal: 25.0,
+                      ),
+                ),
+                child: SkywaText(
+                  text,
+                  fontSize: fontSize,
+                  color: textColor,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+            ],
+          );
+    /*GestureDetector(
       onTap: () {
         onTap();
       },
@@ -71,6 +118,6 @@ class SkywaOutlinedButton extends StatelessWidget {
           ),
         ],
       ),
-    );
+    );*/
   }
 }

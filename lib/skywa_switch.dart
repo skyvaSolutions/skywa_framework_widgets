@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'services/is_string_invalid.dart';
 import 'skywa_text.dart';
 
 class SkywaSwitch extends StatelessWidget {
@@ -11,16 +10,15 @@ class SkywaSwitch extends StatelessWidget {
   final FontWeight? fontWeight;
   final ValueChanged<bool> onChanged;
 
-  SkywaSwitch({
+  const SkywaSwitch({
     Key? key,
     required this.value,
     this.maxLines = 1,
     required this.onChanged,
-    required this.title,
+    this.title = '',
     this.fontSize = 18.0,
     this.fontWeight,
-  })  : assert(!isStringInvalid(text: title)),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -35,7 +35,7 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
                   switch1Value = value;
                 });
               },
-              title: 'Sample Switch 1',
+              // title: 'Sample Switch 1',
             ),
             const SizedBox(height: 10.0),
             Container(
