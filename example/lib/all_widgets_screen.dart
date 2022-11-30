@@ -41,7 +41,13 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
-        child: SkywaAppBar(appbarText: 'Skywa Framework Widgets'),
+        child: SkywaAppBar(
+          appbarText: 'Skywa Framework Widgets',
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(48.0),
+            child: Container(),
+          ),
+        ),
       ),
       body: ListView(
         shrinkWrap: true,
