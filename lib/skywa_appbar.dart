@@ -8,6 +8,7 @@ class SkywaAppBar extends StatelessWidget {
   IconButton? backIconButton;
   final double? size;
   final List<Widget>? actions;
+  final PreferredSizeWidget? bottom;
 
   SkywaAppBar({
     Key? key,
@@ -16,6 +17,7 @@ class SkywaAppBar extends StatelessWidget {
     this.backIconButton,
     this.size,
     this.actions,
+    this.bottom,
   }) : super(key: key);
 
   @override
@@ -40,6 +42,7 @@ class SkywaAppBar extends StatelessWidget {
         color: Colors.white,
         fontWeight: FontWeight.w500,
       ),
+      bottom: bottom,
       actions: actions ?? [],
     );
   }
