@@ -2,6 +2,7 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'skywa_cupertino_date_time_picker.dart';
 import 'skywa_text.dart';
 
@@ -11,6 +12,7 @@ class SkywaTextFormField extends StatefulWidget {
   final String hintText;
   final String? errorText;
   final Color? textColor;
+  final TextAlign textAlign;
   final EdgeInsetsGeometry? contentPadding;
   final FocusNode? focusNode;
   final TextInputType? keyboardType;
@@ -20,6 +22,7 @@ class SkywaTextFormField extends StatefulWidget {
   final bool enabled;
   final bool readOnly;
   final ValueChanged<String>? onChanged;
+
   // final bool isObscure;
   final int minLines;
   final int maxLines;
@@ -48,6 +51,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.keyboardType,
@@ -78,6 +82,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 5,
@@ -129,6 +134,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -164,6 +170,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -196,6 +203,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -231,6 +239,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -260,6 +269,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -323,6 +333,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -355,6 +366,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -382,6 +394,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
     this.minLines = 1,
@@ -427,6 +440,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
           focusNode: widget.focusNode,
           keyboardType: widget.keyboardType,
           textCapitalization: widget.textCapitalization,
+          textAlign: widget.textAlign,
           style: TextStyle(
             fontSize: 17.0,
             color: widget.textColor ?? Colors.black,
