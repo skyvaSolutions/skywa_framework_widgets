@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
@@ -35,8 +37,8 @@ class _SkywaPhoneNoInputFieldScreenState
         },
         suffixIcon: phoneController.text.isNotEmpty
             ? IconButton(
-          onPressed: () {
-            setState(() {
+                onPressed: () {
+                  setState(() {
                     phoneController.clear();
                   });
                 },
@@ -47,11 +49,15 @@ class _SkywaPhoneNoInputFieldScreenState
               )
             : null,
         onInputValidated: (bool validPhone) {
-          isValidated = validPhone;
+          if (!Platform.isMacOS) {
+            isValidated = validPhone;
+          } else {
+            isValidated = true;
+          }
         },
         onFieldSubmitted: (String number) {
           print('onFieldSubmitted: $number');
-          if (!isValidated) {
+          if (!Platform.isMacOS && !isValidated) {
             SkywaSnackBar.error(
               context: context,
               snackBarText: 'Invalid Phone Number',
