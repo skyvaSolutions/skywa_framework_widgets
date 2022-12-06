@@ -1,5 +1,7 @@
 import 'dart:io';
+import 'dart:typed_data';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:image_cropper/image_cropper.dart';
@@ -17,11 +19,12 @@ class SampleImagePickerScreen extends StatefulWidget {
 
 class _SampleImagePickerScreenState extends State<SampleImagePickerScreen> {
   List<File> imageFiles = [];
+  List<Uint8List> imageUint8s = [];
   File? pickedImage;
+  Uint8List? pickedUint8;
 
   @override
   Widget build(BuildContext context) {
-    print(imageFiles);
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(kToolbarHeight),
@@ -32,33 +35,46 @@ class _SampleImagePickerScreenState extends State<SampleImagePickerScreen> {
         child: Column(
           children: [
             const SizedBox(height: 20.0),
+
+            /// gallery
             SkywaElevatedButton.info(
               context: context,
               text: 'Pick Gallery Image',
               onTap: () async {
-                pickedImage = await SkywaImagePicker(
-                  context: context,
-                ).pickImageFromGallery(cropStyle: CropStyle.rectangle);
-                print('pickedImage: $pickedImage');
-                if (pickedImage != null) imageFiles.add(pickedImage!);
+                if (kIsWeb) {
+                  pickedUint8 = await SkywaImagePicker(
+                    context: context,
+                  ).pickImageFromGallery();
+                  if (pickedUint8 != null) imageUint8s.add(pickedUint8!);
+                  print(imageUint8s);
+                } else {
+                  pickedImage = await SkywaImagePicker(
+                    context: context,
+                  ).pickImageFromGallery(cropStyle: CropStyle.rectangle);
+                  /*print('pickedImage: $pickedImage');*/
+                  if (pickedImage != null) imageFiles.add(pickedImage!);
+                }
                 setState(() {});
               },
             ),
             const SizedBox(height: 20.0),
-            SkywaElevatedButton.delete(
-              context: context,
-              text: 'Pick Camera Image',
-              onTap: () async {
-                pickedImage = await SkywaImagePicker(
-                  context: context,
-                ).pickImageFromCamera(
-                  cropStyle: CropStyle.rectangle,
-                );
-                if (pickedImage != null) imageFiles.add(pickedImage!);
-                setState(() {});
-              },
-            ),
-            const SizedBox(height: 20.0),
+
+            /// camera
+            if (!kIsWeb)
+              SkywaElevatedButton.delete(
+                context: context,
+                text: 'Pick Camera Image',
+                onTap: () async {
+                  pickedImage = await SkywaImagePicker(
+                    context: context,
+                  ).pickImageFromCamera(
+                    cropStyle: CropStyle.rectangle,
+                  );
+                  if (pickedImage != null) imageFiles.add(pickedImage!);
+                  setState(() {});
+                },
+              ),
+            if (!kIsWeb) const SizedBox(height: 20.0),
             SkywaElevatedButton.save(
               context: context,
               text: 'Pick Multiple Images',
@@ -75,13 +91,30 @@ class _SampleImagePickerScreenState extends State<SampleImagePickerScreen> {
             Expanded(
               child: ListView.builder(
                 shrinkWrap: true,
-                itemCount: imageFiles.length,
+                itemCount: kIsWeb ? imageUint8s.length : imageFiles.length,
                 padding: const EdgeInsets.symmetric(horizontal: 10.0),
                 itemBuilder: (BuildContext context, int index) {
                   return Column(
                     children: [
                       const SizedBox(height: 20.0),
-                      if (imageFiles[index] != null)
+                      if (kIsWeb)
+                        Container(
+                          padding: const EdgeInsets.all(10.0),
+                          decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor,
+                            borderRadius: BorderRadius.circular(16.0),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(16.0),
+                            child: Image.memory(
+                              imageUint8s[index],
+                              fit: BoxFit.cover,
+                              width: Device.screenWidth / 2,
+                              height: Device.screenWidth / 2,
+                            ),
+                          ),
+                        )
+                      else if (imageFiles[index] != null)
                         Container(
                           padding: const EdgeInsets.all(10.0),
                           decoration: BoxDecoration(

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -13,8 +14,9 @@ class SkywaImagePicker {
     this.preferredCameraDevice = CameraDevice.rear,
   });
 
-  Future<File>? pickImageFromCamera(
-      {CropStyle cropStyle = CropStyle.circle}) async {
+  Future<File>? pickImageFromCamera({
+    CropStyle cropStyle = CropStyle.circle,
+  }) async {
     File? imageFile;
     File? croppedImageFile;
     ImagePicker imagePicker = ImagePicker();
@@ -28,7 +30,7 @@ class SkywaImagePicker {
       croppedImageFile =
           await cropImage(imageFile: imageFile, cropStyle: cropStyle);
     } catch (error) {
-      print('error: $error');
+      print('pickImageFromCamera error: $error');
       print('No image selected');
     }
 
@@ -36,10 +38,13 @@ class SkywaImagePicker {
     return croppedImageFile!;
   }
 
-  Future<File>? pickImageFromGallery(
-      {CropStyle cropStyle = CropStyle.circle}) async {
+  Future<dynamic>? pickImageFromGallery({
+    CropStyle cropStyle = CropStyle.circle,
+  }) async {
     File? imageFile;
     File? croppedImageFile;
+    Uint8List? uInt8List;
+    // File? uInt8ListFile;
     ImagePicker imagePicker = ImagePicker();
     final pickedImage = await imagePicker.pickImage(
       source: ImageSource.gallery,
@@ -47,28 +52,42 @@ class SkywaImagePicker {
       preferredCameraDevice: preferredCameraDevice,
     );
     try {
-      imageFile = File(pickedImage!.path);
-      croppedImageFile =
-          await cropImage(imageFile: imageFile, cropStyle: cropStyle);
+      if (pickedImage != null) {
+        if (kIsWeb) {
+          uInt8List = await pickedImage.readAsBytes();
+          /*croppedImageFile = await cropImage(
+            imageFile: File.fromRawPath(uInt8List),
+            cropStyle: cropStyle,
+          );*/
+        } else {
+          imageFile = File(pickedImage.path);
+          croppedImageFile = await cropImage(
+            imageFile: imageFile,
+            cropStyle: cropStyle,
+          );
+        }
+      }
     } catch (error) {
-      print('error: $error');
+      print('pickImageFromGallery error: $error');
       print('No image selected');
     }
 
-    /// without cropping user can't add image
-    return croppedImageFile!;
+    /// without cropping user can't add image in phone
+    return kIsWeb ? uInt8List! : croppedImageFile!;
   }
 
-  Future<List<File>> pickMultipleImage(
-      {CropStyle cropStyle = CropStyle.circle}) async {
+  // NOT CONFIGURED FOR WEB
+  Future<List<File>> pickMultipleImage({
+    CropStyle cropStyle = CropStyle.circle,
+  }) async {
     List<File> imageFiles = [];
     List<File> croppedImageFiles = [];
     ImagePicker imagePicker = ImagePicker();
-    final List<XFile>? pickedImages = await imagePicker.pickMultiImage(
+    final List<XFile> pickedImages = await imagePicker.pickMultiImage(
       imageQuality: 99,
     );
     try {
-      for (var pickedImage in pickedImages!) {
+      for (var pickedImage in pickedImages) {
         imageFiles.add(File(pickedImage.path));
         imageFiles = List.from(imageFiles.reversed);
       }
@@ -77,22 +96,22 @@ class SkywaImagePicker {
           imageFile: File(imageToBeCropped.path),
           cropStyle: cropStyle,
         ).then((croppedImage) {
-          print(croppedImage);
           croppedImageFiles.add(croppedImage);
           print('croppedImageFiles: $croppedImageFiles');
           print('croppedImageFiles.length: ${croppedImageFiles.length}');
         });
       }
     } catch (error) {
-      print('error: $error');
+      print('pickMultipleImage error: $error');
       print('No image selected');
     }
     return croppedImageFiles;
   }
 
-  Future<File> cropImage(
-      {required File imageFile,
-      CropStyle cropStyle = CropStyle.rectangle}) async {
+  Future<File> cropImage({
+    required File imageFile,
+    CropStyle cropStyle = CropStyle.rectangle,
+  }) async {
     CroppedFile? croppedFile = await ImageCropper().cropImage(
       sourcePath: imageFile.path,
       cropStyle: cropStyle,
@@ -129,6 +148,7 @@ class SkywaImagePicker {
           resetButtonHidden: false,
           showCancelConfirmationDialog: true,
         ),
+        WebUiSettings(context: context),
       ],
     );
     return File(croppedFile!.path);
