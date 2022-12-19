@@ -114,48 +114,38 @@ class SkywaElevatedButton extends StatelessWidget {
       ),
     );*/
     return iconData != null
-        ? Column(
-            children: [
-              ElevatedButton.icon(
-                onPressed: onTap,
-                style: ElevatedButton.styleFrom(
-                  padding: padding ??
-                      const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 25.0),
-                  backgroundColor: buttonColor,
-                ),
-                icon: Icon(
-                  iconData,
-                  color: iconColor,
-                  size: iconSize ?? IconTheme.of(context).size,
-                ),
-                label: SkywaText(
-                  text,
-                  fontSize: fontSize,
-                  color: textColor,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
+        ? ElevatedButton.icon(
+            onPressed: onTap,
+            style: ElevatedButton.styleFrom(
+              padding: padding ??
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+              backgroundColor: buttonColor,
+            ),
+            icon: Icon(
+              iconData,
+              color: iconColor,
+              size: iconSize ?? IconTheme.of(context).size,
+            ),
+            label: SkywaText(
+              text,
+              fontSize: fontSize,
+              color: textColor,
+              fontWeight: FontWeight.w500,
+            ),
           )
-        : Column(
-            children: [
-              ElevatedButton(
-                onPressed: onTap,
-                style: ElevatedButton.styleFrom(
-                  padding: padding ??
-                      const EdgeInsets.symmetric(
-                          vertical: 10.0, horizontal: 25.0),
-                  backgroundColor: buttonColor,
-                ),
-                child: SkywaText(
-                  text,
-                  fontSize: fontSize,
-                  color: textColor,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
+        : ElevatedButton(
+            onPressed: onTap,
+            style: ElevatedButton.styleFrom(
+              padding: padding ??
+                  const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
+              backgroundColor: buttonColor,
+            ),
+            child: SkywaText(
+              text,
+              fontSize: fontSize,
+              color: textColor,
+              fontWeight: FontWeight.w500,
+            ),
           );
   }
 }
