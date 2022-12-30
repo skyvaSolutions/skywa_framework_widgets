@@ -4,6 +4,7 @@ import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 class SkywaPhoneNoInputField extends StatefulWidget {
   final TextEditingController textEditingController;
   final PhoneNumber? initialValue;
+  final String errorMessage;
   final bool autoFocus;
   final EdgeInsets? padding;
   final Widget? suffixIcon;
@@ -16,6 +17,7 @@ class SkywaPhoneNoInputField extends StatefulWidget {
     Key? key,
     required this.textEditingController,
     this.initialValue,
+    this.errorMessage = '',
     this.autoFocus = false,
     this.padding,
     this.suffixIcon,
@@ -59,6 +61,7 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         autoFocusSearch: true,
         initialValue: number,
         isEnabled: widget.enabled,
+        errorMessage: widget.errorMessage,
         searchBoxDecoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
@@ -91,21 +94,6 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
           border: InputBorder.none,
           suffixIcon: widget.suffixIcon,
         ),
-        /*inputDecoration: InputDecoration(
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(15.0),
-          ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.0),
-            borderSide: BorderSide(
-              color: Theme.of(context).primaryColor,
-              width: 2.0,
-            ),
-          ),
-          hintText: 'Phone Number',
-          suffixIcon: widget.suffixIcon,
-          hintStyle: TextStyle(color: Colors.grey.shade500, fontSize: 16),
-        ),*/
         onFieldSubmitted: widget.onFieldSubmitted,
         onSaved: (PhoneNumber number) {
           print('On Saved: $number');

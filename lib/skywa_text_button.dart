@@ -1,9 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
-import 'package:skywa_framework_widgets/skywa_auto_size_text.dart';
 
-import 'services/is_string_invalid.dart';
 import 'skywa_text.dart';
 
 class SkywaTextButton extends StatelessWidget {
@@ -12,7 +9,7 @@ class SkywaTextButton extends StatelessWidget {
   final Color? buttonColor;
   final EdgeInsetsGeometry? padding;
   final EdgeInsetsGeometry? margin;
-  final Color textColor;
+  final Color? textColor;
   final double fontSize;
   final FontWeight fontWeight;
   final IconData? iconData;
@@ -26,7 +23,7 @@ class SkywaTextButton extends StatelessWidget {
     this.buttonColor,
     this.padding,
     this.margin,
-    this.textColor = Colors.black,
+    this.textColor,
     this.fontSize = 18.0,
     this.fontWeight = FontWeight.w400,
     this.iconData,
@@ -57,7 +54,7 @@ class SkywaTextButton extends StatelessWidget {
                 label: SkywaText(
                   text,
                   fontSize: fontSize,
-                  color: textColor,
+                  color: textColor ?? Theme.of(context).primaryColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -78,7 +75,7 @@ class SkywaTextButton extends StatelessWidget {
                 child: SkywaText(
                   text,
                   fontSize: fontSize,
-                  color: textColor,
+                  color: textColor ?? Theme.of(context).primaryColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),
