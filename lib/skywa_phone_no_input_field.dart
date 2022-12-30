@@ -62,6 +62,7 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         initialValue: number,
         isEnabled: widget.enabled,
         errorMessage: widget.errorMessage,
+        autoValidateMode: AutovalidateMode.onUserInteraction,
         searchBoxDecoration: InputDecoration(
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(15.0),
@@ -84,7 +85,6 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
           selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
         ),
         ignoreBlank: false,
-        autoValidateMode: AutovalidateMode.onUserInteraction,
         selectorTextStyle: const TextStyle(color: Colors.black),
         formatInput: true,
         maxLength: 60,
@@ -97,6 +97,7 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         onFieldSubmitted: widget.onFieldSubmitted,
         onSaved: (PhoneNumber number) {
           print('On Saved: $number');
+          widget.onInputValidated;
         },
       ),
     );
