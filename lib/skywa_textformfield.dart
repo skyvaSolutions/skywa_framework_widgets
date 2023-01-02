@@ -12,6 +12,9 @@ class SkywaTextFormField extends StatefulWidget {
   final String hintText;
   final String? errorText;
   final Color? textColor;
+  final Color? cursorColor;
+  final Color? labelColor;
+  final Color? hintColor;
   final TextAlign textAlign;
   final EdgeInsetsGeometry? contentPadding;
   final FocusNode? focusNode;
@@ -51,6 +54,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -82,6 +88,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -134,6 +143,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -170,6 +182,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -203,6 +218,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -239,6 +257,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -269,6 +290,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -333,6 +357,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -366,6 +393,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -394,6 +424,9 @@ class SkywaTextFormField extends StatefulWidget {
     this.hintText = '',
     this.errorText,
     this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
     this.textAlign = TextAlign.left,
     this.contentPadding,
     this.focusNode,
@@ -452,7 +485,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
           maxLines: widget.maxLines,
           enableSuggestions: true,
           obscuringCharacter: '*',
-          cursorColor: Theme.of(context).primaryColor,
+          cursorColor: widget.cursorColor ?? Theme.of(context).primaryColor,
           autovalidateMode: AutovalidateMode.onUserInteraction,
           autofocus: widget.autofocus,
           decoration: InputDecoration(
@@ -484,10 +517,13 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
             label: SkywaText(
               widget.labelText,
               fontSize: 18.0,
-              color: Colors.grey.shade600,
+              color: widget.labelColor ?? Colors.grey.shade600,
             ),
             hintText: widget.hintText,
-            hintStyle: const TextStyle(fontSize: 17.0),
+            hintStyle: TextStyle(
+              fontSize: 17.0,
+              color: widget.hintColor ?? Colors.black,
+            ),
             prefixIcon: widget.prefixIcon,
             /*suffixIcon: widget.keyboardType == TextInputType.visiblePassword ||
                     widget.suffixIcon != null

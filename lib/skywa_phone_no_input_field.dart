@@ -17,7 +17,7 @@ class SkywaPhoneNoInputField extends StatefulWidget {
     Key? key,
     required this.textEditingController,
     this.initialValue,
-    this.errorMessage = '',
+    this.errorMessage = 'Invalid Phone Number',
     this.autoFocus = false,
     this.padding,
     this.suffixIcon,
