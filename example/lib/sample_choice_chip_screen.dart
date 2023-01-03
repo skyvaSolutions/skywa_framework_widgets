@@ -18,6 +18,13 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
   String selectedNationality = '';
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    selectedGender = genderChips.first;
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -36,9 +43,12 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
               choiceChips: genderChips,
               onSelected: (value) {
                 setState(() {
-                  selectedGender = value.toString();
+                  int index =
+                      value ? genderChips.indexOf(selectedGender) : 0;
+                  print(index);
+                  selectedGender = genderChips[index];
                 });
-                print('value: $value');
+                print('selectedGender: $selectedGender');
               },
               wrapAlignment: WrapAlignment.spaceAround,
               padding: const EdgeInsets.all(0.0),
@@ -56,7 +66,7 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
                 setState(() {
                   selectedNationality = value.toString();
                 });
-                print('value: $value');
+                print('selectedNationality: $selectedNationality');
               },
               wrapAlignment: WrapAlignment.spaceAround,
               padding: const EdgeInsets.all(0.0),
