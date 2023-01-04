@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skywa_framework_widgets/skywa_auto_size_text.dart';
 
 class SkywaChoiceChipGroup extends StatefulWidget {
   final List choiceChips;
@@ -31,32 +32,26 @@ class SkywaChoiceChipGroup extends StatefulWidget {
 class _SkywaChoiceChipGroupState extends State<SkywaChoiceChipGroup> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Text('TODO: NULL SAFETY'),
+    return GridView.builder(
+      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        childAspectRatio: 3.1,
+      ),
+      shrinkWrap: true,
+      itemCount: widget.choiceChips.length,
+      itemBuilder: (BuildContext context, int index) {
+        return ChoiceChip(
+          label: SkywaAutoSizeText(
+            text: widget.choiceChips[index],
+            fontSize: widget.fontSize,
+            color: Colors.black,
+          ),
+          selected: widget.selectedValue == widget.choiceChips[index],
+          onSelected: widget.onSelected,
+          backgroundColor: widget.backgroundColor,
+          selectedColor: Theme.of(context).primaryColor,
+        );
+      },
     );
-    /*return ChipsChoice<String>.single(
-      value: widget.selectedValue,
-      wrapped: true,
-      choiceActiveStyle: C2ChoiceStyle(
-        pressElevation: 20.0,
-        elevation: 3.0,
-      ),
-      padding: widget.padding != null ? widget.padding : EdgeInsets.all(8.0),
-      alignment: widget.wrapAlignment,
-      spacing: widget.spacing,
-      choiceStyle: C2ChoiceStyle(
-        elevation: 3.0,
-        pressElevation: 20.0,
-        labelPadding: widget.labelPadding != null
-            ? widget.labelPadding
-            : EdgeInsets.symmetric(horizontal: 10.0, vertical: 4.0),
-      ),
-      onChanged: widget.onSelected,
-      choiceItems: C2Choice.listFrom(
-        source: widget.choiceChips,
-        value: (chipIndex, chipLabel) => chipLabel,
-        label: (chipIndex, chipLabel) => chipLabel,
-      ),
-    );*/
   }
 }
