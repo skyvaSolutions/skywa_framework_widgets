@@ -30,6 +30,7 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
             const SizedBox(height: 20.0),
             SkywaSwitch(
               value: switch1Value,
+              // enabled: false,
               onChanged: (value) {
                 setState(() {
                   switch1Value = value;
@@ -45,6 +46,7 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
             const SizedBox(height: 30.0),
             SkywaSwitch(
               value: switch2Value,
+              enabled: false,
               onChanged: (value) {
                 setState(() {
                   switch2Value = value;

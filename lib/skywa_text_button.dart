@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'skywa_text.dart';
@@ -54,7 +53,7 @@ class SkywaTextButton extends StatelessWidget {
                 label: SkywaText(
                   text,
                   fontSize: fontSize,
-                  color: textColor ?? Theme.of(context).primaryColor,
+                  color: textColor ?? Theme.of(context).errorColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),
@@ -75,47 +74,11 @@ class SkywaTextButton extends StatelessWidget {
                 child: SkywaText(
                   text,
                   fontSize: fontSize,
-                  color: textColor ?? Theme.of(context).primaryColor,
+                  color: textColor ?? Theme.of(context).errorColor,
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ],
           );
-
-    /*GestureDetector(
-      onTap: () {
-        widget.onTap();
-      },
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Container(
-            alignment: Alignment.center,
-            constraints: BoxConstraints(maxWidth: Device.screenWidth * 0.90),
-            child: Card(
-              elevation: 1.0,
-              margin: widget.margin ?? const EdgeInsets.all(0.0),
-              color: widget.buttonColor,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Padding(
-                padding: widget.padding ??
-                    const EdgeInsets.symmetric(
-                      vertical: 10.0,
-                      horizontal: 25.0,
-                    ),
-                child: SkywaAutoSizeText(
-                  text: widget.text,
-                  color: widget.textColor,
-                  fontSize: widget.fontSize,
-                  fontWeight: widget.fontWeight,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );*/
   }
 }
