@@ -1,7 +1,6 @@
-import 'package:skywa_framework_widgets/skywa_outlined_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
+import 'package:skywa_framework_widgets/skywa_outlined_button.dart';
 
 class SampleOutlinedButtonScreen extends StatefulWidget {
   const SampleOutlinedButtonScreen({Key? key}) : super(key: key);
@@ -22,7 +21,7 @@ class _SampleOutlinedButtonScreenState
         child: SkywaAppBar(appbarText: 'Sample Outlined Buttons'),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         child: ListView(
           shrinkWrap: true,
           children: [

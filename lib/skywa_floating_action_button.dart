@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 
 class SkywaFloatingActionButton extends StatelessWidget {
   final IconData iconData;
@@ -15,7 +14,7 @@ class SkywaFloatingActionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(Device.screenHeight * 0.02),
+      margin: EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.grey.shade100,

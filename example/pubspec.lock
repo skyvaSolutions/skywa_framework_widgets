@@ -160,13 +160,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.3.0"
-  flutter_device_type:
-    dependency: transitive
-    description:
-      name: flutter_device_type
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.4.0"
   flutter_launcher_icons:
     dependency: "direct dev"
     description:
@@ -282,13 +275,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.6.1"
-  image_picker_web:
-    dependency: transitive
-    description:
-      name: image_picker_web
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "3.0.0+1"
   intl:
     dependency: transitive
     description:

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
+import 'package:skywa_framework_widgets/skywa_alert_dialog.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
-import 'package:skywa_framework_widgets/skywa_alert_dialog.dart';
 
 class SampleAlertDialogScreen extends StatelessWidget {
   const SampleAlertDialogScreen({Key? key}) : super(key: key);
@@ -30,7 +29,8 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 context: context,
                 titleText: 'Success Alert Success Alert Success Alert Success Alert',
                 content: Container(
-                  padding: EdgeInsets.all(Device.screenHeight * 0.02),
+                  padding:
+                      EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
                   child: const SkywaText(
                     'This is a success alert dialog',
                     fontWeight: FontWeight.w500,
@@ -50,7 +50,8 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 context: context,
                 titleText: 'Info Alert',
                 content: Container(
-                  padding: EdgeInsets.all(Device.screenHeight * 0.02),
+                  padding:
+                      EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
                   child: const SkywaText(
                     'This is a info alert dialog',
                     fontWeight: FontWeight.w500,
@@ -70,7 +71,8 @@ class SampleAlertDialogScreen extends StatelessWidget {
                 context: context,
                 titleText: 'Error Alert',
                 content: Container(
-                  padding: EdgeInsets.all(Device.screenHeight * 0.02),
+                  padding:
+                      EdgeInsets.all(MediaQuery.of(context).size.height * 0.02),
                   child: const SkywaText(
                     'This is a error alert dialog',
                     fontWeight: FontWeight.w500,

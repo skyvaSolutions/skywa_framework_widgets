@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:lottie/lottie.dart';
 
 class SkywaLoader extends StatefulWidget {
@@ -45,8 +44,8 @@ class _SkywaLoaderState extends State<SkywaLoader>
             ..repeat();
         },
         fit: BoxFit.contain,
-        height: Device.screenHeight * 0.50,
-        width: Device.screenHeight * 0.50,
+        height: MediaQuery.of(context).size.height * 0.50,
+        width: MediaQuery.of(context).size.height * 0.50,
         repeat: true,
         animate: true,
       ),

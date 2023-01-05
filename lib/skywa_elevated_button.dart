@@ -84,7 +84,7 @@ class SkywaElevatedButton extends StatelessWidget {
         children: [
           Container(
             alignment: Alignment.center,
-            // constraints: BoxConstraints(maxWidth: Device.screenWidth * 0.90),
+            // constraints: BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.90),
             padding: padding ??
                 const EdgeInsets.symmetric(vertical: 10.0, horizontal: 25.0),
             margin: margin ?? const EdgeInsets.all(0.0),

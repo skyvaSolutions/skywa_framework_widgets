@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:intl/intl.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_cupertino_date_time_picker.dart';
@@ -33,7 +32,7 @@ class _SamplePickerScreenState extends State<SamplePickerScreen> {
         child: SkywaAppBar(appbarText: 'Sample Pickers'),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         child: ListView(
           shrinkWrap: true,
           children: [

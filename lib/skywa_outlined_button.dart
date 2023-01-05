@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'services/is_string_invalid.dart';
 import 'skywa_text.dart';
 
 class SkywaOutlinedButton extends StatelessWidget {

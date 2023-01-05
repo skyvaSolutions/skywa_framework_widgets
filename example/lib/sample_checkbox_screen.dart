@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/models/skywa_checkbox_model.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_checkbox_list_tile.dart';
@@ -62,8 +61,8 @@ class _SampleCheckBoxScreenState extends State<SampleCheckBoxScreen> {
         child: SkywaAppBar(appbarText: 'Sample CheckBoxes'),
       ),
       body: Container(
-        height: Device.screenHeight,
-        width: Device.screenWidth,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         child: ListView(
           shrinkWrap: true,
           padding: const EdgeInsets.all(20.0),
@@ -96,7 +95,7 @@ class _SampleCheckBoxScreenState extends State<SampleCheckBoxScreen> {
             ),
             const SizedBox(height: 10.0),
             Container(
-              width: Device.screenWidth,
+              width: MediaQuery.of(context).size.width,
               height: 100.0,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey.shade600, width: 1.0),
@@ -108,7 +107,7 @@ class _SampleCheckBoxScreenState extends State<SampleCheckBoxScreen> {
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (BuildContext context, int index) {
                   return Container(
-                    width: Device.screenWidth / 6,
+                    width: MediaQuery.of(context).size.width / 6,
                     child: SkywaCheckboxListTile(
                       direction: Axis.vertical,
                       title: days[index].keys.elementAt(0),

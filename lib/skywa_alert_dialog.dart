@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 
 import 'services/is_string_invalid.dart';
 import 'skywa_text.dart';
@@ -69,13 +68,13 @@ class SkywaAlertDialog {
           titlePadding: const EdgeInsets.all(0.0),
           title: !isStringInvalid(text: titleText)
               ? Container(
-            width: Device.screenWidth * width,
+            width: MediaQuery.of(context).size.width * width,
                   padding: titlePadding ??
                       EdgeInsets.only(
-                        top: Device.screenHeight * 0.01,
-                        bottom: Device.screenHeight * 0.01,
-                        left: Device.screenWidth * 0.05,
-                        right: Device.screenWidth * 0.01,
+                        top: MediaQuery.of(context).size.height * 0.01,
+                        bottom: MediaQuery.of(context).size.height * 0.01,
+                        left: MediaQuery.of(context).size.width * 0.05,
+                        right: MediaQuery.of(context).size.width * 0.01,
                       ),
                   decoration: BoxDecoration(
                     color: color,

@@ -3,7 +3,6 @@ import 'dart:typed_data';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
@@ -31,7 +30,7 @@ class _SampleImagePickerScreenState extends State<SampleImagePickerScreen> {
         child: SkywaAppBar(appbarText: 'Sample Image Pickers'),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         child: Column(
           children: [
             const SizedBox(height: 20.0),
@@ -109,8 +108,8 @@ class _SampleImagePickerScreenState extends State<SampleImagePickerScreen> {
                             child: Image.memory(
                               imageUint8s[index],
                               fit: BoxFit.cover,
-                              width: Device.screenWidth / 2,
-                              height: Device.screenWidth / 2,
+                              width: MediaQuery.of(context).size.width / 2,
+                              height: MediaQuery.of(context).size.width / 2,
                             ),
                           ),
                         )
@@ -126,8 +125,8 @@ class _SampleImagePickerScreenState extends State<SampleImagePickerScreen> {
                             child: Image.file(
                               imageFiles[index],
                               fit: BoxFit.cover,
-                              width: Device.screenWidth / 2,
-                              height: Device.screenWidth / 2,
+                              width: MediaQuery.of(context).size.width / 2,
+                              height: MediaQuery.of(context).size.width / 2,
                             ),
                           ),
                         ),

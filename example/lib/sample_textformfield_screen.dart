@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skywa_framework_widgets/services/is_string_invalid.dart';
-import 'package:skywa_framework_widgets/skywa_textformfield.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
+import 'package:skywa_framework_widgets/skywa_textformfield.dart';
 
 class SampleTextFormFieldScreen extends StatefulWidget {
   const SampleTextFormFieldScreen({Key? key}) : super(key: key);
@@ -33,7 +32,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
         child: SkywaAppBar(appbarText: 'Sample TextFormFields'),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(15.0),
         child: ListView(
           children: [
@@ -43,7 +42,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'Text',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -76,7 +75,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'Multiline Text',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -109,7 +108,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
 
             /// number   NOT REQUIRED
             /*Text('Number', style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),),
             SizedBox(height: 10.0),
@@ -142,7 +141,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'Number With Options',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -179,7 +178,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'Phone',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -214,7 +213,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'DateTime',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -263,7 +262,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'Email',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -298,7 +297,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'URL',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -333,7 +332,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             /*Text(
               'Password',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -368,7 +367,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'Name',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -402,7 +401,7 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
             Text(
               'Address',
               style: TextStyle(
-                fontSize: Device.screenHeight * 0.025,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
                 fontWeight: FontWeight.w500,
               ),
             ),

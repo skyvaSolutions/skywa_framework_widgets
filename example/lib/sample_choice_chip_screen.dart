@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_choice_chip_group.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
@@ -33,7 +32,7 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
         child: SkywaAppBar(appbarText: 'Sample Choice Chips'),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         child: ListView(
           shrinkWrap: true,
           children: [
@@ -43,8 +42,7 @@ class _SampleChoiceChipScreenState extends State<SampleChoiceChipScreen> {
               choiceChips: genderChips,
               onSelected: (value) {
                 setState(() {
-                  int index =
-                      value ? genderChips.indexOf(selectedGender) : 0;
+                  int index = value ? genderChips.indexOf(selectedGender) : 0;
                   print(index);
                   selectedGender = genderChips[index];
                 });

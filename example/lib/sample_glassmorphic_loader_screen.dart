@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_cached_network_image.dart';
 import 'package:skywa_framework_widgets/skywa_dropdown_button.dart';
 import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
+import 'package:skywa_framework_widgets/skywa_glassmorphic_loader.dart';
 import 'package:skywa_framework_widgets/skywa_radio_group.dart';
 import 'package:skywa_framework_widgets/skywa_slider.dart';
 import 'package:skywa_framework_widgets/skywa_snackbar.dart';
 import 'package:skywa_framework_widgets/skywa_switch.dart';
 import 'package:skywa_framework_widgets/skywa_text_button.dart';
 import 'package:skywa_framework_widgets/skywa_textformfield.dart';
-import 'package:skywa_framework_widgets/skywa_glassmorphic_loader.dart';
 
 class SampleGlassmorphicLoaderScreen extends StatefulWidget {
   const SampleGlassmorphicLoaderScreen({Key? key}) : super(key: key);
@@ -36,8 +35,8 @@ class _SampleGlassmorphicLoaderScreenState
       body: Stack(
         children: [
           Container(
-            height: Device.screenHeight,
-            width: Device.screenWidth,
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             child: ListView(
               shrinkWrap: true,
               padding: const EdgeInsets.all(20.0),

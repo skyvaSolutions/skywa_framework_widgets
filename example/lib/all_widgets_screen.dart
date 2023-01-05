@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:skywa_framework_widgets/skywa_appbar.dart';
+import 'package:skywa_framework_widgets/skywa_bottom_sheet.dart';
 import 'package:skywa_framework_widgets/skywa_elevated_button.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
-import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets_example/sample_rich_texts_screen.dart';
 import 'package:skywa_framework_widgets_example/skywa_phone_no_input_field_screen.dart';
 
@@ -26,7 +27,6 @@ import 'sample_switch_screen.dart';
 import 'sample_textbutton_screen.dart';
 import 'sample_textformfield_screen.dart';
 import 'sample_texts_screen.dart';
-import 'package:skywa_framework_widgets/skywa_bottom_sheet.dart';
 
 class AllWidgetsScreen extends StatefulWidget {
   const AllWidgetsScreen({Key? key}) : super(key: key);
@@ -159,7 +159,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 }),
               );
             },
-            // fontSize: Device.screenHeight * 0.025,
+            // fontSize: MediaQuery.of(context).size.height * 0.025,
           ),
           const SizedBox(height: 20.0),
 
@@ -221,7 +221,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
               );
             },
             text: 'Sample TextFormFields',
-            // fontSize: Device.screenHeight * 0.025,
+            // fontSize: MediaQuery.of(context).size.height * 0.025,
           ),
           const SizedBox(height: 20.0),
 
@@ -370,7 +370,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
                 }),
               );
             },
-            // fontSize: Device.screenHeight * 0.025,
+            // fontSize: MediaQuery.of(context).size.height * 0.025,
           ),
           const SizedBox(height: 20.0),
 

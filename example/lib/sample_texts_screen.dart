@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
 
@@ -15,11 +14,12 @@ class SampleTextsScreen extends StatelessWidget {
         child: SkywaAppBar(appbarText: 'Sample Texts'),
       ),
       body: Container(
-        height: Device.screenHeight,
-        width: Device.screenWidth,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         child: ListView(
           shrinkWrap: true,
-          padding: EdgeInsets.symmetric(horizontal: Device.screenWidth * 0.02),
+          padding: EdgeInsets.symmetric(
+              horizontal: MediaQuery.of(context).size.width * 0.02),
           children: [
             const SizedBox(height: 20.0),
 
@@ -33,7 +33,7 @@ class SampleTextsScreen extends StatelessWidget {
             /// fontSize: 4% of height
             SkywaText(
               'This is a sample text with fontSize 4% of screen height',
-              fontSize: Device.screenHeight * 0.04,
+              fontSize: MediaQuery.of(context).size.height * 0.04,
               maxLines: 4,
             ),
             const Divider(thickness: 2.0, height: 20.0),

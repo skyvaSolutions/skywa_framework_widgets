@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 
 import 'skywa_text.dart';
 
@@ -46,7 +45,7 @@ class _SkywaRadioGroupState extends State<SkywaRadioGroup> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Device.screenWidth,
+      width: MediaQuery.of(context).size.width,
       margin: widget.margin ?? const EdgeInsets.all(10.0),
       decoration: BoxDecoration(
         color: widget.backgroundColor ?? Colors.transparent,
@@ -78,7 +77,7 @@ class _SkywaRadioGroupState extends State<SkywaRadioGroup> {
         children: [
           for (int i = 0; i < widget.texts.length; i++)
             Container(
-              width: widget.width ?? Device.screenWidth * 0.40,
+              width: widget.width ?? MediaQuery.of(context).size.width * 0.40,
               alignment: Alignment.center,
               child: RadioListTile(
                 contentPadding: EdgeInsets.zero,

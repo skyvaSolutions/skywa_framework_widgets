@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 
 import 'services/is_string_invalid.dart';
 import 'skywa_auto_size_text.dart';
@@ -37,7 +36,7 @@ class _SkywaCheckboxListTileState extends State<SkywaCheckboxListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: Device.screenWidth,
+      width: MediaQuery.of(context).size.width,
       margin: widget.margin ?? const EdgeInsets.all(10.0),
       child: widget.direction == Axis.horizontal
           ? CheckboxListTile(
@@ -49,19 +48,24 @@ class _SkywaCheckboxListTileState extends State<SkywaCheckboxListTile> {
                 fontWeight: FontWeight.w400,
                 maxLines: 1,
               ),
-              subtitle: !isStringInvalid(text: widget.subTitle)
-                  ? SkywaText(
-                      widget.subTitle,
-                      fontSize: widget.fontSize - 1.0,
-                      fontWeight: FontWeight.w300,
-                      maxLines: 2,
-                    )
-                  : null,
-              contentPadding: widget.contentPadding ??
-                  EdgeInsets.symmetric(horizontal: Device.screenWidth * 0.05),
-              activeColor: Theme.of(context).primaryColor,
-              checkColor: Colors.white,
-              onChanged: widget.onChanged!,
+        subtitle: !isStringInvalid(text: widget.subTitle)
+            ? SkywaText(
+          widget.subTitle,
+          fontSize: widget.fontSize - 1.0,
+          fontWeight: FontWeight.w300,
+          maxLines: 2,
+        )
+            : null,
+        contentPadding: widget.contentPadding ??
+            EdgeInsets.symmetric(horizontal: MediaQuery
+                .of(context)
+                .size
+                .width * 0.05),
+        activeColor: Theme
+            .of(context)
+            .primaryColor,
+        checkColor: Colors.white,
+        onChanged: widget.onChanged!,
             )
           : Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,

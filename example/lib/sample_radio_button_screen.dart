@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:skywa_framework_widgets/skywa_radio_group.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
+import 'package:skywa_framework_widgets/skywa_radio_group.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
 
 class SampleRadioButtonScreen extends StatefulWidget {
@@ -25,15 +24,15 @@ class _SampleRadioButtonScreenState extends State<SampleRadioButtonScreen> {
         child: SkywaAppBar(appbarText: 'Sample Radio Buttons'),
       ),
       body: Container(
-        height: Device.screenHeight,
-        width: Device.screenWidth,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         child: ListView(
           shrinkWrap: true,
           children: [
             const SizedBox(height: 20.0),
             SkywaRadioGroup(
               wrapAlignment: WrapAlignment.start,
-              width: Device.screenWidth,
+              width: MediaQuery.of(context).size.width,
               texts: const [
                 'Male',
                 'Female',

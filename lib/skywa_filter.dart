@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_alert_dialog.dart';
 
 import 'skywa_elevated_button.dart';
@@ -29,7 +28,7 @@ class SkywaFilter {
       context: context,
       content: StatefulBuilder(builder: (context, dialogSetState) {
         return Container(
-          width: Device.screenWidth,
+          width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -37,7 +36,7 @@ class SkywaFilter {
               /// filter items
               Container(
                 constraints: BoxConstraints(
-                  maxHeight: Device.screenHeight * 0.60,
+                  maxHeight: MediaQuery.of(context).size.height * 0.60,
                 ),
                 child: buildFilterItems,
               ),

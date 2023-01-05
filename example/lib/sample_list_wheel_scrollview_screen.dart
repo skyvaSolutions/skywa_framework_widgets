@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_cached_network_image.dart';
-import 'package:skywa_framework_widgets/skywa_text.dart';
 import 'package:skywa_framework_widgets/skywa_list_wheel_scrollview.dart';
+import 'package:skywa_framework_widgets/skywa_text.dart';
 
 class SampleListWheelScrollViewScreen extends StatefulWidget {
   const SampleListWheelScrollViewScreen({Key? key}) : super(key: key);
@@ -98,15 +97,15 @@ class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollV
       ),
       body: SingleChildScrollView(
         child: Container(
-          // height: Device.screenHeight,
-          width: Device.screenWidth,
+          // height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
               /// gender
               Column(
                 children: [
                   Container(
-                    height: Device.screenHeight * 0.45,
+                    height: MediaQuery.of(context).size.height * 0.45,
                     color: Colors.amber.shade200,
                     child: SkywaListWheelScrollView(
                       bodies: genders,
@@ -132,7 +131,7 @@ class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollV
               Column(
                 children: [
                   Container(
-                    height: Device.screenHeight * 0.30,
+                    height: MediaQuery.of(context).size.height * 0.30,
                     color: Colors.purple.shade200,
                     child: SkywaListWheelScrollView(
                       bodies: timeUnits,
@@ -156,7 +155,7 @@ class _SampleListWheelScrollViewScreenState extends State<SampleListWheelScrollV
               Column(
                 children: [
                   Container(
-                    height: Device.screenHeight * 0.30,
+                    height: MediaQuery.of(context).size.height * 0.30,
                     color: Colors.teal.shade200,
                     child: SkywaListWheelScrollView(
                       itemExtent: 200.0,

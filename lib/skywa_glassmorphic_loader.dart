@@ -1,7 +1,6 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 
 import 'skywa_text.dart';
 
@@ -23,8 +22,8 @@ class SkywaGlassMorphicLoader extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          height: Device.screenHeight,
-          width: Device.screenWidth,
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(color: Colors.transparent),
         ),
         Container(

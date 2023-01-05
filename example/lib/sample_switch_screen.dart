@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_switch.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
@@ -24,7 +23,7 @@ class _SampleSwitchScreenState extends State<SampleSwitchScreen> {
         child: SkywaAppBar(appbarText: 'Sample Pickers'),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         child: ListView(
           children: [
             const SizedBox(height: 20.0),

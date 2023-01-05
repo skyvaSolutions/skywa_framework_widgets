@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_cached_network_image.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
@@ -23,8 +22,8 @@ class _SampleCachedImageNetworkScreenState
         child: SkywaAppBar(appbarText: 'Sample Cached Network Images'),
       ),
       body: Container(
-        height: Device.screenHeight,
-        width: Device.screenWidth,
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
         color: Colors.amber.shade100,
         child: ListView(
           shrinkWrap: true,

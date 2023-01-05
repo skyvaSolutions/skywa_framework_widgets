@@ -1,7 +1,6 @@
-import 'package:skywa_framework_widgets/skywa_text_button.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
+import 'package:skywa_framework_widgets/skywa_text_button.dart';
 
 class SampleTextButtonScreen extends StatefulWidget {
   const SampleTextButtonScreen({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class _SampleTextButtonScreenState extends State<SampleTextButtonScreen> {
         child: SkywaAppBar(appbarText: 'Sample Text Buttons'),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         child: ListView(
           shrinkWrap: true,
           children: [

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:skywa_framework_widgets/skywa_appbar.dart';
 import 'package:skywa_framework_widgets/skywa_slider.dart';
 import 'package:skywa_framework_widgets/skywa_text.dart';
@@ -24,7 +23,7 @@ class _SampleSliderScreenState extends State<SampleSliderScreen> {
         child: SkywaAppBar(appbarText: 'Sample Sliders'),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         child: ListView(
           shrinkWrap: true,
           children: [

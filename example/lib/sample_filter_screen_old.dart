@@ -68,14 +68,14 @@ class _SampleFilterScreenOldState extends State<SampleFilterScreenOld> {
       context: context,
       content: StatefulBuilder(builder: (context, dialogSetState) {
         return Container(
-          width: Device.screenWidth,
+          width: MediaQuery.of(context).size.width,
           padding: const EdgeInsets.all(20.0),
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
                 constraints: BoxConstraints(
-                  maxHeight: Device.screenHeight * 0.60,
+                  maxHeight: MediaQuery.of(context).size.height * 0.60,
                 ),
                 child: ListView(
                   shrinkWrap: true,
@@ -187,7 +187,7 @@ class _SampleFilterScreenOldState extends State<SampleFilterScreenOld> {
         ),
       ),
       body: Container(
-        height: Device.screenHeight,
+        height: MediaQuery.of(context).size.height,
         child: ListView.builder(
           itemCount: filteredItems.length,
           itemBuilder: (BuildContext context, int index) {
