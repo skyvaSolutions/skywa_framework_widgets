@@ -8,6 +8,7 @@ class SkywaAlertDialog {
   final BuildContext context;
   final bool barrierDismissible;
   final String titleText;
+  final double? width;
   final EdgeInsetsGeometry? titlePadding;
   final double fontSize;
   final Widget content;
@@ -19,6 +20,7 @@ class SkywaAlertDialog {
     required this.context,
     this.barrierDismissible = true,
     this.titleText = '',
+    this.width,
     this.titlePadding,
     this.fontSize = 18.0,
     required this.content,
@@ -32,6 +34,7 @@ class SkywaAlertDialog {
     required this.context,
     this.barrierDismissible = true,
     this.titleText = '',
+    this.width,
     this.titlePadding,
     this.fontSize = 18.0,
     required this.content,
@@ -45,6 +48,7 @@ class SkywaAlertDialog {
     required this.context,
     this.barrierDismissible = true,
     this.titleText = '',
+    this.width,
     this.titlePadding,
     this.fontSize = 18.0,
     required this.content,
@@ -56,67 +60,68 @@ class SkywaAlertDialog {
 
   void displayAlertDialog() {
     showDialog(
-        context: context,
-        barrierDismissible: barrierDismissible,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            backgroundColor: Colors.transparent,
-            contentPadding: const EdgeInsets.all(0.0),
-            titlePadding: const EdgeInsets.all(0.0),
-            title: !isStringInvalid(text: titleText)
-                ? Container(
-                    width: Device.screenWidth * 0.65,
-                    padding: titlePadding ??
-                        EdgeInsets.only(
-                          top: Device.screenHeight * 0.01,
-                          bottom: Device.screenHeight * 0.01,
-                          left: Device.screenWidth * 0.05,
-                          right: Device.screenWidth * 0.01,
-                        ),
-                    decoration: BoxDecoration(
-                      color: color,
-                      borderRadius: const BorderRadius.only(
-                        topLeft: Radius.circular(12.0),
-                        topRight: Radius.circular(12.0),
+      context: context,
+      barrierDismissible: barrierDismissible,
+      builder: (BuildContext context) {
+        return AlertDialog(
+          backgroundColor: Colors.transparent,
+          contentPadding: const EdgeInsets.all(0.0),
+          titlePadding: const EdgeInsets.all(0.0),
+          title: !isStringInvalid(text: titleText)
+              ? Container(
+                  width: Device.screenWidth * 0.65,
+                  padding: titlePadding ??
+                      EdgeInsets.only(
+                        top: Device.screenHeight * 0.01,
+                        bottom: Device.screenHeight * 0.01,
+                        left: Device.screenWidth * 0.05,
+                        right: Device.screenWidth * 0.01,
                       ),
+                  decoration: BoxDecoration(
+                    color: color,
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(12.0),
+                      topRight: Radius.circular(12.0),
                     ),
-                    child: Row(
-                      mainAxisAlignment: icon == null
-                          ? MainAxisAlignment.center
-                          : MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: SkywaText(
-                            titleText,
-                            fontSize: fontSize,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                            textAlign: TextAlign.center,
-                          ),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: icon == null
+                        ? MainAxisAlignment.center
+                        : MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: SkywaText(
+                          titleText,
+                          fontSize: fontSize,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                          textAlign: TextAlign.center,
                         ),
-                        if (icon != null) icon!,
-                      ],
-                    ),
-                  )
-                : Container(),
-            content: Container(
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: isStringInvalid(text: titleText)
-                      ? const Radius.circular(12.0)
-                      : const Radius.circular(0.0),
-                  topRight: isStringInvalid(text: titleText)
-                      ? const Radius.circular(12.0)
-                      : const Radius.circular(0.0),
-                  bottomLeft: const Radius.circular(12.0),
-                  bottomRight: const Radius.circular(12.0),
-                ),
+                      ),
+                      if (icon != null) icon!,
+                    ],
+                  ),
+                )
+              : Container(),
+          content: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: isStringInvalid(text: titleText)
+                    ? const Radius.circular(12.0)
+                    : const Radius.circular(0.0),
+                topRight: isStringInvalid(text: titleText)
+                    ? const Radius.circular(12.0)
+                    : const Radius.circular(0.0),
+                bottomLeft: const Radius.circular(12.0),
+                bottomRight: const Radius.circular(12.0),
               ),
-              child: content,
             ),
-            actions: actions,
-          );
-        });
+            child: content,
+          ),
+          actions: actions,
+        );
+      },
+    );
   }
 }
