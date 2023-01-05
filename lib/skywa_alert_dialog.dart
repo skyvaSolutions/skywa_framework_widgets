@@ -8,7 +8,7 @@ class SkywaAlertDialog {
   final BuildContext context;
   final bool barrierDismissible;
   final String titleText;
-  final double? width;
+  final double width;
   final EdgeInsetsGeometry? titlePadding;
   final double fontSize;
   final Widget content;
@@ -20,7 +20,7 @@ class SkywaAlertDialog {
     required this.context,
     this.barrierDismissible = true,
     this.titleText = '',
-    this.width,
+    this.width = 0.65,
     this.titlePadding,
     this.fontSize = 18.0,
     required this.content,
@@ -34,7 +34,7 @@ class SkywaAlertDialog {
     required this.context,
     this.barrierDismissible = true,
     this.titleText = '',
-    this.width,
+    this.width = 0.65,
     this.titlePadding,
     this.fontSize = 18.0,
     required this.content,
@@ -48,7 +48,7 @@ class SkywaAlertDialog {
     required this.context,
     this.barrierDismissible = true,
     this.titleText = '',
-    this.width,
+    this.width = 0.65,
     this.titlePadding,
     this.fontSize = 18.0,
     required this.content,
@@ -69,7 +69,7 @@ class SkywaAlertDialog {
           titlePadding: const EdgeInsets.all(0.0),
           title: !isStringInvalid(text: titleText)
               ? Container(
-                  width: width ?? Device.screenWidth * 0.65,
+            width: Device.screenWidth * width,
                   padding: titlePadding ??
                       EdgeInsets.only(
                         top: Device.screenHeight * 0.01,
