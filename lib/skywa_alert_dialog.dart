@@ -69,7 +69,7 @@ class SkywaAlertDialog {
           titlePadding: const EdgeInsets.all(0.0),
           title: !isStringInvalid(text: titleText)
               ? Container(
-                  width: Device.screenWidth * 0.65,
+                  width: width ?? Device.screenWidth * 0.65,
                   padding: titlePadding ??
                       EdgeInsets.only(
                         top: Device.screenHeight * 0.01,
