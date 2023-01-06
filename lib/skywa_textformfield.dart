@@ -522,7 +522,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
             hintText: widget.hintText,
             hintStyle: TextStyle(
               fontSize: 17.0,
-              color: widget.hintColor ?? Colors.black,
+              color: widget.hintColor ?? Colors.grey.shade400,
             ),
             prefixIcon: widget.prefixIcon,
             /*suffixIcon: widget.keyboardType == TextInputType.visiblePassword ||
