@@ -49,7 +49,7 @@ class SkywaAppBar extends StatelessWidget {
                   appbarText,
                   color: Colors.white,
                   fontWeight: FontWeight.w500,
-                )
+                ),
               ],
             )
           : SkywaText(
