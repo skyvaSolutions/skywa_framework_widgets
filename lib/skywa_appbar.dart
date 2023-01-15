@@ -9,6 +9,7 @@ class SkywaAppBar extends StatelessWidget {
   final double? size;
   final List<Widget>? actions;
   final PreferredSizeWidget? bottom;
+  final Widget? titleIcon;
 
   SkywaAppBar({
     Key? key,
@@ -18,6 +19,7 @@ class SkywaAppBar extends StatelessWidget {
     this.size,
     this.actions,
     this.bottom,
+    this.titleIcon,
   }) : super(key: key);
 
   @override
@@ -37,11 +39,24 @@ class SkywaAppBar extends StatelessWidget {
       elevation: 0.0,
       backgroundColor: Theme.of(context).primaryColor,
       leading: backIconButton,
-      title: SkywaText(
-        appbarText,
-        color: Colors.white,
-        fontWeight: FontWeight.w500,
-      ),
+      title: titleIcon != null
+          ? Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                titleIcon!,
+                const SizedBox(width: 8.0),
+                SkywaText(
+                  appbarText,
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                ),
+              ],
+            )
+          : SkywaText(
+              appbarText,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+            ),
       bottom: bottom,
       actions: actions ?? [],
     );

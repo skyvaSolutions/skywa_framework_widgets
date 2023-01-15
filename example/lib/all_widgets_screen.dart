@@ -43,6 +43,7 @@ class _AllWidgetsScreenState extends State<AllWidgetsScreen> {
         preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(
           appbarText: 'Skywa Framework Widgets',
+          titleIcon: const Icon(Icons.dashboard),
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(48.0),
             child: Container(),
