@@ -9,9 +9,9 @@ class SampleFloatingActionButtonScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.lightGreen,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(kToolbarHeight),
+        preferredSize: const Size.fromHeight(kToolbarHeight),
         child: SkywaAppBar(appbarText: 'Sample Floating Action Buttons'),
       ),
       body: Container(
@@ -19,9 +19,10 @@ class SampleFloatingActionButtonScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
       ),
       floatingActionButton: SkywaFloatingActionButton(
-        onTap: () {
-          SkywaSnackBar.info(context: context, snackBarText: 'FAB tapped');
-        },
+        onTap: () => SkywaSnackBar.info(
+          context: context,
+          snackBarText: 'FAB tapped',
+        ),
         iconData: Icons.add_rounded,
       ),
     );
