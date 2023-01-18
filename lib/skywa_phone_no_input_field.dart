@@ -83,6 +83,9 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
         onInputValidated: widget.onInputValidated,
         selectorConfig: const SelectorConfig(
           selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
+          trailingSpace: false,
+          leadingPadding: 0.0,
+          useEmoji: true,
         ),
         ignoreBlank: false,
         selectorTextStyle: const TextStyle(color: Colors.black),
