@@ -18,20 +18,9 @@ class SkywaFloatingActionButton extends StatelessWidget {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: Colors.grey.shade100,
-        boxShadow: [
-          /// bottom right
-          BoxShadow(
-            color: Colors.grey.shade400,
-            blurRadius: 10.0,
-            spreadRadius: 2.0,
-            offset: const Offset(5, 5),
-          ),
-        ],
       ),
       child: IconButton(
-        onPressed: () {
-          onTap();
-        },
+        onPressed: () => onTap(),
         iconSize: iconSize,
         icon: Icon(iconData, color: Theme.of(context).primaryColor),
       ),
