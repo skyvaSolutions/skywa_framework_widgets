@@ -42,7 +42,7 @@ class SkywaFloatingActionButton extends StatelessWidget {
                 children: [
                   Icon(iconData, color: Colors.white),
                   const SizedBox(width: 10.0),
-                  SkywaText(text),
+                  SkywaText(text, color: Colors.white),
                 ],
               ),
             )
