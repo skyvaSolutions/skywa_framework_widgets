@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 
@@ -85,7 +86,7 @@ class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
           selectorType: PhoneInputSelectorType.BOTTOM_SHEET,
           trailingSpace: false,
           leadingPadding: 0.0,
-          useEmoji: true,
+          useEmoji: !kIsWeb,
         ),
         ignoreBlank: false,
         selectorTextStyle: const TextStyle(color: Colors.black),
