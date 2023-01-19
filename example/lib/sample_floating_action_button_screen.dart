@@ -24,6 +24,7 @@ class SampleFloatingActionButtonScreen extends StatelessWidget {
           snackBarText: 'FAB tapped',
         ),
         iconData: Icons.add_rounded,
+        text: 'Add Page',
       ),
     );
   }
