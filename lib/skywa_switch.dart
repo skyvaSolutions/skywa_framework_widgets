@@ -12,6 +12,7 @@ class SkywaSwitch extends StatelessWidget {
   final ValueChanged<bool> onChanged;
   final bool enabled;
   final Color textColor;
+  final EdgeInsets? padding;
 
   const SkywaSwitch({
     Key? key,
@@ -23,15 +24,17 @@ class SkywaSwitch extends StatelessWidget {
     this.fontWeight,
     this.enabled = true,
     this.textColor = Colors.black,
+    this.padding,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return !isStringInvalid(text: title)
         ? SwitchListTile(
-      value: value,
+            value: value,
             onChanged: enabled ? onChanged : null,
             activeColor: Theme.of(context).primaryColor,
+            contentPadding: padding ?? EdgeInsets.zero,
             inactiveThumbColor:
                 enabled ? Colors.grey.shade50 : Colors.grey.shade200,
             inactiveTrackColor:
@@ -45,7 +48,7 @@ class SkywaSwitch extends StatelessWidget {
             ),
           )
         : Switch(
-      value: value,
+            value: value,
             onChanged: enabled ? onChanged : null,
             activeColor: Theme.of(context).primaryColor,
             inactiveThumbColor:

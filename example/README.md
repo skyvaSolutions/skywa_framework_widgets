@@ -1,4 +1,4 @@
-# skywa_framework_widgets_example
+# skywa_framework_widgets
 
 Demonstrates how to use the skywa_framework_widgets plugin.
 
