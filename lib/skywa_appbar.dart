@@ -41,11 +41,6 @@ class SkywaAppBar extends StatelessWidget {
       elevation: 0.0,
       backgroundColor: Theme.of(context).primaryColor,
       leading: backIconButton,
-      title: SkywaText(
-        appbarText,
-        color: textColor,
-        fontWeight: FontWeight.w500,
-      ),
       title: titleIcon != null
           ? Row(
               mainAxisAlignment: MainAxisAlignment.center,
