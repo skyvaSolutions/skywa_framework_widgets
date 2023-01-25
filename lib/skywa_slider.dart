@@ -26,7 +26,7 @@ class SkywaSlider extends StatelessWidget {
       activeColor: activeColor ?? Theme.of(context).primaryColor,
       inactiveColor: Colors.grey.shade600,
       divisions: allowDivisions ? (maxValue - minValue).round() : null,
-      thumbColor: Theme.of(context).primaryColor,
+      thumbColor: activeColor ?? Theme.of(context).primaryColor,
       min: minValue,
       max: maxValue,
     );
