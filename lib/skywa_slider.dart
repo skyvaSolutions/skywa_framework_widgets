@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 class SkywaSlider extends StatelessWidget {
   final double value;
   final ValueChanged<double> onChanged;
+  final Color? activeColor;
   final double minValue;
   final double maxValue;
   final bool allowDivisions;
@@ -10,6 +11,7 @@ class SkywaSlider extends StatelessWidget {
   SkywaSlider({
     required this.value,
     required this.onChanged,
+    this.activeColor,
     this.minValue = 1.0,
     required this.maxValue,
     this.allowDivisions = false,
@@ -21,7 +23,7 @@ class SkywaSlider extends StatelessWidget {
       value: value,
       onChanged: onChanged,
       label: value.toString(),
-      activeColor: Theme.of(context).primaryColor,
+      activeColor: activeColor ?? Theme.of(context).primaryColor,
       inactiveColor: Colors.grey.shade600,
       divisions: allowDivisions ? (maxValue - minValue).round() : null,
       thumbColor: Theme.of(context).primaryColor,
