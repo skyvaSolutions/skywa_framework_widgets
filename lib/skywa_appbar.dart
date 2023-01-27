@@ -5,6 +5,7 @@ import 'skywa_text.dart';
 class SkywaAppBar extends StatelessWidget {
   final String appbarText;
   final Color textColor;
+  final Color? appbarColor;
   final bool centerTitle;
   IconButton? backIconButton;
   final double? size;
@@ -16,6 +17,7 @@ class SkywaAppBar extends StatelessWidget {
     Key? key,
     this.appbarText = '',
     this.textColor = Colors.white,
+    this.appbarColor,
     this.centerTitle = true,
     this.backIconButton,
     this.size,
@@ -39,7 +41,7 @@ class SkywaAppBar extends StatelessWidget {
       automaticallyImplyLeading: false,
       centerTitle: centerTitle,
       elevation: 0.0,
-      backgroundColor: Theme.of(context).primaryColor,
+      backgroundColor: appbarColor ?? Theme.of(context).primaryColor,
       leading: backIconButton,
       title: titleIcon != null
           ? Row(
