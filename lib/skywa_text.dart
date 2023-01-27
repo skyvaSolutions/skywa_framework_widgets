@@ -5,6 +5,7 @@ class SkywaText extends StatelessWidget {
   final TextStyle? textStyle;
   final Color color;
   final double fontSize;
+  final FontStyle fontStyle;
   final FontWeight fontWeight;
   final TextAlign textAlign;
   final TextOverflow textOverflow;
@@ -19,6 +20,7 @@ class SkywaText extends StatelessWidget {
     this.textStyle,
     this.color = Colors.black,
     this.fontSize = 18.0,
+    this.fontStyle = FontStyle.normal,
     this.fontWeight = FontWeight.w400,
     this.textAlign = TextAlign.start,
     this.textOverflow = TextOverflow.ellipsis,
@@ -39,6 +41,7 @@ class SkywaText extends StatelessWidget {
       style: textStyle ??
           TextStyle(
             fontSize: fontSize,
+            fontStyle: fontStyle,
             color: color,
             letterSpacing: letterSpacing,
             fontWeight: fontWeight,
