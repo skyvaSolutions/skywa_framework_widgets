@@ -34,15 +34,15 @@ class SkywaPhoneNoInputField extends StatefulWidget {
 
 class _SkywaPhoneNoInputFieldState extends State<SkywaPhoneNoInputField> {
   PhoneNumber? number;
-  List<Locale> systemLocales = WidgetsBinding.instance.window.locales;
-  String? isoCountryCode;
+//   List<Locale> systemLocales = WidgetsBinding.instance.window.locales;
+//   String? isoCountryCode;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    isoCountryCode = systemLocales.first.countryCode;
-    number = widget.initialValue ?? PhoneNumber(isoCode: isoCountryCode);
+//     isoCountryCode = systemLocales.first.countryCode;
+    number = widget.initialValue ?? PhoneNumber(isoCode: 'US');
   }
 
   @override
