@@ -49,10 +49,12 @@ class SkywaAppBar extends StatelessWidget {
               children: [
                 titleIcon!,
                 const SizedBox(width: 8.0),
-                SkywaText(
-                  appbarText,
-                  color: textColor,
-                  fontWeight: FontWeight.w500,
+                Expanded(
+                  child: SkywaText(
+                    appbarText,
+                    color: textColor,
+                    fontWeight: FontWeight.w500,
+                  ),
                 ),
               ],
             )
