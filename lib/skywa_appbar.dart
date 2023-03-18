@@ -46,16 +46,13 @@ class SkywaAppBar extends StatelessWidget {
       title: titleIcon != null
           ? Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 titleIcon!,
                 const SizedBox(width: 8.0),
-                Expanded(
-                  child: SkywaText(
-                    appbarText,
-                    color: textColor,
-                    fontWeight: FontWeight.w500,
-                  ),
+                SkywaText(
+                  appbarText,
+                  color: textColor,
+                  fontWeight: FontWeight.w500,
                 ),
               ],
             )
