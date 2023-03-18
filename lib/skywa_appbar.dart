@@ -46,6 +46,7 @@ class SkywaAppBar extends StatelessWidget {
       title: titleIcon != null
           ? Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 titleIcon!,
                 const SizedBox(width: 8.0),
