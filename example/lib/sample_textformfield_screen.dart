@@ -71,6 +71,40 @@ class _SampleTextFormFieldScreenState extends State<SampleTextFormFieldScreen> {
                 }),
             const SizedBox(height: 20.0),
 
+            /// password
+            Text(
+              'Password',
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height * 0.025,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+            const SizedBox(height: 10.0),
+            SkywaTextFormField.password(
+                textEditingController: _passwordController,
+                hintText: 'Enter a password...',
+                labelText: 'Password',
+                isObscure: true,
+                suffixIcon: _passwordController.text.isNotEmpty
+                    ? IconButton(
+                        onPressed: () {
+                          setState(() {
+                            _passwordController.clear();
+                          });
+                        },
+                        icon: Icon(
+                          Icons.close_rounded,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      )
+                    : null,
+                onChanged: (value) {
+                  setState(() {
+                    _passwordController.text;
+                  });
+                }),
+            const SizedBox(height: 20.0),
+
             /// multiline
             Text(
               'Multiline Text',
