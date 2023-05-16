@@ -26,6 +26,7 @@ dependencies:
   image_picker: ^0.8.6
 #  image_picker_web: ^3.0.0+1
   intl_phone_number_input: ^0.7.1
+  another_flushbar: ^1.12.30
 
 dev_dependencies:
   flutter_test:
