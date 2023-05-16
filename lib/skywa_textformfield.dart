@@ -25,8 +25,6 @@ class SkywaTextFormField extends StatefulWidget {
   final bool enabled;
   final bool readOnly;
   final ValueChanged<String>? onChanged;
-
-  // final bool isObscure;
   final int minLines;
   final int maxLines;
   final bool autofocus;
@@ -43,6 +41,7 @@ class SkywaTextFormField extends StatefulWidget {
   int? maxDigitsLength;
   bool? allowDecimal;
   int? postDecimalLength;
+  bool? isObscure;
 
   /// Optimize for textual information.
   ///
@@ -72,8 +71,39 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    // // this.isObscure = false,
   })  : textCapitalization = TextCapitalization.sentences,
+        assert(labelText != 'null');
+
+  /// Optimize for textual information.
+  ///
+  /// Requests the default platform keyboard.
+  SkywaTextFormField.password({
+    super.key,
+    this.textEditingController,
+    this.labelText = '',
+    this.hintText = '',
+    this.errorText,
+    this.textColor,
+    this.cursorColor,
+    this.labelColor,
+    this.hintColor,
+    this.textAlign = TextAlign.left,
+    this.contentPadding,
+    this.focusNode,
+    this.minLines = 1,
+    this.maxLines = 1,
+    this.autofocus = false,
+    this.showDecoration = true,
+    this.onTap,
+    this.validator,
+    this.prefixIcon,
+    this.suffixIcon,
+    this.enabled = true,
+    this.readOnly = false,
+    this.onChanged,
+    this.isObscure = true,
+  })  : keyboardType = TextInputType.visiblePassword,
+        textCapitalization = TextCapitalization.sentences,
         assert(labelText != 'null');
 
   /// Optimize for multiline textual information.
@@ -105,7 +135,7 @@ class SkywaTextFormField extends StatefulWidget {
     this.enabled = true,
     this.readOnly = false,
     this.onChanged,
-    // // this.isObscure = false,
+    // this.isObscure = false,
   })  : keyboardType = TextInputType.multiline,
         textCapitalization = TextCapitalization.sentences,
         assert(textEditingController != null),
@@ -525,7 +555,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
               color: widget.hintColor ?? Colors.grey.shade400,
             ),
             prefixIcon: widget.prefixIcon,
-            /*suffixIcon: widget.keyboardType == TextInputType.visiblePassword ||
+            suffixIcon: widget.keyboardType == TextInputType.visiblePassword ||
                     widget.suffixIcon != null
                 ? Row(
                     mainAxisSize: MainAxisSize.min,
@@ -547,8 +577,7 @@ class _SkywaTextFormFieldState extends State<SkywaTextFormField> {
                       if (widget.suffixIcon != null) widget.suffixIcon!,
                     ],
                   )
-                : null,*/
-            suffixIcon: widget.suffixIcon,
+                : null,
           ),
           validator: (value) {
             // print('459: $value');
