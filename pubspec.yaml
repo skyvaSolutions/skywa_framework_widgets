@@ -18,6 +18,7 @@ dependencies:
   flutter_lints: ^2.0.1
   cached_network_image: ^3.2.2
   intl: ^0.17.0
+  another_flushbar: ^1.12.30
 
   flutter_web_plugins:
     sdk: flutter
