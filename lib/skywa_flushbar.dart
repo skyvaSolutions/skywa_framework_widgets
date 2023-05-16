@@ -66,7 +66,7 @@ class SkywaFlushBar {
     required this.flushBarTitle,
     required this.flushBarMessage,
     this.fontSize,
-    this.durationInSeconds = 2,
+    this.durationInSeconds = 3,
     this.iconSize,
     this.flushBarPosition = FlushbarPosition.BOTTOM,
     this.flushBarStyle = FlushbarStyle.GROUNDED,
