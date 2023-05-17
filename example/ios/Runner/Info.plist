@@ -28,6 +28,16 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Skywa requires the camera to allow you to send a video message</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Skywa app needs access to location access in background to support check in process</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Skywa requires your location to support the customer check in process</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Skywa requires the microphone to allow you to send a video message</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>We require access to your photos to allow you to upload pictures of your business and services</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
